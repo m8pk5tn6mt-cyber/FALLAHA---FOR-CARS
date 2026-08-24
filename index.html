@@ -3,204 +3,554 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
 <title>مجمع حلب الأول | FALLAHA</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
 
 body{
-  font-family:Arial,sans-serif;
-  background:#050505;
-  color:#fff;
-  text-align:center;
+font-family:Arial,Tahoma,sans-serif;
+background:#050505;
+color:#fff;
+overflow-x:hidden;
 }
 
-header{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:30px 20px;
-  background:
-  radial-gradient(circle at center,rgba(220,0,20,.22),transparent 40%),
-  linear-gradient(#080808,#000);
+body:before{
+content:"";
+position:fixed;
+inset:0;
+z-index:-3;
+background:
+radial-gradient(circle at 50% 15%,rgba(230,0,20,.13),transparent 28%),
+repeating-linear-gradient(
+135deg,
+rgba(255,255,255,.012) 0 6px,
+transparent 6px 12px
+);
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:100;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 6%;
+background:rgba(5,5,5,.82);
+backdrop-filter:blur(14px);
+border-bottom:1px solid #191919;
+direction:ltr;
+}
+
+.brand{
+font-weight:900;
+letter-spacing:3px;
+font-size:20px;
+}
+
+.brand span{color:#ed101d}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+font-size:13px;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:110px 20px 60px;
+position:relative;
+}
+
+.hero:after{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+border:1px solid rgba(255,255,255,.04);
+border-radius:50%;
+z-index:-1;
+box-shadow:
+0 0 90px rgba(230,0,20,.1),
+inset 0 0 80px rgba(230,0,20,.05);
+}
+
+.badge{
+display:inline-block;
+padding:8px 14px;
+border:1px solid #292929;
+border-radius:30px;
+font-size:10px;
+letter-spacing:2px;
+color:#aaa;
+margin-bottom:25px;
 }
 
 .logo{
-  font-size:55px;
-  font-weight:900;
-  letter-spacing:5px;
-  color:#fff;
+font-size:52px;
+font-weight:900;
+letter-spacing:7px;
+direction:ltr;
 }
 
-.logo span{
-  color:#e31320;
-}
+.logo span{color:#ed101d}
 
-.small{
-  letter-spacing:4px;
-  color:#888;
-  font-size:11px;
-  margin-top:8px;
+.logo-sub{
+font-size:10px;
+letter-spacing:5px;
+color:#888;
+margin-top:10px;
+direction:ltr;
 }
 
 h1{
-  font-size:55px;
-  margin-top:45px;
+font-size:clamp(52px,10vw,100px);
+line-height:1;
+margin-top:50px;
+font-weight:900;
 }
 
-.red{
-  color:#e31320;
+h1 span{
+display:block;
+color:#ed101d;
+margin-top:8px;
 }
 
-.subtitle{
-  color:#bbb;
-  font-size:19px;
-  margin:18px 0 35px;
+.hero-text{
+color:#aaa;
+font-size:18px;
+margin:28px 0 34px;
 }
 
 .buttons{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
 }
 
 .btn{
-  display:inline-block;
-  padding:14px 25px;
-  border-radius:30px;
-  text-decoration:none;
-  color:white;
-  border:1px solid #333;
-  background:#111;
-  font-weight:bold;
+min-width:155px;
+padding:15px 24px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+border:1px solid #333;
+color:#fff;
+background:#101010;
+transition:.25s;
 }
 
-.btn.redbtn{
-  background:#d80d19;
-  border-color:#d80d19;
+.btn-red{
+background:#e10c19;
+border-color:#e10c19;
+box-shadow:0 10px 35px rgba(225,12,25,.2);
+}
+
+.btn:hover{transform:translateY(-3px)}
+
+.quick{
+margin-top:48px;
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.quick span{
+padding:8px 14px;
+font-size:12px;
+border:1px solid #262626;
+border-radius:20px;
+color:#ccc;
+background:#0b0b0b;
 }
 
 section{
-  padding:80px 20px;
+padding:90px 6%;
 }
 
-section h2{
-  font-size:36px;
-  margin-bottom:12px;
+.heading{
+text-align:center;
+max-width:700px;
+margin:0 auto 45px;
 }
 
-section .desc{
-  color:#999;
-  margin-bottom:40px;
+.heading small{
+color:#ed101d;
+letter-spacing:3px;
+font-weight:bold;
+}
+
+.heading h2{
+font-size:clamp(34px,6vw,55px);
+margin:12px 0;
+}
+
+.heading p{
+color:#888;
+line-height:1.8;
 }
 
 .cards{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
 }
 
 .card{
-  background:#101010;
-  border:1px solid #222;
-  border-radius:22px;
-  padding:35px 20px;
+position:relative;
+min-height:330px;
+padding:30px;
+border:1px solid #1f1f1f;
+border-radius:24px;
+background:
+radial-gradient(circle at 50% 0%,rgba(225,12,25,.09),transparent 40%),
+#0c0c0d;
+transition:.3s;
 }
 
-.card .icon{
-  font-size:35px;
+.card:hover{
+transform:translateY(-7px);
+border-color:#551017;
+}
+
+.number{
+color:#555;
+font-size:12px;
+font-weight:bold;
+}
+
+.icon{
+font-size:38px;
+margin-top:60px;
+color:#ed101d;
 }
 
 .card h3{
-  font-size:24px;
-  margin:20px 0 10px;
+font-size:30px;
+margin:15px 0 10px;
 }
 
 .card p{
-  color:#999;
-  line-height:1.8;
+font-size:14px;
+color:#888;
+line-height:1.8;
 }
 
 .services{
-  max-width:1000px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
 }
 
 .service{
-  background:#0d0d0d;
-  border:1px solid #222;
-  border-radius:16px;
-  padding:20px;
+min-height:150px;
+padding:22px;
+border-radius:18px;
+border:1px solid #1e1e1e;
+background:#0b0b0c;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.service b{
+color:#ed101d;
+font-size:11px;
+margin-bottom:14px;
+}
+
+.service span{
+font-size:17px;
+font-weight:bold;
+}
+
+.showcase{
+max-width:1100px;
+margin:auto;
+border:1px solid #222;
+border-radius:28px;
+padding:45px;
+background:
+linear-gradient(135deg,rgba(225,12,25,.12),transparent 40%),
+#0a0a0b;
+display:grid;
+grid-template-columns:1.3fr .7fr;
+gap:30px;
+align-items:center;
+}
+
+.showcase h2{
+font-size:clamp(35px,6vw,60px);
+margin-bottom:15px;
+}
+
+.showcase p{
+color:#999;
+line-height:1.9;
+}
+
+.stats{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.stat{
+padding:25px 10px;
+text-align:center;
+border-radius:18px;
+background:#101011;
+border:1px solid #222;
+}
+
+.stat strong{
+display:block;
+font-size:38px;
+}
+
+.stat small{color:#888}
+
+.gallery{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+}
+
+.photo{
+min-height:240px;
+border:1px solid #222;
+border-radius:22px;
+padding:20px;
+display:flex;
+align-items:flex-end;
+background:
+linear-gradient(to top,rgba(0,0,0,.8),transparent),
+repeating-linear-gradient(
+135deg,
+#111 0 12px,
+#0b0b0b 12px 24px
+);
+}
+
+.photo.big{
+grid-column:1/-1;
+min-height:320px;
+}
+
+.photo span{
+background:#090909;
+padding:8px 12px;
+border-radius:20px;
+font-size:12px;
 }
 
 .contact{
-  background:#0b0b0b;
+max-width:1000px;
+margin:auto;
+border-radius:28px;
+border:1px solid #222;
+padding:50px 25px;
+text-align:center;
+background:
+radial-gradient(circle at top,rgba(225,12,25,.15),transparent 40%),
+#090909;
+}
+
+.contact h2{
+font-size:44px;
+margin-bottom:10px;
+}
+
+.contact p{
+color:#888;
+margin-bottom:30px;
+}
+
+.numbers{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+max-width:700px;
+margin:25px auto;
 }
 
 .phone{
-  display:block;
-  color:#fff;
-  font-size:28px;
-  font-weight:bold;
-  margin:15px;
-  text-decoration:none;
+display:block;
+padding:20px;
+border:1px solid #262626;
+border-radius:18px;
+text-decoration:none;
+color:white;
+background:#0f0f10;
+}
+
+.phone small{
+display:block;
+color:#ed101d;
+margin-bottom:7px;
+}
+
+.phone strong{
+font-size:24px;
 }
 
 footer{
-  padding:40px;
-  border-top:1px solid #222;
-  color:#777;
+padding:50px 20px 80px;
+border-top:1px solid #191919;
+text-align:center;
+color:#777;
 }
 
-@media(max-width:700px){
-  h1{
-    font-size:43px;
-  }
+footer strong{
+color:#fff;
+letter-spacing:4px;
+font-size:20px;
+}
 
-  .logo{
-    font-size:40px;
-  }
+.wa{
+position:fixed;
+left:20px;
+bottom:20px;
+width:56px;
+height:56px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#fff;
+color:#000;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 10px 30px #000;
+z-index:100;
+}
 
-  .cards,
-  .services{
-    grid-template-columns:1fr;
-  }
+.reveal{
+opacity:0;
+transform:translateY(25px);
+transition:.7s;
+}
+
+.reveal.on{
+opacity:1;
+transform:none;
+}
+
+@media(max-width:800px){
+
+nav a{display:none}
+
+.hero:after{
+width:350px;
+height:350px;
+}
+
+.logo{font-size:39px}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.services{
+grid-template-columns:1fr 1fr;
+}
+
+.showcase{
+grid-template-columns:1fr;
+padding:28px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.photo.big{
+grid-column:auto;
+}
+
+.numbers{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:480px){
+
+section{
+padding:75px 18px;
+}
+
+.services{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:56px;
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
+<div class="brand"><span>F</span>ALLAHA</div>
+<a href="#contact">CONTACT</a>
+</nav>
+
+<header class="hero">
 <div>
 
+<div class="badge">FALLAHA DIGITAL EXPERIENCE</div>
+
 <div class="logo"><span>F</span>ALLAHA</div>
-<div class="small">CAR'S TRADING & SERVICE</div>
+<div class="logo-sub">CAR'S TRADING & SERVICE</div>
 
-<h1>مجمع <span class="red">حلب الأول</span></h1>
+<h1>
+مجمع
+<span>حلب الأول</span>
+</h1>
 
-<p class="subtitle">
+<p class="hero-text">
 خدمة متطورة في عالم السيارات الحديثة
 </p>
 
 <div class="buttons">
-<a class="btn redbtn" href="tel:+963994643666">اتصل الآن</a>
 
-<a class="btn"
-href="https://wa.me/963994643666">
+<a href="tel:+963994643666" class="btn btn-red">
+اتصل الآن
+</a>
+
+<a href="https://wa.me/963994643666" class="btn">
 واتساب
 </a>
+
+</div>
+
+<div class="quick">
+<span>مغسل</span>
+<span>كافيه</span>
+<span>زيوت وتشحيم</span>
 </div>
 
 </div>
@@ -209,27 +559,41 @@ href="https://wa.me/963994643666">
 
 <section>
 
-<h2>أقسام المجمع</h2>
-<p class="desc">كل ما تحتاجه لسيارتك في مكان واحد</p>
+<div class="heading reveal">
+<small>MAIN ZONES</small>
+<h2>كل شيء في مكان واحد</h2>
+<p>
+ثلاثة أقسام رئيسية ضمن تجربة واحدة متكاملة.
+</p>
+</div>
 
 <div class="cards">
 
-<div class="card">
+<div class="card reveal">
+<div class="number">01</div>
 <div class="icon">✦</div>
 <h3>المغسل</h3>
-<p>غسيل وعناية كاملة بالسيارة مع اهتمام بالتفاصيل.</p>
+<p>
+غسيل وعناية كاملة للسيارة مع اهتمام بالتفاصيل والنظافة.
+</p>
 </div>
 
-<div class="card">
+<div class="card reveal">
+<div class="number">02</div>
 <div class="icon">☕</div>
 <h3>الكافيه</h3>
-<p>استراحة مريحة وفنجان قهوة أثناء خدمة سيارتك.</p>
+<p>
+استراحة مريحة وفنجان قهوة أثناء انتظار خدمة سيارتك.
+</p>
 </div>
 
-<div class="card">
+<div class="card reveal">
+<div class="number">03</div>
 <div class="icon">◆</div>
 <h3>زيوت وتشحيم</h3>
-<p>خدمة سريعة ومنظمة لزيوت وتشحيم السيارات.</p>
+<p>
+خدمة منظمة وسريعة للعناية بزيوت وتشحيم سيارتك.
+</p>
 </div>
 
 </div>
@@ -238,45 +602,180 @@ href="https://wa.me/963994643666">
 
 <section>
 
+<div class="heading reveal">
+<small>AUTOMOTIVE SERVICES</small>
 <h2>خدمات السيارات</h2>
-<p class="desc">خدمات متكاملة ضمن مجمع حلب الأول</p>
+<p>
+خدمات متعددة لتغطية احتياجات سيارتك.
+</p>
+</div>
 
 <div class="services">
 
-<div class="service">فحص السيارات</div>
-<div class="service">ميكانيك</div>
-<div class="service">كهرباء سيارات</div>
-<div class="service">علب سرعة</div>
-<div class="service">صوتيات</div>
-<div class="service">بوليش ومعالجة طلاء</div>
-<div class="service">مكابح</div>
-<div class="service">نظام التعليق</div>
+<div class="service reveal">
+<b>01</b>
+<span>فحص السيارات</span>
+</div>
+
+<div class="service reveal">
+<b>02</b>
+<span>ميكانيك</span>
+</div>
+
+<div class="service reveal">
+<b>03</b>
+<span>كهرباء سيارات</span>
+</div>
+
+<div class="service reveal">
+<b>04</b>
+<span>علب سرعة</span>
+</div>
+
+<div class="service reveal">
+<b>05</b>
+<span>صوتيات</span>
+</div>
+
+<div class="service reveal">
+<b>06</b>
+<span>بوليش ومعالجة طلاء</span>
+</div>
+
+<div class="service reveal">
+<b>07</b>
+<span>مكابح</span>
+</div>
+
+<div class="service reveal">
+<b>08</b>
+<span>نظام التعليق</span>
+</div>
 
 </div>
 
 </section>
 
 
-<section class="contact">
+<section>
+
+<div class="showcase reveal">
+
+<div>
+<small style="color:#ed101d">
+ONE QR • ONE EXPERIENCE
+</small>
+
+<h2>
+بوابتك الرقمية<br>
+لمجمع حلب الأول
+</h2>
+
+<p>
+من مسح الـ QR إلى التواصل والخدمات،
+كل المعلومات المهمة عن المجمع أصبحت في صفحة واحدة
+سريعة ومصممة للموبايل.
+</p>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<strong>3</strong>
+<small>أقسام رئيسية</small>
+</div>
+
+<div class="stat">
+<strong>8</strong>
+<small>خدمات</small>
+</div>
+
+<div class="stat">
+<strong>2</strong>
+<small>أرقام تواصل</small>
+</div>
+
+<div class="stat">
+<strong>1</strong>
+<small>QR</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="heading reveal">
+<small>GALLERY</small>
+<h2>معرض المجمع</h2>
+<p>
+قريباً نضيف صور مجمع حلب الأول الحقيقية.
+</p>
+</div>
+
+<div class="gallery">
+
+<div class="photo reveal">
+<span>المغسل</span>
+</div>
+
+<div class="photo reveal">
+<span>الكافيه</span>
+</div>
+
+<div class="photo reveal">
+<span>قسم الزيوت</span>
+</div>
+
+<div class="photo big reveal">
+<span>واجهة مجمع حلب الأول</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<div class="contact reveal">
+
+<small style="color:#ed101d">
+CONTACT
+</small>
 
 <h2>تواصل معنا</h2>
 
-<p class="desc">مجمع حلب الأول — FALLAHA</p>
+<p>
+مجمع حلب الأول — FALLAHA
+</p>
+
+<div class="numbers">
 
 <a class="phone" href="tel:+963994643666">
-0994 643 666
+<small>اتصال مباشر</small>
+<strong>0994 643 666</strong>
 </a>
 
 <a class="phone" href="tel:+963995643666">
-0995 643 666
+<small>اتصال مباشر</small>
+<strong>0995 643 666</strong>
 </a>
+
+</div>
 
 <div class="buttons">
 
-<a class="btn redbtn"
+<a class="btn btn-red"
 href="https://wa.me/963994643666">
 راسلنا على واتساب
 </a>
+
+</div>
 
 </div>
 
@@ -287,15 +786,50 @@ href="https://wa.me/963994643666">
 
 <strong>FALLAHA</strong>
 
-<p style="margin-top:10px">
+<p style="margin-top:12px">
 مجمع حلب الأول
 </p>
 
-<p style="margin-top:15px">
+<p style="margin-top:10px">
 خدمة متطورة في عالم السيارات الحديثة
 </p>
 
 </footer>
+
+
+<a class="wa"
+href="https://wa.me/963994643666">
+WA
+</a>
+
+
+<script>
+
+const elements =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("on");
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},{
+threshold:.08
+});
+
+elements.forEach(el=>observer.observe(el));
+
+</script>
 
 </body>
 </html>
