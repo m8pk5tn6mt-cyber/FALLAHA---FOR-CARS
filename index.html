@@ -4,17 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050505">
+
 <title>مجمع حلب الأول | FALLAHA</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 
-html{scroll-behavior:smooth}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 font-family:Arial,Tahoma,sans-serif;
 background:#050505;
-color:#fff;
+color:white;
 overflow-x:hidden;
 }
 
@@ -22,103 +30,133 @@ body:before{
 content:"";
 position:fixed;
 inset:0;
-z-index:-3;
+z-index:-5;
 background:
-radial-gradient(circle at 50% 15%,rgba(230,0,20,.13),transparent 28%),
+radial-gradient(circle at 50% 10%,rgba(230,0,20,.14),transparent 30%),
 repeating-linear-gradient(
 135deg,
-rgba(255,255,255,.012) 0 6px,
+rgba(255,255,255,.015) 0 6px,
 transparent 6px 12px
 );
 }
+
+
+/* NAV */
 
 nav{
 position:fixed;
 top:0;
 left:0;
 right:0;
-z-index:100;
 height:70px;
+z-index:1000;
+
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:0 6%;
-background:rgba(5,5,5,.82);
-backdrop-filter:blur(14px);
-border-bottom:1px solid #191919;
+
+padding:0 5%;
+
+background:rgba(5,5,5,.88);
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid #1d1d1d;
+
 direction:ltr;
 }
 
-.brand{
+.nav-logo{
+font-size:21px;
 font-weight:900;
-letter-spacing:3px;
-font-size:20px;
+letter-spacing:4px;
 }
 
-.brand span{color:#ed101d}
+.nav-logo span{
+color:#ed101d;
+}
 
 nav a{
-color:#ddd;
+color:#ccc;
 text-decoration:none;
-font-size:13px;
+font-size:12px;
 }
+
+
+/* HERO */
 
 .hero{
 min-height:100vh;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 text-align:center;
-padding:110px 20px 60px;
+
+padding:120px 20px 80px;
+
 position:relative;
+overflow:hidden;
 }
 
-.hero:after{
+.hero:before{
 content:"";
 position:absolute;
-width:520px;
-height:520px;
-border:1px solid rgba(255,255,255,.04);
+
+width:600px;
+height:600px;
+
 border-radius:50%;
-z-index:-1;
+
+border:1px solid rgba(255,255,255,.04);
+
 box-shadow:
-0 0 90px rgba(230,0,20,.1),
-inset 0 0 80px rgba(230,0,20,.05);
+0 0 120px rgba(225,12,25,.12),
+inset 0 0 100px rgba(225,12,25,.05);
+
+z-index:-1;
 }
 
 .badge{
 display:inline-block;
+
 padding:8px 14px;
+
 border:1px solid #292929;
 border-radius:30px;
+
 font-size:10px;
 letter-spacing:2px;
+
 color:#aaa;
+
 margin-bottom:25px;
 }
 
-.logo{
-font-size:52px;
-font-weight:900;
-letter-spacing:7px;
-direction:ltr;
+
+/* REAL LOGO */
+
+.main-logo{
+width:min(720px,92vw);
+height:auto;
+
+display:block;
+margin:0 auto 35px;
+
+border-radius:22px;
+
+box-shadow:
+0 30px 80px rgba(0,0,0,.7),
+0 0 45px rgba(225,12,25,.12);
 }
 
-.logo span{color:#ed101d}
-
-.logo-sub{
-font-size:10px;
-letter-spacing:5px;
-color:#888;
-margin-top:10px;
-direction:ltr;
-}
 
 h1{
-font-size:clamp(52px,10vw,100px);
-line-height:1;
-margin-top:50px;
+font-size:clamp(50px,10vw,100px);
 font-weight:900;
+line-height:1;
+
+margin-top:25px;
 }
 
 h1 span{
@@ -128,10 +166,16 @@ margin-top:8px;
 }
 
 .hero-text{
-color:#aaa;
 font-size:18px;
-margin:28px 0 34px;
+color:#aaa;
+
+margin:28px 0 35px;
+
+line-height:1.8;
 }
+
+
+/* BUTTONS */
 
 .buttons{
 display:flex;
@@ -141,209 +185,374 @@ flex-wrap:wrap;
 }
 
 .btn{
-min-width:155px;
+display:inline-block;
+
+min-width:160px;
+
 padding:15px 24px;
+
 border-radius:30px;
+
+border:1px solid #333;
+
+background:#101010;
+
+color:white;
+
 text-decoration:none;
 font-weight:bold;
-border:1px solid #333;
-color:#fff;
-background:#101010;
+
 transition:.25s;
 }
 
-.btn-red{
-background:#e10c19;
-border-color:#e10c19;
-box-shadow:0 10px 35px rgba(225,12,25,.2);
+.btn:hover{
+transform:translateY(-3px);
 }
 
-.btn:hover{transform:translateY(-3px)}
+.btn-red{
+background:#df0d19;
+border-color:#df0d19;
+
+box-shadow:
+0 10px 35px rgba(223,13,25,.23);
+}
+
 
 .quick{
-margin-top:48px;
+margin-top:45px;
+
 display:flex;
 justify-content:center;
-gap:12px;
+gap:10px;
 flex-wrap:wrap;
 }
 
 .quick span{
+
 padding:8px 14px;
-font-size:12px;
+
 border:1px solid #262626;
-border-radius:20px;
-color:#ccc;
-background:#0b0b0b;
+
+border-radius:25px;
+
+background:#0c0c0c;
+
+font-size:12px;
+
+color:#ddd;
 }
 
+
+/* SECTIONS */
+
 section{
-padding:90px 6%;
+padding:95px 6%;
 }
 
 .heading{
-text-align:center;
-max-width:700px;
+max-width:750px;
 margin:0 auto 45px;
+
+text-align:center;
 }
 
 .heading small{
 color:#ed101d;
-letter-spacing:3px;
+
 font-weight:bold;
+
+font-size:10px;
+letter-spacing:3px;
 }
 
 .heading h2{
-font-size:clamp(34px,6vw,55px);
+
+font-size:clamp(34px,6vw,56px);
+
 margin:12px 0;
 }
 
 .heading p{
-color:#888;
-line-height:1.8;
+
+color:#8f8f8f;
+
+line-height:1.9;
 }
 
+
+/* MAIN CARDS */
+
 .cards{
+
 max-width:1100px;
+
 margin:auto;
+
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
+
 gap:15px;
 }
 
 .card{
-position:relative;
-min-height:330px;
+
+min-height:360px;
+
 padding:30px;
-border:1px solid #1f1f1f;
-border-radius:24px;
+
+border-radius:25px;
+
+border:1px solid #202020;
+
 background:
-radial-gradient(circle at 50% 0%,rgba(225,12,25,.09),transparent 40%),
+
+radial-gradient(
+circle at 50% 0%,
+rgba(225,12,25,.10),
+transparent 42%
+),
+
 #0c0c0d;
+
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-7px);
-border-color:#551017;
+
+transform:translateY(-8px);
+
+border-color:#5b1017;
 }
 
-.number{
-color:#555;
+.card-number{
+
 font-size:12px;
+
+color:#555;
+
 font-weight:bold;
 }
 
 .icon{
-font-size:38px;
-margin-top:60px;
+
+font-size:40px;
+
+margin-top:70px;
+
 color:#ed101d;
 }
 
 .card h3{
+
 font-size:30px;
+
 margin:15px 0 10px;
 }
 
 .card p{
+
 font-size:14px;
+
 color:#888;
-line-height:1.8;
+
+line-height:1.9;
 }
 
+
+/* SERVICES */
+
 .services{
+
 max-width:1100px;
+
 margin:auto;
+
 display:grid;
+
 grid-template-columns:repeat(4,1fr);
+
 gap:10px;
 }
 
 .service{
-min-height:150px;
+
+min-height:160px;
+
 padding:22px;
+
 border-radius:18px;
-border:1px solid #1e1e1e;
+
+border:1px solid #1f1f1f;
+
 background:#0b0b0c;
+
 display:flex;
+
 flex-direction:column;
+
 justify-content:center;
+
+transition:.25s;
+}
+
+.service:hover{
+
+transform:translateY(-4px);
+
+border-color:#3c3c3c;
 }
 
 .service b{
-color:#ed101d;
+
 font-size:11px;
-margin-bottom:14px;
-}
 
-.service span{
-font-size:17px;
-font-weight:bold;
-}
+color:#ed101d;
 
-.showcase{
-max-width:1100px;
-margin:auto;
-border:1px solid #222;
-border-radius:28px;
-padding:45px;
-background:
-linear-gradient(135deg,rgba(225,12,25,.12),transparent 40%),
-#0a0a0b;
-display:grid;
-grid-template-columns:1.3fr .7fr;
-gap:30px;
-align-items:center;
-}
-
-.showcase h2{
-font-size:clamp(35px,6vw,60px);
 margin-bottom:15px;
 }
 
+.service span{
+
+font-size:17px;
+
+font-weight:bold;
+}
+
+
+/* DIGITAL SHOWCASE */
+
+.showcase{
+
+max-width:1100px;
+
+margin:auto;
+
+padding:50px;
+
+border-radius:30px;
+
+border:1px solid #222;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(225,12,25,.13),
+transparent 40%
+),
+
+#09090a;
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+gap:40px;
+
+align-items:center;
+}
+
+.showcase small{
+
+color:#ed101d;
+
+font-size:10px;
+
+font-weight:bold;
+
+letter-spacing:2px;
+}
+
+.showcase h2{
+
+font-size:clamp(35px,6vw,58px);
+
+margin:12px 0 18px;
+}
+
 .showcase p{
+
 color:#999;
+
 line-height:1.9;
 }
 
+
 .stats{
+
 display:grid;
+
 grid-template-columns:1fr 1fr;
+
 gap:10px;
 }
 
 .stat{
+
 padding:25px 10px;
-text-align:center;
-border-radius:18px;
+
 background:#101011;
+
 border:1px solid #222;
+
+border-radius:18px;
+
+text-align:center;
 }
 
 .stat strong{
+
 display:block;
-font-size:38px;
+
+font-size:40px;
 }
 
-.stat small{color:#888}
+.stat span{
+
+font-size:11px;
+
+color:#888;
+}
+
+
+/* GALLERY */
 
 .gallery{
+
 max-width:1100px;
+
 margin:auto;
+
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
+
 gap:12px;
 }
 
 .photo{
+
 min-height:240px;
-border:1px solid #222;
-border-radius:22px;
+
 padding:20px;
+
+border-radius:22px;
+
+border:1px solid #222;
+
 display:flex;
+
 align-items:flex-end;
+
 background:
-linear-gradient(to top,rgba(0,0,0,.8),transparent),
+
+linear-gradient(
+to top,
+rgba(0,0,0,.85),
+transparent
+),
+
 repeating-linear-gradient(
 135deg,
 #111 0 12px,
@@ -352,470 +561,915 @@ repeating-linear-gradient(
 }
 
 .photo.big{
+
 grid-column:1/-1;
+
 min-height:320px;
 }
 
 .photo span{
+
+padding:8px 13px;
+
 background:#090909;
-padding:8px 12px;
+
 border-radius:20px;
+
 font-size:12px;
 }
 
+
+/* CONTACT */
+
 .contact{
+
 max-width:1000px;
+
 margin:auto;
-border-radius:28px;
-border:1px solid #222;
+
 padding:50px 25px;
+
+border-radius:30px;
+
+border:1px solid #222;
+
 text-align:center;
+
 background:
-radial-gradient(circle at top,rgba(225,12,25,.15),transparent 40%),
+
+radial-gradient(
+circle at top,
+rgba(225,12,25,.15),
+transparent 40%
+),
+
 #090909;
 }
 
-.contact h2{
-font-size:44px;
-margin-bottom:10px;
+.contact small{
+
+color:#ed101d;
+
+font-weight:bold;
+
+letter-spacing:3px;
 }
 
-.contact p{
+.contact h2{
+
+font-size:45px;
+
+margin:12px 0;
+}
+
+.contact-text{
+
 color:#888;
+
 margin-bottom:30px;
 }
 
+
 .numbers{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-max-width:700px;
+
+max-width:720px;
+
 margin:25px auto;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
 }
 
 .phone{
+
 display:block;
-padding:20px;
-border:1px solid #262626;
-border-radius:18px;
-text-decoration:none;
-color:white;
+
+padding:25px;
+
+border-radius:20px;
+
+border:1px solid #272727;
+
 background:#0f0f10;
+
+color:white;
+
+text-decoration:none;
 }
 
 .phone small{
+
 display:block;
+
 color:#ed101d;
-margin-bottom:7px;
+
+letter-spacing:0;
+
+margin-bottom:8px;
 }
 
 .phone strong{
-font-size:24px;
+
+display:block;
+
+font-size:27px;
+
+direction:ltr;
+unicode-bidi:isolate;
 }
 
+
+/* FOOTER */
+
 footer{
-padding:50px 20px 80px;
-border-top:1px solid #191919;
+
+padding:55px 20px 90px;
+
 text-align:center;
+
+border-top:1px solid #1c1c1c;
+
 color:#777;
 }
 
 footer strong{
-color:#fff;
-letter-spacing:4px;
-font-size:20px;
+
+font-size:22px;
+
+letter-spacing:5px;
+
+color:white;
 }
+
+footer p{
+
+margin-top:12px;
+}
+
+
+/* FLOATING WA */
 
 .wa{
+
 position:fixed;
+
 left:20px;
 bottom:20px;
-width:56px;
-height:56px;
+
+width:58px;
+height:58px;
+
 display:flex;
+
 align-items:center;
 justify-content:center;
+
 border-radius:50%;
-background:#fff;
-color:#000;
+
+background:white;
+
+color:#050505;
+
+font-weight:900;
+
 text-decoration:none;
-font-weight:bold;
-box-shadow:0 10px 30px #000;
-z-index:100;
+
+z-index:999;
+
+box-shadow:0 12px 40px black;
 }
+
+
+/* ANIMATION */
 
 .reveal{
+
 opacity:0;
-transform:translateY(25px);
-transition:.7s;
+
+transform:translateY(30px);
+
+transition:
+opacity .7s ease,
+transform .7s ease;
 }
 
-.reveal.on{
+.reveal.show{
+
 opacity:1;
+
 transform:none;
 }
 
-@media(max-width:800px){
 
-nav a{display:none}
+/* MOBILE */
 
-.hero:after{
-width:350px;
-height:350px;
+@media(max-width:850px){
+
+nav a{
+display:none;
 }
 
-.logo{font-size:39px}
+.hero:before{
+
+width:380px;
+height:380px;
+}
 
 .cards{
+
 grid-template-columns:1fr;
 }
 
 .services{
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:repeat(2,1fr);
 }
 
 .showcase{
+
 grid-template-columns:1fr;
-padding:28px;
+
+padding:30px;
 }
 
 .gallery{
+
 grid-template-columns:1fr;
 }
 
 .photo.big{
+
 grid-column:auto;
 }
 
 .numbers{
+
 grid-template-columns:1fr;
 }
 
 }
 
-@media(max-width:480px){
+
+@media(max-width:500px){
 
 section{
+
 padding:75px 18px;
 }
 
 .services{
+
 grid-template-columns:1fr;
 }
 
 h1{
+
 font-size:56px;
 }
 
+.main-logo{
+
+width:100%;
+
+border-radius:16px;
 }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
 <nav>
-<div class="brand"><span>F</span>ALLAHA</div>
-<a href="#contact">CONTACT</a>
+
+<div class="nav-logo">
+<span>F</span>ALLAHA
+</div>
+
+<a href="#contact">
+CONTACT
+</a>
+
 </nav>
 
+
 <header class="hero">
+
 <div>
 
-<div class="badge">FALLAHA DIGITAL EXPERIENCE</div>
+<div class="badge">
+FALLAHA DIGITAL EXPERIENCE
+</div>
 
-<div class="logo"><span>F</span>ALLAHA</div>
-<div class="logo-sub">CAR'S TRADING & SERVICE</div>
+
+<img
+src="logo.jpeg"
+alt="FALLAHA CAR'S TRADING AND SERVICE"
+class="main-logo"
+>
+
 
 <h1>
+
 مجمع
-<span>حلب الأول</span>
+
+<span>
+حلب الأول
+</span>
+
 </h1>
 
+
 <p class="hero-text">
+
 خدمة متطورة في عالم السيارات الحديثة
+
 </p>
+
 
 <div class="buttons">
 
-<a href="tel:+963994643666" class="btn btn-red">
+<a
+class="btn btn-red"
+href="tel:+963994643666"
+>
+
 اتصل الآن
+
 </a>
 
-<a href="https://wa.me/963994643666" class="btn">
+
+<a
+class="btn"
+href="https://wa.me/963994643666"
+>
+
 واتساب
+
 </a>
 
 </div>
+
 
 <div class="quick">
+
 <span>مغسل</span>
+
 <span>كافيه</span>
+
 <span>زيوت وتشحيم</span>
-</div>
 
 </div>
+
+
+</div>
+
 </header>
 
 
+
 <section>
 
 <div class="heading reveal">
-<small>MAIN ZONES</small>
-<h2>كل شيء في مكان واحد</h2>
+
+<small>
+MAIN ZONES
+</small>
+
+<h2>
+كل شيء في مكان واحد
+</h2>
+
 <p>
+
 ثلاثة أقسام رئيسية ضمن تجربة واحدة متكاملة.
+
 </p>
+
 </div>
+
 
 <div class="cards">
 
-<div class="card reveal">
-<div class="number">01</div>
-<div class="icon">✦</div>
-<h3>المغسل</h3>
-<p>
-غسيل وعناية كاملة للسيارة مع اهتمام بالتفاصيل والنظافة.
-</p>
-</div>
 
 <div class="card reveal">
-<div class="number">02</div>
-<div class="icon">☕</div>
-<h3>الكافيه</h3>
-<p>
-استراحة مريحة وفنجان قهوة أثناء انتظار خدمة سيارتك.
-</p>
+
+<div class="card-number">
+01
 </div>
+
+<div class="icon">
+✦
+</div>
+
+<h3>
+المغسل
+</h3>
+
+<p>
+
+غسيل وعناية كاملة للسيارة
+مع اهتمام بالنظافة والتفاصيل.
+
+</p>
+
+</div>
+
+
 
 <div class="card reveal">
-<div class="number">03</div>
-<div class="icon">◆</div>
-<h3>زيوت وتشحيم</h3>
-<p>
-خدمة منظمة وسريعة للعناية بزيوت وتشحيم سيارتك.
-</p>
+
+<div class="card-number">
+02
 </div>
 
+<div class="icon">
+☕
 </div>
+
+<h3>
+الكافيه
+</h3>
+
+<p>
+
+استراحة مريحة وفنجان قهوة
+أثناء انتظار خدمة سيارتك.
+
+</p>
+
+</div>
+
+
+
+<div class="card reveal">
+
+<div class="card-number">
+03
+</div>
+
+<div class="icon">
+◆
+</div>
+
+<h3>
+زيوت وتشحيم
+</h3>
+
+<p>
+
+خدمة منظمة وسريعة للعناية
+بزيوت وتشحيم سيارتك.
+
+</p>
+
+</div>
+
+
+</div>
+
 </section>
+
 
 
 <section>
 
 <div class="heading reveal">
-<small>AUTOMOTIVE SERVICES</small>
-<h2>خدمات السيارات</h2>
+
+<small>
+AUTOMOTIVE SERVICES
+</small>
+
+<h2>
+خدمات السيارات
+</h2>
+
 <p>
+
 خدمات متعددة لتغطية احتياجات سيارتك.
+
 </p>
+
 </div>
+
 
 <div class="services">
 
+
 <div class="service reveal">
+
 <b>01</b>
-<span>فحص السيارات</span>
+
+<span>
+فحص السيارات
+</span>
+
 </div>
 
+
 <div class="service reveal">
+
 <b>02</b>
-<span>ميكانيك</span>
+
+<span>
+ميكانيك
+</span>
+
 </div>
 
+
 <div class="service reveal">
+
 <b>03</b>
-<span>كهرباء سيارات</span>
+
+<span>
+كهرباء سيارات
+</span>
+
 </div>
 
+
 <div class="service reveal">
+
 <b>04</b>
-<span>علب سرعة</span>
+
+<span>
+علب سرعة
+</span>
+
 </div>
 
+
 <div class="service reveal">
+
 <b>05</b>
-<span>صوتيات</span>
+
+<span>
+صوتيات
+</span>
+
 </div>
 
+
 <div class="service reveal">
+
 <b>06</b>
-<span>بوليش ومعالجة طلاء</span>
+
+<span>
+بوليش ومعالجة طلاء
+</span>
+
 </div>
 
+
 <div class="service reveal">
+
 <b>07</b>
-<span>مكابح</span>
+
+<span>
+مكابح
+</span>
+
 </div>
 
+
 <div class="service reveal">
+
 <b>08</b>
-<span>نظام التعليق</span>
+
+<span>
+نظام التعليق
+</span>
+
 </div>
+
 
 </div>
 
 </section>
+
 
 
 <section>
 
 <div class="showcase reveal">
 
+
 <div>
-<small style="color:#ed101d">
+
+<small>
+
 ONE QR • ONE EXPERIENCE
+
 </small>
 
+
 <h2>
-بوابتك الرقمية<br>
+
+بوابتك الرقمية
+
+<br>
+
 لمجمع حلب الأول
+
 </h2>
 
+
 <p>
-من مسح الـ QR إلى التواصل والخدمات،
-كل المعلومات المهمة عن المجمع أصبحت في صفحة واحدة
-سريعة ومصممة للموبايل.
+
+من مسح الـQR إلى الخدمات والتواصل،
+كل المعلومات المهمة عن المجمع
+أصبحت في صفحة واحدة سريعة
+ومصممة للموبايل.
+
 </p>
+
 </div>
+
+
 
 <div class="stats">
 
-<div class="stat">
-<strong>3</strong>
-<small>أقسام رئيسية</small>
-</div>
 
 <div class="stat">
-<strong>8</strong>
-<small>خدمات</small>
+
+<strong>
+3
+</strong>
+
+<span>
+أقسام رئيسية
+</span>
+
 </div>
+
 
 <div class="stat">
-<strong>2</strong>
-<small>أرقام تواصل</small>
+
+<strong>
+8
+</strong>
+
+<span>
+خدمات
+</span>
+
 </div>
+
 
 <div class="stat">
-<strong>1</strong>
-<small>QR</small>
-</div>
+
+<strong>
+2
+</strong>
+
+<span>
+أرقام تواصل
+</span>
 
 </div>
+
+
+<div class="stat">
+
+<strong>
+1
+</strong>
+
+<span>
+QR
+</span>
+
+</div>
+
+
+</div>
+
 
 </div>
 
 </section>
+
 
 
 <section>
 
 <div class="heading reveal">
-<small>GALLERY</small>
-<h2>معرض المجمع</h2>
+
+<small>
+GALLERY
+</small>
+
+<h2>
+معرض المجمع
+</h2>
+
 <p>
+
 قريباً نضيف صور مجمع حلب الأول الحقيقية.
+
 </p>
+
 </div>
+
 
 <div class="gallery">
 
-<div class="photo reveal">
-<span>المغسل</span>
-</div>
 
 <div class="photo reveal">
-<span>الكافيه</span>
+
+<span>
+المغسل
+</span>
+
 </div>
 
+
 <div class="photo reveal">
-<span>قسم الزيوت</span>
+
+<span>
+الكافيه
+</span>
+
 </div>
+
+
+<div class="photo reveal">
+
+<span>
+قسم الزيوت
+</span>
+
+</div>
+
 
 <div class="photo big reveal">
-<span>واجهة مجمع حلب الأول</span>
+
+<span>
+
+واجهة مجمع حلب الأول
+
+</span>
+
 </div>
+
 
 </div>
 
 </section>
+
 
 
 <section id="contact">
 
 <div class="contact reveal">
 
-<small style="color:#ed101d">
+
+<small>
+
 CONTACT
+
 </small>
 
-<h2>تواصل معنا</h2>
 
-<p>
+<h2>
+
+تواصل معنا
+
+</h2>
+
+
+<p class="contact-text">
+
 مجمع حلب الأول — FALLAHA
+
 </p>
+
+
 
 <div class="numbers">
 
-<a class="phone" href="tel:+963994643666">
-<small>اتصال مباشر</small>
-<strong>0994 643 666</strong>
+
+<a
+class="phone"
+href="tel:+963994643666"
+>
+
+<small>
+اتصال مباشر
+</small>
+
+<strong dir="ltr">
+0994 643 666
+</strong>
+
 </a>
 
-<a class="phone" href="tel:+963995643666">
-<small>اتصال مباشر</small>
-<strong>0995 643 666</strong>
+
+
+<a
+class="phone"
+href="tel:+963995643666"
+>
+
+<small>
+اتصال مباشر
+</small>
+
+<strong dir="ltr">
+0995 643 666
+</strong>
+
 </a>
+
 
 </div>
+
+
 
 <div class="buttons">
 
-<a class="btn btn-red"
-href="https://wa.me/963994643666">
+
+<a
+class="btn btn-red"
+href="https://wa.me/963994643666"
+>
+
 راسلنا على واتساب
+
 </a>
 
+
 </div>
+
 
 </div>
 
 </section>
 
 
+
 <footer>
 
-<strong>FALLAHA</strong>
 
-<p style="margin-top:12px">
+<strong>
+
+FALLAHA
+
+</strong>
+
+
+<p>
+
 مجمع حلب الأول
+
 </p>
 
-<p style="margin-top:10px">
+
+<p>
+
 خدمة متطورة في عالم السيارات الحديثة
+
 </p>
+
 
 </footer>
 
 
-<a class="wa"
-href="https://wa.me/963994643666">
+
+<a
+class="wa"
+href="https://wa.me/963994643666"
+>
+
 WA
+
 </a>
+
 
 
 <script>
 
-const elements =
+const revealElements =
 document.querySelectorAll(".reveal");
 
-const observer =
-new IntersectionObserver(entries=>{
 
-entries.forEach(entry=>{
+const observer =
+new IntersectionObserver(
+
+entries => {
+
+entries.forEach(entry => {
 
 if(entry.isIntersecting){
 
-entry.target.classList.add("on");
+entry.target.classList.add("show");
 
 observer.unobserve(entry.target);
 
@@ -823,13 +1477,23 @@ observer.unobserve(entry.target);
 
 });
 
-},{
-threshold:.08
-});
+},
 
-elements.forEach(el=>observer.observe(el));
+{
+threshold:.08
+}
+
+);
+
+
+revealElements.forEach(
+
+element => observer.observe(element)
+
+);
 
 </script>
+
 
 </body>
 </html>
