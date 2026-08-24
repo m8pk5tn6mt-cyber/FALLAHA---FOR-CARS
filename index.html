@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مجمع حلب الأول | FALLAHA</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#050505;
+  color:#fff;
+  text-align:center;
+}
+
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 20px;
+  background:
+  radial-gradient(circle at center,rgba(220,0,20,.22),transparent 40%),
+  linear-gradient(#080808,#000);
+}
+
+.logo{
+  font-size:55px;
+  font-weight:900;
+  letter-spacing:5px;
+  color:#fff;
+}
+
+.logo span{
+  color:#e31320;
+}
+
+.small{
+  letter-spacing:4px;
+  color:#888;
+  font-size:11px;
+  margin-top:8px;
+}
+
+h1{
+  font-size:55px;
+  margin-top:45px;
+}
+
+.red{
+  color:#e31320;
+}
+
+.subtitle{
+  color:#bbb;
+  font-size:19px;
+  margin:18px 0 35px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  color:white;
+  border:1px solid #333;
+  background:#111;
+  font-weight:bold;
+}
+
+.btn.redbtn{
+  background:#d80d19;
+  border-color:#d80d19;
+}
+
+section{
+  padding:80px 20px;
+}
+
+section h2{
+  font-size:36px;
+  margin-bottom:12px;
+}
+
+section .desc{
+  color:#999;
+  margin-bottom:40px;
+}
+
+.cards{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.card{
+  background:#101010;
+  border:1px solid #222;
+  border-radius:22px;
+  padding:35px 20px;
+}
+
+.card .icon{
+  font-size:35px;
+}
+
+.card h3{
+  font-size:24px;
+  margin:20px 0 10px;
+}
+
+.card p{
+  color:#999;
+  line-height:1.8;
+}
+
+.services{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.service{
+  background:#0d0d0d;
+  border:1px solid #222;
+  border-radius:16px;
+  padding:20px;
+}
+
+.contact{
+  background:#0b0b0b;
+}
+
+.phone{
+  display:block;
+  color:#fff;
+  font-size:28px;
+  font-weight:bold;
+  margin:15px;
+  text-decoration:none;
+}
+
+footer{
+  padding:40px;
+  border-top:1px solid #222;
+  color:#777;
+}
+
+@media(max-width:700px){
+  h1{
+    font-size:43px;
+  }
+
+  .logo{
+    font-size:40px;
+  }
+
+  .cards,
+  .services{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div>
+
+<div class="logo"><span>F</span>ALLAHA</div>
+<div class="small">CAR'S TRADING & SERVICE</div>
+
+<h1>مجمع <span class="red">حلب الأول</span></h1>
+
+<p class="subtitle">
+خدمة متطورة في عالم السيارات الحديثة
+</p>
+
+<div class="buttons">
+<a class="btn redbtn" href="tel:+963994643666">اتصل الآن</a>
+
+<a class="btn"
+href="https://wa.me/963994643666">
+واتساب
+</a>
+</div>
+
+</div>
+</header>
+
+
+<section>
+
+<h2>أقسام المجمع</h2>
+<p class="desc">كل ما تحتاجه لسيارتك في مكان واحد</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">✦</div>
+<h3>المغسل</h3>
+<p>غسيل وعناية كاملة بالسيارة مع اهتمام بالتفاصيل.</p>
+</div>
+
+<div class="card">
+<div class="icon">☕</div>
+<h3>الكافيه</h3>
+<p>استراحة مريحة وفنجان قهوة أثناء خدمة سيارتك.</p>
+</div>
+
+<div class="card">
+<div class="icon">◆</div>
+<h3>زيوت وتشحيم</h3>
+<p>خدمة سريعة ومنظمة لزيوت وتشحيم السيارات.</p>
+</div>
+
+</div>
+</section>
+
+
+<section>
+
+<h2>خدمات السيارات</h2>
+<p class="desc">خدمات متكاملة ضمن مجمع حلب الأول</p>
+
+<div class="services">
+
+<div class="service">فحص السيارات</div>
+<div class="service">ميكانيك</div>
+<div class="service">كهرباء سيارات</div>
+<div class="service">علب سرعة</div>
+<div class="service">صوتيات</div>
+<div class="service">بوليش ومعالجة طلاء</div>
+<div class="service">مكابح</div>
+<div class="service">نظام التعليق</div>
+
+</div>
+
+</section>
+
+
+<section class="contact">
+
+<h2>تواصل معنا</h2>
+
+<p class="desc">مجمع حلب الأول — FALLAHA</p>
+
+<a class="phone" href="tel:+963994643666">
+0994 643 666
+</a>
+
+<a class="phone" href="tel:+963995643666">
+0995 643 666
+</a>
+
+<div class="buttons">
+
+<a class="btn redbtn"
+href="https://wa.me/963994643666">
+راسلنا على واتساب
+</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<strong>FALLAHA</strong>
+
+<p style="margin-top:10px">
+مجمع حلب الأول
+</p>
+
+<p style="margin-top:15px">
+خدمة متطورة في عالم السيارات الحديثة
+</p>
+
+</footer>
+
+</body>
+</html>
