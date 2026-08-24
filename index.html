@@ -1,1499 +1,899 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مجمع حلب الأول | FALLAHA</title>
+  <meta
+    name="description"
+    content="FALLAHA - مجمع حلب الأول لخدمات السيارات، صيانة، زيوت، مغسل، كافيه وخدمات متكاملة للسيارات."
+  >
 
-<style>
+  <title>FALLAHA | مجمع حلب الأول لخدمات السيارات</title>
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Arial,Tahoma,sans-serif;
-background:#050505;
-color:white;
-overflow-x:hidden;
-}
-
-body:before{
-content:"";
-position:fixed;
-inset:0;
-z-index:-5;
-background:
-radial-gradient(circle at 50% 10%,rgba(230,0,20,.14),transparent 30%),
-repeating-linear-gradient(
-135deg,
-rgba(255,255,255,.015) 0 6px,
-transparent 6px 12px
-);
-}
-
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-right:0;
-height:70px;
-z-index:1000;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:0 5%;
-
-background:rgba(5,5,5,.88);
-backdrop-filter:blur(15px);
-
-border-bottom:1px solid #1d1d1d;
-
-direction:ltr;
-}
-
-.nav-logo{
-font-size:21px;
-font-weight:900;
-letter-spacing:4px;
-}
-
-.nav-logo span{
-color:#ed101d;
-}
-
-nav a{
-color:#ccc;
-text-decoration:none;
-font-size:12px;
-}
-
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-text-align:center;
-
-padding:120px 20px 80px;
-
-position:relative;
-overflow:hidden;
-}
-
-.hero:before{
-content:"";
-position:absolute;
-
-width:600px;
-height:600px;
-
-border-radius:50%;
-
-border:1px solid rgba(255,255,255,.04);
-
-box-shadow:
-0 0 120px rgba(225,12,25,.12),
-inset 0 0 100px rgba(225,12,25,.05);
-
-z-index:-1;
-}
-
-.badge{
-display:inline-block;
-
-padding:8px 14px;
-
-border:1px solid #292929;
-border-radius:30px;
-
-font-size:10px;
-letter-spacing:2px;
-
-color:#aaa;
-
-margin-bottom:25px;
-}
-
-
-/* REAL LOGO */
-
-.main-logo{
-width:min(720px,92vw);
-height:auto;
-
-display:block;
-margin:0 auto 35px;
-
-border-radius:22px;
-
-box-shadow:
-0 30px 80px rgba(0,0,0,.7),
-0 0 45px rgba(225,12,25,.12);
-}
-
-
-h1{
-font-size:clamp(50px,10vw,100px);
-font-weight:900;
-line-height:1;
-
-margin-top:25px;
-}
-
-h1 span{
-display:block;
-color:#ed101d;
-margin-top:8px;
-}
-
-.hero-text{
-font-size:18px;
-color:#aaa;
-
-margin:28px 0 35px;
-
-line-height:1.8;
-}
-
-
-/* BUTTONS */
-
-.buttons{
-display:flex;
-justify-content:center;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.btn{
-display:inline-block;
-
-min-width:160px;
-
-padding:15px 24px;
-
-border-radius:30px;
-
-border:1px solid #333;
-
-background:#101010;
-
-color:white;
-
-text-decoration:none;
-font-weight:bold;
-
-transition:.25s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-.btn-red{
-background:#df0d19;
-border-color:#df0d19;
-
-box-shadow:
-0 10px 35px rgba(223,13,25,.23);
-}
-
-
-.quick{
-margin-top:45px;
-
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.quick span{
-
-padding:8px 14px;
-
-border:1px solid #262626;
-
-border-radius:25px;
-
-background:#0c0c0c;
-
-font-size:12px;
-
-color:#ddd;
-}
-
-
-/* SECTIONS */
-
-section{
-padding:95px 6%;
-}
-
-.heading{
-max-width:750px;
-margin:0 auto 45px;
-
-text-align:center;
-}
-
-.heading small{
-color:#ed101d;
-
-font-weight:bold;
-
-font-size:10px;
-letter-spacing:3px;
-}
-
-.heading h2{
-
-font-size:clamp(34px,6vw,56px);
-
-margin:12px 0;
-}
-
-.heading p{
-
-color:#8f8f8f;
-
-line-height:1.9;
-}
-
-
-/* MAIN CARDS */
-
-.cards{
-
-max-width:1100px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:15px;
-}
-
-.card{
-
-min-height:360px;
-
-padding:30px;
-
-border-radius:25px;
-
-border:1px solid #202020;
-
-background:
-
-radial-gradient(
-circle at 50% 0%,
-rgba(225,12,25,.10),
-transparent 42%
-),
-
-#0c0c0d;
-
-transition:.3s;
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
-border-color:#5b1017;
-}
-
-.card-number{
-
-font-size:12px;
-
-color:#555;
-
-font-weight:bold;
-}
-
-.icon{
-
-font-size:40px;
-
-margin-top:70px;
-
-color:#ed101d;
-}
-
-.card h3{
-
-font-size:30px;
-
-margin:15px 0 10px;
-}
-
-.card p{
-
-font-size:14px;
-
-color:#888;
-
-line-height:1.9;
-}
-
-
-/* SERVICES */
-
-.services{
-
-max-width:1100px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:10px;
-}
-
-.service{
-
-min-height:160px;
-
-padding:22px;
-
-border-radius:18px;
-
-border:1px solid #1f1f1f;
-
-background:#0b0b0c;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-transition:.25s;
-}
-
-.service:hover{
-
-transform:translateY(-4px);
-
-border-color:#3c3c3c;
-}
-
-.service b{
-
-font-size:11px;
-
-color:#ed101d;
-
-margin-bottom:15px;
-}
-
-.service span{
-
-font-size:17px;
-
-font-weight:bold;
-}
-
-
-/* DIGITAL SHOWCASE */
-
-.showcase{
-
-max-width:1100px;
-
-margin:auto;
-
-padding:50px;
-
-border-radius:30px;
-
-border:1px solid #222;
-
-background:
-
-linear-gradient(
-135deg,
-rgba(225,12,25,.13),
-transparent 40%
-),
-
-#09090a;
-
-display:grid;
-
-grid-template-columns:1.2fr .8fr;
-
-gap:40px;
-
-align-items:center;
-}
-
-.showcase small{
-
-color:#ed101d;
-
-font-size:10px;
-
-font-weight:bold;
-
-letter-spacing:2px;
-}
-
-.showcase h2{
-
-font-size:clamp(35px,6vw,58px);
-
-margin:12px 0 18px;
-}
-
-.showcase p{
-
-color:#999;
-
-line-height:1.9;
-}
-
-
-.stats{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:10px;
-}
-
-.stat{
-
-padding:25px 10px;
-
-background:#101011;
-
-border:1px solid #222;
-
-border-radius:18px;
-
-text-align:center;
-}
-
-.stat strong{
-
-display:block;
-
-font-size:40px;
-}
-
-.stat span{
-
-font-size:11px;
-
-color:#888;
-}
-
-
-/* GALLERY */
-
-.gallery{
-
-max-width:1100px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:12px;
-}
-
-.photo{
-
-min-height:240px;
-
-padding:20px;
-
-border-radius:22px;
-
-border:1px solid #222;
-
-display:flex;
-
-align-items:flex-end;
-
-background:
-
-linear-gradient(
-to top,
-rgba(0,0,0,.85),
-transparent
-),
-
-repeating-linear-gradient(
-135deg,
-#111 0 12px,
-#0b0b0b 12px 24px
-);
-}
-
-.photo.big{
-
-grid-column:1/-1;
-
-min-height:320px;
-}
-
-.photo span{
-
-padding:8px 13px;
-
-background:#090909;
-
-border-radius:20px;
-
-font-size:12px;
-}
-
-
-/* CONTACT */
-
-.contact{
-
-max-width:1000px;
-
-margin:auto;
-
-padding:50px 25px;
-
-border-radius:30px;
-
-border:1px solid #222;
-
-text-align:center;
-
-background:
-
-radial-gradient(
-circle at top,
-rgba(225,12,25,.15),
-transparent 40%
-),
-
-#090909;
-}
-
-.contact small{
-
-color:#ed101d;
-
-font-weight:bold;
-
-letter-spacing:3px;
-}
-
-.contact h2{
-
-font-size:45px;
-
-margin:12px 0;
-}
-
-.contact-text{
-
-color:#888;
-
-margin-bottom:30px;
-}
-
-
-.numbers{
-
-max-width:720px;
-
-margin:25px auto;
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:10px;
-}
-
-.phone{
-
-display:block;
-
-padding:25px;
-
-border-radius:20px;
-
-border:1px solid #272727;
-
-background:#0f0f10;
-
-color:white;
-
-text-decoration:none;
-}
-
-.phone small{
-
-display:block;
-
-color:#ed101d;
-
-letter-spacing:0;
-
-margin-bottom:8px;
-}
-
-.phone strong{
-
-display:block;
-
-font-size:27px;
-
-direction:ltr;
-unicode-bidi:isolate;
-}
-
-
-/* FOOTER */
-
-footer{
-
-padding:55px 20px 90px;
-
-text-align:center;
-
-border-top:1px solid #1c1c1c;
-
-color:#777;
-}
-
-footer strong{
-
-font-size:22px;
-
-letter-spacing:5px;
-
-color:white;
-}
-
-footer p{
-
-margin-top:12px;
-}
-
-
-/* FLOATING WA */
-
-.wa{
-
-position:fixed;
-
-left:20px;
-bottom:20px;
-
-width:58px;
-height:58px;
-
-display:flex;
-
-align-items:center;
-justify-content:center;
-
-border-radius:50%;
-
-background:white;
-
-color:#050505;
-
-font-weight:900;
-
-text-decoration:none;
-
-z-index:999;
-
-box-shadow:0 12px 40px black;
-}
-
-
-/* ANIMATION */
-
-.reveal{
-
-opacity:0;
-
-transform:translateY(30px);
-
-transition:
-opacity .7s ease,
-transform .7s ease;
-}
-
-.reveal.show{
-
-opacity:1;
-
-transform:none;
-}
-
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-nav a{
-display:none;
-}
-
-.hero:before{
-
-width:380px;
-height:380px;
-}
-
-.cards{
-
-grid-template-columns:1fr;
-}
-
-.services{
-
-grid-template-columns:repeat(2,1fr);
-}
-
-.showcase{
-
-grid-template-columns:1fr;
-
-padding:30px;
-}
-
-.gallery{
-
-grid-template-columns:1fr;
-}
-
-.photo.big{
-
-grid-column:auto;
-}
-
-.numbers{
-
-grid-template-columns:1fr;
-}
-
-}
-
-
-@media(max-width:500px){
-
-section{
-
-padding:75px 18px;
-}
-
-.services{
-
-grid-template-columns:1fr;
-}
-
-h1{
-
-font-size:56px;
-}
-
-.main-logo{
-
-width:100%;
-
-border-radius:16px;
-}
-
-}
-
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="main-header">
 
-<nav>
+    <div class="container nav-container">
 
-<div class="nav-logo">
-<span>F</span>ALLAHA
-</div>
+      <a href="#home" class="brand-small">
+        <img src="images/logo.png" alt="FALLAHA Logo">
+      </a>
 
-<a href="#contact">
-CONTACT
-</a>
+      <nav class="main-nav">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">الخدمات</a>
+        <a href="#gallery">معرض الصور</a>
+        <a href="#location">موقعنا</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
 
-</nav>
+      <a href="#contact" class="nav-contact-btn">
+        تواصل معنا
+      </a>
 
+    </div>
 
-<header class="hero">
+  </header>
 
-<div>
 
-<div class="badge">
-FALLAHA DIGITAL EXPERIENCE
-</div>
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
+  <main>
 
+    <section class="hero" id="home">
 
-<img
-src="logo.jpeg"
-alt="FALLAHA CAR'S TRADING AND SERVICE"
-class="main-logo"
->
+      <div class="hero-overlay"></div>
 
+      <div class="container hero-content">
 
-<h1>
+        <!-- الشعار الرئيسي -->
+        <div class="hero-logo-wrap">
 
-مجمع
+          <div class="logo-glow"></div>
 
-<span>
-حلب الأول
-</span>
+          <img
+            src="images/logo.png"
+            class="hero-logo"
+            alt="FALLAHA Car's Trading and Service"
+          >
 
-</h1>
+        </div>
 
 
-<p class="hero-text">
+        <!-- النص الرئيسي -->
+        <div class="hero-text">
 
-خدمة متطورة في عالم السيارات الحديثة
+          <span class="hero-badge">
+            مجمع حلب الأول لخدمات السيارات
+          </span>
 
-</p>
+          <h1>
+            كل ما تحتاجه سيارتك
+            <span>في مكان واحد</span>
+          </h1>
 
+          <p>
+            خدمات سيارات متكاملة بمعايير احترافية،
+            من الزيوت والصيانة إلى المغسل والكافيه،
+            ضمن تجربة عصرية تليق بسيارتك.
+          </p>
 
-<div class="buttons">
 
-<a
-class="btn btn-red"
-href="tel:+963994643666"
->
+          <!-- الأزرار -->
+          <div class="hero-actions">
 
-اتصل الآن
+            <a
+              href="#services"
+              class="btn btn-primary"
+            >
+              استكشف خدماتنا
+            </a>
 
-</a>
+            <a
+              href="https://www.google.com/maps?q=36.2246737,37.1548240"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-silver"
+            >
+              موقعنا على الخريطة
+            </a>
 
+          </div>
 
-<a
-class="btn"
-href="https://wa.me/963994643666"
->
+        </div>
 
-واتساب
 
-</a>
+        <!-- بطاقات سريعة -->
+        <div class="hero-features">
 
-</div>
+          <div class="feature-item">
+            <span class="feature-icon">◆</span>
+            <div>
+              <strong>خدمات متكاملة</strong>
+              <small>كل احتياجات سيارتك</small>
+            </div>
+          </div>
 
+          <div class="feature-item">
+            <span class="feature-icon">◆</span>
+            <div>
+              <strong>جودة واحتراف</strong>
+              <small>عناية بأدق التفاصيل</small>
+            </div>
+          </div>
 
-<div class="quick">
+          <div class="feature-item">
+            <span class="feature-icon">◆</span>
+            <div>
+              <strong>موقع مميز</strong>
+              <small>حلب - سوريا</small>
+            </div>
+          </div>
 
-<span>مغسل</span>
+        </div>
 
-<span>كافيه</span>
+      </div>
 
-<span>زيوت وتشحيم</span>
+      <!-- السهم أسفل الشاشة -->
+      <a href="#services" class="scroll-down" aria-label="انتقل إلى الخدمات">
+        ↓
+      </a>
 
-</div>
+    </section>
 
 
-</div>
+    <!-- =========================
+         بداية قسم الخدمات
+         سنكمله بالجزء الثاني
+    ========================== -->
+    <section class="services-section" id="services">
 
-</header>
+      <div class="container">
 
+        <div class="section-heading">
 
+          <span class="section-tag">
+            FALLAHA SERVICES
+          </span>
 
-<section>
+          <h2>
+            خدماتنا
+          </h2>
 
-<div class="heading reveal">
+          <p>
+            خدمات متخصصة لسيارتك بتصميم وتجربة حديثة وواضحة.
+          </p>
 
-<small>
-MAIN ZONES
-</small>
+        </div>
 
-<h2>
-كل شيء في مكان واحد
-</h2>
+        <div class="services-grid">
 
-<p>
+                  <!-- =========================
+               SERVICE 01 - الزيوت
+          ========================== -->
+          <article class="service-card featured-service">
 
-ثلاثة أقسام رئيسية ضمن تجربة واحدة متكاملة.
+            <div class="service-image">
+              <img
+                src="images/oil-service.jpg"
+                alt="خدمة الزيوت والتشحيم"
+              >
+            </div>
 
-</p>
+            <div class="service-content">
 
-</div>
+              <div class="service-icon">
+                🛢️
+              </div>
 
+              <h3>الزيوت والتشحيم</h3>
 
-<div class="cards">
+              <p>
+                تبديل زيوت المحرك والفلاتر والتشحيم
+                باستخدام منتجات مختارة بعناية للمحافظة
+                على أداء سيارتك.
+              </p>
 
+              <a href="#contact" class="service-link">
+                استفسر عن الخدمة
+              </a>
 
-<div class="card reveal">
+            </div>
 
-<div class="card-number">
-01
-</div>
+          </article>
 
-<div class="icon">
-✦
-</div>
 
-<h3>
-المغسل
-</h3>
+          <!-- =========================
+               SERVICE 02 - الكافيه
+          ========================== -->
+          <article class="service-card featured-service">
 
-<p>
+            <div class="service-image">
+              <img
+                src="images/cafe.jpg"
+                alt="كافيه FALLAHA"
+              >
+            </div>
 
-غسيل وعناية كاملة للسيارة
-مع اهتمام بالنظافة والتفاصيل.
+            <div class="service-content">
 
-</p>
+              <div class="service-icon">
+                ☕
+              </div>
 
-</div>
+              <h3>الكافيه</h3>
 
+              <p>
+                مساحة مريحة وعصرية لتستمتع بوقتك
+                أثناء انتظار سيارتك ضمن أجواء أنيقة
+                وخدمة مميزة.
+              </p>
 
+              <a href="#gallery" class="service-link">
+                شاهد المكان
+              </a>
 
-<div class="card reveal">
+            </div>
 
-<div class="card-number">
-02
-</div>
+          </article>
 
-<div class="icon">
-☕
-</div>
 
-<h3>
-الكافيه
-</h3>
+          <!-- =========================
+               SERVICE 03 - المغسل
+          ========================== -->
+          <article class="service-card featured-service">
 
-<p>
+            <div class="service-image">
+              <img
+                src="images/car-wash.jpg"
+                alt="مغسل السيارات FALLAHA"
+              >
+            </div>
 
-استراحة مريحة وفنجان قهوة
-أثناء انتظار خدمة سيارتك.
+            <div class="service-content">
 
-</p>
+              <div class="service-icon">
+                🚿
+              </div>
+
+              <h3>مغسل السيارات</h3>
+
+              <p>
+                تنظيف وعناية داخلية وخارجية للسيارة
+                مع اهتمام بالتفاصيل للحصول على نتيجة
+                نظيفة ولامعة.
+              </p>
 
-</div>
+              <a href="#contact" class="service-link">
+                اطلب الخدمة
+              </a>
 
+            </div>
 
+          </article>
 
-<div class="card reveal">
 
-<div class="card-number">
-03
-</div>
+          <!-- =========================
+               باقي الخدمات
+          ========================== -->
 
-<div class="icon">
-◆
-</div>
+          <article class="service-card compact-service">
+            <div class="compact-icon">🔧</div>
+            <h3>ميكانيك</h3>
+            <p>
+              تشخيص وصيانة الأعطال الميكانيكية
+              باهتمام ودقة.
+            </p>
+          </article>
 
-<h3>
-زيوت وتشحيم
-</h3>
 
-<p>
+          <article class="service-card compact-service">
+            <div class="compact-icon">⚡</div>
+            <h3>كهرباء السيارات</h3>
+            <p>
+              فحص الأنظمة الكهربائية والبطارية
+              وتشخيص الأعطال.
+            </p>
+          </article>
 
-خدمة منظمة وسريعة للعناية
-بزيوت وتشحيم سيارتك.
 
-</p>
+          <article class="service-card compact-service">
+            <div class="compact-icon">🖥️</div>
+            <h3>فحص إلكتروني</h3>
+            <p>
+              فحص أنظمة السيارة وتشخيص الأخطاء
+              إلكترونياً.
+            </p>
+          </article>
 
-</div>
 
+          <article class="service-card compact-service">
+            <div class="compact-icon">⚙️</div>
+            <h3>علب السرعة</h3>
+            <p>
+              فحص وصيانة أنظمة ناقل الحركة
+              ومتابعة حالتها.
+            </p>
+          </article>
 
-</div>
 
-</section>
+          <article class="service-card compact-service">
+            <div class="compact-icon">🔊</div>
+            <h3>صوتيات وإكسسوارات</h3>
+            <p>
+              تجهيزات صوتية وإضافات مختارة
+              لسيارتك.
+            </p>
+          </article>
 
 
+          <article class="service-card compact-service">
+            <div class="compact-icon">✨</div>
+            <h3>بوليش وعناية بالطلاء</h3>
+            <p>
+              تحسين مظهر الطلاء واستعادة
+              لمعانه بطريقة احترافية.
+            </p>
+          </article>
 
-<section>
 
-<div class="heading reveal">
+          <article class="service-card compact-service">
+            <div class="compact-icon">🛞</div>
+            <h3>مكابح وتعليق</h3>
+            <p>
+              فحص وصيانة أنظمة الفرامل
+              والتعليق.
+            </p>
+          </article>
 
-<small>
-AUTOMOTIVE SERVICES
-</small>
 
-<h2>
-خدمات السيارات
-</h2>
+          <article class="service-card compact-service">
+            <div class="compact-icon">🧰</div>
+            <h3>صيانة دورية</h3>
+            <p>
+              متابعة احتياجات السيارة الدورية
+              للحفاظ على أفضل أداء.
+            </p>
+          </article>
 
-<p>
+        </div>
 
-خدمات متعددة لتغطية احتياجات سيارتك.
+      </div>
 
-</p>
+    </section>
 
-</div>
 
+    <!-- =========================
+         GALLERY
+    ========================== -->
+    <section class="gallery-section" id="gallery">
 
-<div class="services">
+      <div class="container">
 
+        <div class="section-heading">
 
-<div class="service reveal">
+          <span class="section-tag">
+            FALLAHA GALLERY
+          </span>
 
-<b>01</b>
+          <h2>معرض الصور</h2>
 
-<span>
-فحص السيارات
-</span>
+          <p>
+            لمحة من أجواء المجمع والخدمات.
+          </p>
 
-</div>
+        </div>
 
 
-<div class="service reveal">
+        <div class="gallery-grid">
 
-<b>02</b>
+          <figure class="gallery-item gallery-large">
+            <img
+              src="images/gallery-1.jpg"
+              alt="مجمع FALLAHA"
+            >
+          </figure>
 
-<span>
-ميكانيك
-</span>
+          <figure class="gallery-item">
+            <img
+              src="images/gallery-2.jpg"
+              alt="خدمات FALLAHA"
+            >
+          </figure>
 
-</div>
+          <figure class="gallery-item">
+            <img
+              src="images/gallery-3.jpg"
+              alt="عناية السيارات"
+            >
+          </figure>
 
+          <figure class="gallery-item">
+            <img
+              src="images/gallery-4.jpg"
+              alt="مغسل السيارات"
+            >
+          </figure>
 
-<div class="service reveal">
+          <figure class="gallery-item">
+            <img
+              src="images/gallery-5.jpg"
+              alt="كافيه FALLAHA"
+            >
+          </figure>
 
-<b>03</b>
+        </div>
 
-<span>
-كهرباء سيارات
-</span>
+      </div>
 
-</div>
+    </section>
 
 
-<div class="service reveal">
+    <!-- =========================
+         LOCATION
+    ========================== -->
+    <section class="location-section" id="location">
 
-<b>04</b>
+      <div class="container location-wrapper">
 
-<span>
-علب سرعة
-</span>
+        <div class="location-content">
 
-</div>
+          <span class="section-tag">
+            OUR LOCATION
+          </span>
 
+          <h2>
+            موقعنا
+          </h2>
 
-<div class="service reveal">
+          <p>
+            زورونا في مجمع FALLAHA لخدمات السيارات
+            واستفيدوا من مجموعة متكاملة من الخدمات
+            في مكان واحد.
+          </p>
 
-<b>05</b>
+          <div class="coordinates">
+            <span>الإحداثيات</span>
+            <strong>
+              36.2246737, 37.1548240
+            </strong>
+          </div>
 
-<span>
-صوتيات
-</span>
+          <a
+            href="https://www.google.com/maps?q=36.2246737,37.1548240"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            افتح الموقع على الخريطة
+          </a>
 
-</div>
+        </div>
 
 
-<div class="service reveal">
+        <div class="location-card">
 
-<b>06</b>
+          <div class="map-placeholder">
 
-<span>
-بوليش ومعالجة طلاء
-</span>
+            <span class="map-pin">
+              📍
+            </span>
 
-</div>
+            <h3>FALLAHA</h3>
 
+            <p>
+              مجمع حلب الأول لخدمات السيارات
+            </p>
 
-<div class="service reveal">
+          </div>
 
-<b>07</b>
+        </div>
 
-<span>
-مكابح
-</span>
+      </div>
 
-</div>
+    </section>
 
 
-<div class="service reveal">
+    <!-- =========================
+         CONTACT
+         نكمله بالجزء الثالث
+    ========================== -->
+    <section class="contact-section" id="contact">
 
-<b>08</b>
+      <div class="container">
 
-<span>
-نظام التعليق
-</span>
+        <div class="section-heading">
 
-</div>
+          <span class="section-tag">
+            CONTACT FALLAHA
+          </span>
 
+          <h2>
+            تواصل معنا
+          </h2>
 
-</div>
+          <p>
+            نحن جاهزون لاستفساراتكم وخدمتكم.
+          </p>
 
-</section>
+        </div>
 
+        <div class="contact-wrapper">
+          <!-- =========================
+               CONTACT INFO
+          ========================== -->
+          <div class="contact-info">
 
+            <div class="contact-card contact-card-main">
 
-<section>
+              <span class="contact-label">
+                اتصل بنا
+              </span>
 
-<div class="showcase reveal">
+              <h3>أرقام التواصل</h3>
 
+              <div class="phone-list">
 
-<div>
+                <a href="tel:+963994010004" class="phone-item">
+                  <span class="phone-icon">☎</span>
+                  <span dir="ltr">+963 994 010 004</span>
+                </a>
 
-<small>
+                <a href="tel:+963993009907" class="phone-item">
+                  <span class="phone-icon">☎</span>
+                  <span dir="ltr">+963 993 009 907</span>
+                </a>
 
-ONE QR • ONE EXPERIENCE
+                <a href="tel:+963930006000" class="phone-item">
+                  <span class="phone-icon">☎</span>
+                  <span dir="ltr">+963 930 006 000</span>
+                </a>
 
-</small>
+              </div>
 
+            </div>
 
-<h2>
 
-بوابتك الرقمية
+            <!-- =========================
+                 SOCIAL MEDIA
+            ========================== -->
+            <div class="social-card">
 
-<br>
+              <h3>تابعونا وتواصلوا معنا</h3>
 
-لمجمع حلب الأول
+              <div class="social-links">
 
-</h2>
+                <a
+                  href="#"
+                  class="social-btn whatsapp"
+                  aria-label="WhatsApp"
+                >
+                  <span class="social-icon">WA</span>
+                  <span>واتساب</span>
+                </a>
 
+                <a
+                  href="#"
+                  class="social-btn facebook"
+                  aria-label="Facebook"
+                >
+                  <span class="social-icon">f</span>
+                  <span>فيسبوك</span>
+                </a>
 
-<p>
+                <a
+                  href="#"
+                  class="social-btn instagram"
+                  aria-label="Instagram"
+                >
+                  <span class="social-icon">◎</span>
+                  <span>إنستغرام</span>
+                </a>
 
-من مسح الـQR إلى الخدمات والتواصل،
-كل المعلومات المهمة عن المجمع
-أصبحت في صفحة واحدة سريعة
-ومصممة للموبايل.
+              </div>
 
-</p>
+            </div>
 
-</div>
 
+            <!-- =========================
+                 ADDRESS
+            ========================== -->
+            <div class="contact-card">
 
+              <span class="contact-label">
+                موقعنا
+              </span>
 
-<div class="stats">
+              <h3>مجمع FALLAHA</h3>
 
+              <p>
+                مجمع حلب الأول لخدمات السيارات
+              </p>
 
-<div class="stat">
+              <p class="contact-coordinate">
+                <strong>36.2246737, 37.1548240</strong>
+              </p>
 
-<strong>
-3
-</strong>
+              <a
+                href="https://www.google.com/maps?q=36.2246737,37.1548240"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="small-map-link"
+              >
+                فتح الموقع على الخريطة
+              </a>
 
-<span>
-أقسام رئيسية
-</span>
+            </div>
 
-</div>
+          </div>
 
 
-<div class="stat">
+          <!-- =========================
+               CONTACT FORM
+          ========================== -->
+          <div class="contact-form-wrapper">
 
-<strong>
-8
-</strong>
+            <form
+              class="contact-form"
+              action="#"
+              method="post"
+            >
 
-<span>
-خدمات
-</span>
+              <div class="form-heading">
 
-</div>
+                <span class="section-tag">
+                  SEND MESSAGE
+                </span>
 
+                <h3>أرسل لنا رسالة</h3>
 
-<div class="stat">
+                <p>
+                  اترك رسالتك وسنتواصل معك.
+                </p>
 
-<strong>
-2
-</strong>
+              </div>
 
-<span>
-أرقام تواصل
-</span>
 
-</div>
+              <div class="form-group">
+                <label for="name">الاسم</label>
 
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="اكتب اسمك"
+                  required
+                >
+              </div>
 
-<div class="stat">
 
-<strong>
-1
-</strong>
+              <div class="form-group">
+                <label for="phone">رقم الهاتف</label>
 
-<span>
-QR
-</span>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="رقم الهاتف"
+                  required
+                >
+              </div>
 
-</div>
 
+              <div class="form-group">
+                <label for="service">الخدمة المطلوبة</label>
 
-</div>
+                <select id="service" name="service">
 
+                  <option value="">
+                    اختر الخدمة
+                  </option>
 
-</div>
+                  <option value="oil">
+                    الزيوت والتشحيم
+                  </option>
 
-</section>
+                  <option value="wash">
+                    مغسل السيارات
+                  </option>
 
+                  <option value="mechanic">
+                    ميكانيك
+                  </option>
 
+                  <option value="electric">
+                    كهرباء السيارات
+                  </option>
 
-<section>
+                  <option value="diagnostic">
+                    فحص إلكتروني
+                  </option>
 
-<div class="heading reveal">
+                  <option value="gearbox">
+                    علب السرعة
+                  </option>
 
-<small>
-GALLERY
-</small>
+                  <option value="detailing">
+                    بوليش وعناية بالطلاء
+                  </option>
 
-<h2>
-معرض المجمع
-</h2>
+                  <option value="other">
+                    خدمة أخرى
+                  </option>
 
-<p>
+                </select>
+              </div>
 
-قريباً نضيف صور مجمع حلب الأول الحقيقية.
 
-</p>
+              <div class="form-group">
 
-</div>
+                <label for="message">
+                  الرسالة
+                </label>
 
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="كيف فينا نخدمك؟"
+                ></textarea>
 
-<div class="gallery">
+              </div>
 
 
-<div class="photo reveal">
+              <button
+                type="submit"
+                class="btn btn-primary form-submit"
+              >
+                إرسال الرسالة
+              </button>
 
-<span>
-المغسل
-</span>
+            </form>
 
-</div>
+          </div>
 
+        </div>
 
-<div class="photo reveal">
+      </div>
 
-<span>
-الكافيه
-</span>
+    </section>
 
-</div>
+  </main>
 
 
-<div class="photo reveal">
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="main-footer">
 
-<span>
-قسم الزيوت
-</span>
+    <div class="container footer-wrapper">
 
-</div>
+      <div class="footer-brand">
 
+        <img
+          src="images/logo.png"
+          alt="FALLAHA Logo"
+          class="footer-logo"
+        >
 
-<div class="photo big reveal">
+        <div>
+          <strong>FALLAHA</strong>
 
-<span>
+          <p>
+            Car's Trading and Service
+          </p>
+        </div>
 
-واجهة مجمع حلب الأول
+      </div>
 
-</span>
 
-</div>
+      <div class="footer-links">
 
+        <a href="#home">
+          الرئيسية
+        </a>
 
-</div>
+        <a href="#services">
+          الخدمات
+        </a>
 
-</section>
+        <a href="#gallery">
+          الصور
+        </a>
 
+        <a href="#location">
+          الموقع
+        </a>
 
+        <a href="#contact">
+          التواصل
+        </a>
 
-<section id="contact">
+      </div>
 
-<div class="contact reveal">
 
+      <div class="footer-social">
 
-<small>
+        <a href="#" aria-label="WhatsApp">
+          WA
+        </a>
 
-CONTACT
+        <a href="#" aria-label="Facebook">
+          f
+        </a>
 
-</small>
+        <a href="#" aria-label="Instagram">
+          ◎
+        </a>
 
+      </div>
 
-<h2>
+    </div>
 
-تواصل معنا
 
-</h2>
+    <div class="footer-bottom">
 
+      <div class="container">
 
-<p class="contact-text">
+        <p>
+          © 2026 FALLAHA - جميع الحقوق محفوظة
+        </p>
 
-مجمع حلب الأول — FALLAHA
+      </div>
 
-</p>
+    </div>
 
+  </footer>
 
 
-<div class="numbers">
+  <!-- =========================
+       FLOATING ACTIONS
+  ========================== -->
+  <div class="floating-actions">
 
+    <a
+      href="tel:+963994010004"
+      class="floating-btn floating-call"
+      aria-label="اتصل بنا"
+      title="اتصل بنا"
+    >
+      ☎
+    </a>
 
-<a
-class="phone"
-href="tel:+963994643666"
->
+    <a
+      href="#"
+      class="floating-btn floating-whatsapp"
+      aria-label="واتساب"
+      title="واتساب"
+    >
+      WA
+    </a>
 
-<small>
-اتصال مباشر
-</small>
+    <a
+      href="https://www.google.com/maps?q=36.2246737,37.1548240"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="floating-btn floating-map"
+      aria-label="الموقع"
+      title="الموقع"
+    >
+      📍
+    </a>
 
-<strong dir="ltr">
-0994 643 666
-</strong>
+  </div>
 
-</a>
 
-
-
-<a
-class="phone"
-href="tel:+963995643666"
->
-
-<small>
-اتصال مباشر
-</small>
-
-<strong dir="ltr">
-0995 643 666
-</strong>
-
-</a>
-
-
-</div>
-
-
-
-<div class="buttons">
-
-
-<a
-class="btn btn-red"
-href="https://wa.me/963994643666"
->
-
-راسلنا على واتساب
-
-</a>
-
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<footer>
-
-
-<strong>
-
-FALLAHA
-
-</strong>
-
-
-<p>
-
-مجمع حلب الأول
-
-</p>
-
-
-<p>
-
-خدمة متطورة في عالم السيارات الحديثة
-
-</p>
-
-
-</footer>
-
-
-
-<a
-class="wa"
-href="https://wa.me/963994643666"
->
-
-WA
-
-</a>
-
-
-
-<script>
-
-const revealElements =
-document.querySelectorAll(".reveal");
-
-
-const observer =
-new IntersectionObserver(
-
-entries => {
-
-entries.forEach(entry => {
-
-if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
-observer.unobserve(entry.target);
-
-}
-
-});
-
-},
-
-{
-threshold:.08
-}
-
-);
-
-
-revealElements.forEach(
-
-element => observer.observe(element)
-
-);
-
-</script>
-
+  <script src="script.js"></script>
 
 </body>
 </html>
