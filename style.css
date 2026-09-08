@@ -1009,3 +1009,93 @@ footer p{
   }
 
 }
+/* ===== NEW ALEPPO COMPLEX TITLE ===== */
+
+.complex-title{
+  margin:8px 0 20px;
+  position:relative;
+  width:fit-content;
+  min-width:300px;
+}
+
+.complex-small{
+  display:block;
+  font-size:19px;
+  font-weight:800;
+  color:#d5d7da;
+  margin-bottom:2px;
+  letter-spacing:0;
+}
+
+.complex-main{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  line-height:.95;
+  white-space:nowrap;
+}
+
+.complex-main strong{
+  font-size:62px;
+  font-weight:900;
+  color:#ffffff;
+  text-shadow:
+    0 3px 18px rgba(255,255,255,.10),
+    0 10px 30px rgba(0,0,0,.45);
+}
+
+.complex-main em{
+  font-size:62px;
+  font-weight:900;
+  font-style:normal;
+  color:#d1222a;
+  text-shadow:
+    0 0 18px rgba(209,34,42,.28),
+    0 10px 30px rgba(0,0,0,.45);
+}
+
+.complex-line{
+  width:100%;
+  height:3px;
+  margin-top:11px;
+  border-radius:50px;
+  background:
+    linear-gradient(
+      90deg,
+      #d1222a 0%,
+      rgba(209,34,42,.55) 40%,
+      transparent 100%
+    );
+  box-shadow:
+    0 0 15px rgba(209,34,42,.25);
+}
+
+
+@media(max-width:560px){
+
+  .complex-title{
+    width:100%;
+    min-width:0;
+    margin-top:4px;
+    margin-bottom:18px;
+  }
+
+  .complex-small{
+    font-size:17px;
+    margin-bottom:4px;
+  }
+
+  .complex-main{
+    gap:10px;
+  }
+
+  .complex-main strong,
+  .complex-main em{
+    font-size:54px;
+  }
+
+  .complex-line{
+    width:82%;
+  }
+
+}
