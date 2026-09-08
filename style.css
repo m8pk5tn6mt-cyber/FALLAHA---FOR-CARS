@@ -893,3 +893,79 @@ footer p{
   }
 
 }
+/* ===== MOBILE HERO POLISH ===== */
+
+@media(max-width:560px){
+
+  .hero-content{
+    padding-top:110px;
+    padding-bottom:90px;
+  }
+
+  .hero-logo{
+    width:64vw;
+    max-width:300px;
+    margin:20px 0 18px;
+  }
+
+  .hero-logo img{
+    max-height:105px;
+    object-fit:contain;
+  }
+
+  .mini-title{
+    font-size:14px;
+    margin-bottom:0;
+  }
+
+  .hero h1{
+    font-size:46px;
+    line-height:1;
+    letter-spacing:-.03em;
+  }
+
+  .hero h1 span{
+    -webkit-text-stroke:1px #fff;
+  }
+
+  .tagline{
+    font-size:13px;
+    margin:18px 0;
+  }
+
+  .hero-pills{
+    gap:7px;
+    margin-bottom:20px;
+  }
+
+  .hero-pills span{
+    padding:8px 11px;
+    font-size:11px;
+  }
+
+  .hero-actions{
+    gap:9px;
+  }
+
+  .btn{
+    padding:12px 15px;
+    border-radius:15px;
+  }
+
+  .btn strong{
+    font-size:16px;
+  }
+
+  .floating-wa{
+    width:48px;
+    height:48px;
+    border-radius:15px;
+    font-size:9px;
+    left:14px;
+    bottom:14px;
+  }
+
+  .scroll{
+    bottom:12px;
+  }
+}
