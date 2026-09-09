@@ -1144,3 +1144,30 @@ footer p{
   background: #e50914;
   border-radius: 10px;
 }
+/* كلمة الأول - أحمر كامل */
+.red-word{
+  color: #e31b23 !important;
+  -webkit-text-fill-color: #e31b23 !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+}
+
+/* عنوان مجمع حلب الأول */
+.main-title{
+  position: relative;
+  display: inline-block;
+  padding-bottom: 14px;
+  color: #fff;
+}
+
+/* الخط الأحمر تحت العنوان كامل */
+.main-title::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #e31b23;
+  border-radius: 10px;
+}
