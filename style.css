@@ -1170,13 +1170,13 @@ footer p{
   content: "";
   position: absolute;
   bottom: 0;
-  right: 7%;
-  width: 68%;
-  height: 5px;
+  right: 18%;
+  width: 52%;
+  height: 3px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    #e31b23 12%,
+    #e31b23 14%,
     #ff2b32 55%,
     #e31b23 88%,
     transparent 100%
@@ -1184,6 +1184,6 @@ footer p{
   border-radius: 50px;
   transform: skewX(-18deg);
   box-shadow:
-    0 0 8px rgba(227,27,35,.55),
-    0 0 18px rgba(227,27,35,.22);
+    0 0 7px rgba(227,27,35,.5),
+    0 0 14px rgba(227,27,35,.18);
 }
