@@ -1122,3 +1122,25 @@ footer p{
   }
 
 }
+/* كلمة الأول باللون الأحمر */
+.red-word {
+  color: #e50914;
+}
+
+/* الخط الأحمر تحت عنوان مجمع حلب الأول */
+.main-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 14px;
+}
+
+.main-title::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  bottom: 0;
+  width: 84%;
+  height: 3px;
+  background: #e50914;
+  border-radius: 10px;
+}
