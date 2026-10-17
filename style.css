@@ -1186,4 +1186,44 @@ footer p{
   box-shadow:
     0 0 7px rgba(227,27,35,.5),
     0 0 14px rgba(227,27,35,.18);
+  <style>
+  /* تنسيق صندوق الأيقونات داخل كاردات التواصل */
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: right !important;
+  }
+  .contact-icon-box {
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon-box svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--neon-cyan);
+  }
+  .contact-icon-box.whatsapp-bg {
+    background: rgba(37, 211, 102, 0.1);
+    border-color: rgba(37, 211, 102, 0.3);
+  }
+  .contact-icon-box.whatsapp-bg svg {
+    fill: #25d366;
+  }
+  .contact-icon-box.map-bg {
+    background: rgba(255, 51, 102, 0.1);
+    border-color: rgba(255, 51, 102, 0.3);
+  }
+  .contact-icon-box.map-bg svg {
+    fill: var(--neon-red);
+  }
+</style>
+
 }
