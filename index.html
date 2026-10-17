@@ -20,7 +20,7 @@
   >
 
   <title>
-    FALLAHA | مجمع حلب الأول • 2036
+    FALLAHA | مجمع حلب الأول
   </title>
 
   <link
@@ -44,7 +44,6 @@
     href="style.css"
   >
 
-  <!-- لمسات الإبداع والذكاء البرمجي (دمج الهوية مع اللمسة المستقبلية) -->
   <style>
     :root {
       --neon-cyan: #00f0ff;
@@ -58,7 +57,6 @@
       position: relative;
     }
 
-    /* خلفية شبكية رقمية خفيفة جداً تزيد من فخامة التصميم */
     body::before {
       content: '';
       position: fixed;
@@ -74,10 +72,9 @@
       pointer-events: none;
     }
 
-    /* تأثيرات سينمائية للهيدر واللوجو */
     .topbar {
       backdrop-filter: blur(16px);
-      background: rgba(3, 7, 18, 0.8) !important;
+      background: rgba(3, 7, 18, 0.85) !important;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -92,7 +89,6 @@
       transform: scale(1.05);
     }
 
-    /* تحسينات بصرية للبطاقات والأقسام */
     .zone-card, .service-card, .contact-card {
       background: var(--card-glass) !important;
       backdrop-filter: blur(10px);
@@ -106,940 +102,321 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    /* زر الواتساب العائم بتصميم متطور ومضيء */
+    /* تنسيق أيقونات الخدمات */
+    .service-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 1.2rem;
+    }
+
+    .service-icon {
+      width: 32px;
+      height: 32px;
+      fill: var(--neon-cyan);
+      flex-shrink: 0;
+    }
+
+    /* زر واتساب العائم الفخم */
     .floating-wa {
-      background: linear-gradient(135deg, #25d366, #128c7e) !important;
-      box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.2rem;
+      box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.3s ease;
       animation: pulseWa 3s infinite;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.1);
     }
 
     @keyframes pulseWa {
       0%, 100% { box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
-      50% { box-shadow: 0 0 30px rgba(37, 211, 102, 0.8); }
+      50% { box-shadow: 0 0 35px rgba(37, 211, 102, 0.9); }
     }
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- ========================= -->
-  <!--          HEADER           -->
-  <!-- ========================= -->
-
+  <!-- HEADER -->
   <header class="topbar">
-
-    <a
-      href="#home"
-      class="brand"
-      aria-label="FALLAHA"
-    >
-
-      <img
-        src="images/logo.jpeg"
-        alt="FALLAHA"
-      >
-
+    <a href="#home" class="brand" aria-label="FALLAHA">
+      <img src="images/logo.jpeg" alt="FALLAHA">
     </a>
 
-
-    <button
-      class="menu-btn"
-      aria-label="فتح القائمة"
-      aria-expanded="false"
-    >
-
+    <button class="menu-btn" aria-label="فتح القائمة" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
-
     </button>
 
-
     <nav class="nav">
-
-      <a href="#home">
-        الرئيسية
-      </a>
-
-      <a href="#zones">
-        الأقسام
-      </a>
-
-      <a href="#services">
-        الخدمات
-      </a>
-
-      <a href="#gallery">
-        المعرض
-      </a>
-
-      <a href="#contact">
-        التواصل
-      </a>
-
+      <a href="#home">الرئيسية</a>
+      <a href="#zones">الأقسام</a>
+      <a href="#services">الخدمات</a>
+      <a href="#gallery">المعرض</a>
+      <a href="#contact">التواصل</a>
     </nav>
-
   </header>
-
-
 
   <main>
 
-
-    <!-- ========================= -->
-    <!--           HERO            -->
-    <!-- ========================= -->
-
-    <section
-      class="hero"
-      id="home"
-    >
-
-
+    <!-- HERO -->
+    <section class="hero" id="home">
       <div class="hero-image">
-
-        <img
-          src="images/hero.jpg"
-          alt=""
-        >
-
+        <img src="images/hero.jpg" alt="">
       </div>
-
-
       <div class="hero-overlay"></div>
 
-
       <div class="hero-content">
-
-
-        <span class="eyebrow">
-          FALLAHA • DIGITAL EXPERIENCE 2036
-        </span>
-
+        <span class="eyebrow">مجمع حلب الأول • احترافية وعناية متكاملة</span>
 
         <div class="hero-logo">
-
-          <img
-            src="images/logo.jpeg"
-            alt="FALLAHA Car's Trading and Service"
-          >
-
+          <img src="images/logo.jpeg" alt="FALLAHA Car's Trading and Service">
         </div>
 
-
- <div class="complex-title">
-<h1 class="main-title">
-  مجمع حلب <span class="red-word">الأول</span>
-</h1>
-</div>
+        <div class="complex-title">
+          <h1 class="main-title">
+            مجمع حلب <span class="red-word">الأول</span>
+          </h1>
+        </div>
 
         <p class="tagline">
-          خدمة متطورة في عالم السيارات الحديثة
+          الوجهة الاحترافية الأولى لخدمات السيارات المتكاملة
         </p>
-
 
         <div class="hero-pills">
-
-          <span>
-            مغسل
-          </span>
-
-          <span>
-            كافيه
-          </span>
-
-          <span>
-            زيوت وتشحيم
-          </span>
-
+          <span>مغسل</span>
+          <span>كافيه</span>
+          <span>زيوت وتشحيم</span>
         </div>
-
 
         <div class="hero-actions">
-
-
-          <a
-            class="btn btn-red"
-            href="tel:+963994643666"
-          >
-
-            <small>
-              اتصال مباشر
-            </small>
-
-            <strong dir="ltr">
-              0994 643 666
-            </strong>
-
+          <a class="btn btn-red" href="tel:+963994643666">
+            <small>اتصال مباشر</small>
+            <strong dir="ltr">0994 643 666</strong>
           </a>
 
-
-          <a
-            class="btn btn-dark"
-            href="https://wa.me/963994643666"
-            target="_blank"
-            rel="noopener"
-          >
-
-            <small>
-              WhatsApp
-            </small>
-
-            <strong>
-              تواصل معنا
-            </strong>
-
+          <a class="btn btn-dark" href="https://wa.me/963994643666" target="_blank" rel="noopener">
+            <small>WhatsApp</small>
+            <strong>تواصل معنا</strong>
           </a>
-
-
         </div>
-
-
       </div>
 
-
-      <a
-        class="scroll"
-        href="#zones"
-      >
-
+      <a class="scroll" href="#zones">
         اكتشف المجمع
-
         <b></b>
-
       </a>
-
-
     </section>
 
-
-
-    <!-- ========================= -->
-    <!--        MAIN ZONES         -->
-    <!-- ========================= -->
-
-    <section
-      class="section"
-      id="zones"
-    >
-
-
+    <!-- MAIN ZONES -->
+    <section class="section" id="zones">
       <div class="section-head">
-
-
         <div>
-
-          <span class="section-kicker">
-            MAIN ZONES
-          </span>
-
-          <h2>
-            ثلاثة أقسام.
-            <br>
-
-            <em>
-              هوية واحدة.
-            </em>
-          </h2>
-
+          <h2>أقسام المجمع الرئيسية</h2>
         </div>
-
-
-        <p>
-          واجهة رقمية عصرية وسريعة تركز على أهم أقسام مجمع حلب الأول.
-        </p>
-
-
+        <p>تكامل الخدمات لراحة سيارتك ومرافقتك في مكان واحد.</p>
       </div>
-
-
 
       <div class="zones-grid">
-
-
         <!-- CAR WASH -->
-
         <article class="zone-card">
-
-          <img
-            src="images/car-wash.jpg"
-            alt="مغسل السيارات"
-          >
-
+          <img src="images/car-wash.jpg" alt="مغسل السيارات">
           <div class="shade"></div>
-
-
           <div class="zone-copy">
-
-            <span>
-              01
-            </span>
-
-            <h3>
-              مغسل
-            </h3>
-
-            <p>
-              غسيل وعناية كاملة
-            </p>
-
-            <b>
-              غسيل اكسترا
-            </b>
-
+            <h3>مغسل</h3>
+            <p>غسيل وعناية فائقة وتفصيلية</p>
+            <b>غسيل اكسترا</b>
           </div>
-
         </article>
-
-
 
         <!-- CAFE -->
-
         <article class="zone-card featured">
-
-          <img
-            src="images/cafe.jpg"
-            alt="كافيه مجمع حلب الأول"
-          >
-
+          <img src="images/cafe.jpg" alt="كافيه مجمع حلب الأول">
           <div class="shade"></div>
-
-
           <div class="zone-copy">
-
-            <span>
-              02
-            </span>
-
-            <h3>
-              كافيه
-            </h3>
-
-            <p>
-              فنجان قهوة ولقمة هنية
-            </p>
-
-            <b>
-              HALAB 1 CAFE
-            </b>
-
+            <h3>كافيه</h3>
+            <p>استراحة راقية وأجواء مميزة</p>
+            <b>HALAB 1 CAFE</b>
           </div>
-
         </article>
-
-
 
         <!-- OIL -->
-
         <article class="zone-card">
-
-          <img
-            src="images/oil.jpg"
-            alt="زيوت وتشحيم"
-          >
-
+          <img src="images/oil.jpg" alt="زيوت وتشحيم">
           <div class="shade"></div>
-
-
           <div class="zone-copy">
-
-            <span>
-              03
-            </span>
-
-            <h3>
-              زيوت وتشحيم
-            </h3>
-
-            <p>
-              خدمة منظمة وسريعة
-            </p>
-
-            <b>
-              FALLAHA SERVICE
-            </b>
-
+            <h3>زيوت وتشحيم</h3>
+            <p>أفضل الزيوت العالمية والخدمة السريعة</p>
+            <b>FALLAHA SERVICE</b>
           </div>
-
         </article>
-
-
       </div>
-
-
     </section>
 
-
-
-    <!-- ========================= -->
-    <!--        SPEED STRIP        -->
-    <!-- ========================= -->
-
-    <section
-      class="ticker"
-      aria-hidden="true"
-    >
-
+    <!-- SPEED STRIP -->
+    <section class="ticker" aria-hidden="true">
       <div class="ticker-track">
-
-        <span>
-          FALLAHA
-        </span>
-
-        <i>
-          •
-        </i>
-
-        <span>
-          مجمع حلب الأول
-        </span>
-
-        <i>
-          •
-        </i>
-
-        <span>
-          CAR CARE
-        </span>
-
-        <i>
-          •
-        </i>
-
-        <span>
-          CAFE
-        </span>
-
-        <i>
-          •
-        </i>
-
-        <span>
-          OIL SERVICE
-        </span>
-
-        <i>
-          •
-        </i>
-
-        <span>
-          FALLAHA
-        </span>
-
-        <i>
-          •
-        </i>
-
+        <span>FALLAHA</span>
+        <i>•</i>
+        <span>مجمع حلب الأول</span>
+        <i>•</i>
+        <span>CAR CARE</span>
+        <i>•</i>
+        <span>CAFE</span>
+        <i>•</i>
+        <span>OIL SERVICE</span>
+        <i>•</i>
       </div>
-
     </section>
 
-
-
-    <!-- ========================= -->
-    <!--         SERVICES          -->
-    <!-- ========================= -->
-
-    <section
-      class="section"
-      id="services"
-    >
-
-
+    <!-- SERVICES -->
+    <section class="section" id="services">
       <div class="section-head">
-
-
         <div>
-
-          <span class="section-kicker">
-            AUTOMOTIVE SERVICES
-          </span>
-
-          <h2>
-            خدمات السيارة
-            <br>
-
-            <em>
-              من الألف للياء.
-            </em>
-          </h2>
-
+          <h2>خدماتنا الاحترافية للسيارات</h2>
         </div>
-
-
       </div>
-
-
 
       <div class="services-grid">
-
-
         <article class="service-card">
-
-          <b>
-            01
-          </b>
-
-          <span>
-            فحص
-          </span>
-
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          <span>فحص دقيق وشامل</span>
         </article>
 
-
-
         <article class="service-card">
-
-          <b>
-            02
-          </b>
-
-          <span>
-            ميكانيك
-          </span>
-
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.5 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.4-2.4c.4-.4.4-1 0-1.3z"/></svg>
+          <span>ميكانيك عام</span>
         </article>
 
-
-
         <article class="service-card">
-
-          <b>
-            03
-          </b>
-
-          <span>
-            كهرباء
-          </span>
-
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 3.87-3.13 7-7 7s-7-3.13-7-7c0-3.53 2.61-6.43 6-6.92V2.05C6.33 2.55 2 7.33 2 13c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.67-4.33-10.45-10-10.95zM11 6h2v6h-2z"/></svg>
+          <span>كهرباء وأنظمة ذكية</span>
         </article>
 
-
-
         <article class="service-card">
-
-          <b>
-            04
-          </b>
-
-          <span>
-            علب سرعة
-          </span>
-
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <span>علب سرعة</span>
         </article>
 
-
-
         <article class="service-card">
-
-          <b>
-            05
-          </b>
-
-          <span>
-            صوتيات
-          </span>
-
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z"/></svg>
+          <span>أنظمة الصوتيات</span>
         </article>
 
-
-
         <article class="service-card">
-
-          <b>
-            06
-          </b>
-
-          <span>
-            بوليش ومعالجة طلاء
-          </span>
-
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15c0-1.66 1.34-3 3-3s3 1.34 3 3-1.34 3-3 3-3-1.34-3-3z"/></svg>
+          <span>بوليش ومعالجة طلاء</span>
         </article>
 
-
-
         <article class="service-card">
-
-          <b>
-            07
-          </b>
-
-          <span>
-            مكابح ونظام التعليق
-          </span>
-
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"/></svg>
+          <span>مكابح ونظام التعليق</span>
         </article>
-
-
 
         <article class="service-card hot">
-
-          <b>
-            24/7
-          </b>
-
-          <span>
-            تواصل أسرع
-          </span>
-
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/></svg>
+          <span>خدمة طوارئ 24/7</span>
         </article>
-
-
       </div>
-
-
     </section>
 
-
-
-    <!-- ========================= -->
-    <!--       BRAND BANNER        -->
-    <!-- ========================= -->
-
-    <section class="section">
-
-
-      <div class="feature-banner">
-
-
-        <img
-          src="images/storefront.jpg"
-          alt="واجهة مجمع حلب الأول"
-        >
-
-
-        <div class="feature-overlay"></div>
-
-
-        <div class="feature-copy">
-
-
-          <span class="section-kicker">
-            ONE QR • ONE EXPERIENCE
-          </span>
-
-
-          <h2>
-            من الكرت...
-            <br>
-            إلى كل خدمات المجمع.
-          </h2>
-
-
-          <p>
-            الشعار، الأقسام، الخدمات، الصور، التواصل والموقع ضمن صفحة واحدة.
-          </p>
-
-
-        </div>
-
-
-      </div>
-
-
-    </section>
-
-
-
-    <!-- ========================= -->
-    <!--          GALLERY          -->
-    <!-- ========================= -->
-
-    <section
-      class="section"
-      id="gallery"
-    >
-
-
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
       <div class="section-head">
-
-
         <div>
-
-          <span class="section-kicker">
-            GALLERY
-          </span>
-
-          <h2>
-            المعرض
-            <br>
-
-            <em>
-              بصوركم الحقيقية.
-            </em>
-          </h2>
-
+          <h2>معرض الصور</h2>
         </div>
-
-
       </div>
-
-
 
       <div class="gallery-grid">
-
-
         <figure class="big">
-
-          <img
-            src="images/storefront.jpg"
-            alt="واجهة المجمع"
-          >
-
-          <figcaption>
-            واجهة المجمع
-          </figcaption>
-
+          <img src="images/storefront.jpg" alt="واجهة المجمع">
+          <figcaption>واجهة المجمع</figcaption>
         </figure>
-
-
-
         <figure>
-
-          <img
-            src="images/car-wash.jpg"
-            alt="المغسل"
-          >
-
-          <figcaption>
-            المغسل
-          </figcaption>
-
+          <img src="images/car-wash.jpg" alt="المغسل">
+          <figcaption>المغسل</figcaption>
         </figure>
-
-
-
         <figure>
-
-          <img
-            src="images/cafe.jpg"
-            alt="الكافيه"
-          >
-
-          <figcaption>
-            الكافيه
-          </figcaption>
-
+          <img src="images/cafe.jpg" alt="الكافيه">
+          <figcaption>الكافيه</figcaption>
         </figure>
-
-
-
         <figure>
-
-          <img
-            src="images/oil.jpg"
-            alt="قسم الزيوت"
-          >
-
-          <figcaption>
-            قسم الزيوت
-          </figcaption>
-
+          <img src="images/oil.jpg" alt="قسم الزيوت">
+          <figcaption>قسم الزيوت</figcaption>
         </figure>
-
-
-
         <figure>
-
-          <img
-            src="images/equipment.jpg"
-            alt="الخدمات والتجهيزات"
-          >
-
-          <figcaption>
-            الخدمات والتجهيزات
-          </figcaption>
-
+          <img src="images/equipment.jpg" alt="الخدمات والتجهيزات">
+          <figcaption>الخدمات والتجهيزات</figcaption>
         </figure>
-
-
       </div>
-
-
     </section>
 
-
-
-    <!-- ========================= -->
-    <!--          CONTACT          -->
-    <!-- ========================= -->
-
-    <section
-      class="contact-section"
-      id="contact"
-    >
-
-
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
       <div class="contact-wrap">
-
-
-        <span class="section-kicker">
-          FALLAHA CONNECT
-        </span>
-
-
-        <h2>
-          جاهزين نخدمك.
-        </h2>
-
-
-        <p>
-          اختر طريقة التواصل الأنسب إلك.
-        </p>
-
-
+        <h2>جاهزين لخدمتك</h2>
+        <p>اختر وسيلة التواصل الأنسب لك وسنت Zأكد من تلبية طلبك فوراً.</p>
 
         <div class="contact-grid">
-
-
-          <a
-            class="contact-card"
-            href="tel:+963994643666"
-          >
-
-            <small>
-              اتصال مباشر
-            </small>
-
-            <strong dir="ltr">
-              0994 643 666
-            </strong>
-
-            <span>
-              اضغط للاتصال ↗
-            </span>
-
+          <a class="contact-card" href="tel:+963994643666">
+            <small>اتصال مباشر</small>
+            <strong dir="ltr">0994 643 666</strong>
+            <span>اضغط للاتصال ↗</span>
           </a>
 
-
-
-          <a
-            class="contact-card"
-            href="tel:+963995643666"
-          >
-
-            <small>
-              اتصال مباشر
-            </small>
-
-            <strong dir="ltr">
-              0995 643 666
-            </strong>
-
-            <span>
-              اضغط للاتصال ↗
-            </span>
-
+          <a class="contact-card" href="tel:+963995643666">
+            <small>اتصال مباشر</small>
+            <strong dir="ltr">0995 643 666</strong>
+            <span>اضغط للاتصال ↗</span>
           </a>
 
-
-
-          <a
-            class="contact-card accent"
-            href="https://wa.me/963994643666"
-            target="_blank"
-            rel="noopener"
-          >
-
-            <small>
-              WhatsApp
-            </small>
-
-            <strong>
-              مراسلة فورية
-            </strong>
-
-            <span>
-              افتح المحادثة ↗
-            </span>
-
+          <a class="contact-card accent" href="https://wa.me/963994643666" target="_blank" rel="noopener">
+            <small>WhatsApp</small>
+            <strong>مراسلة فورية</strong>
+            <span>افتح المحادثة ↗</span>
           </a>
 
-
-
-          <a
-            class="contact-card"
-            href="https://maps.google.com/?q=36.2246737,37.1548240"
-            target="_blank"
-            rel="noopener"
-          >
-
-            <small>
-              Location
-            </small>
-
-            <strong>
-              موقع المجمع
-            </strong>
-
-            <span>
-              افتح الخريطة ↗
-            </span>
-
+          <a class="contact-card" href="https://maps.google.com/?q=36.2246737,37.1548240" target="_blank" rel="noopener">
+            <small>Location</small>
+            <strong>موقع المجمع</strong>
+            <span>افتح الخريطة ↗</span>
           </a>
-
-
         </div>
-
-
       </div>
-
-
     </section>
-
 
   </main>
 
-
-
-  <!-- ========================= -->
-  <!--          FOOTER           -->
-  <!-- ========================= -->
-
+  <!-- FOOTER -->
   <footer>
-
-
-    <img
-      src="images/logo.jpeg"
-      alt="FALLAHA"
-    >
-
-
-    <p>
-      مجمع حلب الأول — خدمة متطورة في عالم السيارات الحديثة
-    </p>
-
-
-    <small>
-      ©
-      <span id="year"></span>
-      FALLAHA
-    </small>
-
-
+    <img src="images/logo.jpeg" alt="FALLAHA">
+    <p>مجمع حلب الأول — خدمة متطورة في عالم السيارات الحديثة</p>
+    <small>© <span id="year"></span> FALLAHA</small>
   </footer>
 
-
-
   <!-- WhatsApp Floating Button -->
-
-  <a
-    class="floating-wa"
-    href="https://wa.me/963994643666"
-    target="_blank"
-    rel="noopener"
-    aria-label="واتساب"
-  >
+  <a class="floating-wa" href="https://wa.me/963994643666" target="_blank" rel="noopener" aria-label="واتساب">
     WA
   </a>
 
-
-
   <script src="script.js"></script>
-
-
 </body>
 
 </html>
