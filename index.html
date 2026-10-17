@@ -11,14 +11,14 @@
     
     <style>
         :root {
-            --carbon-base: #030305;
-            --carbon-grid: #0c0d12;
-            --fire-red: #ff002b;
-            --fire-glow: rgba(255, 0, 43, 0.6);
-            --silver-light: #f8fafc;
-            --silver-muted: #94a3b8;
-            --glass-bg: rgba(10, 11, 16, 0.85);
-            --border-neon: rgba(255, 0, 43, 0.3);
+            --matrix-dark: #020204;
+            --matrix-surface: #0a0b10;
+            --matrix-card: #12141c;
+            --neon-fire: #ff0033;
+            --neon-glow: rgba(255, 0, 51, 0.6);
+            --silver-text: #f3f4f6;
+            --silver-muted: #9ca3af;
+            --border-matrix: rgba(255, 0, 51, 0.35);
         }
 
         * {
@@ -29,48 +29,43 @@
             scroll-behavior: smooth;
         }
 
-        /* تخطيط فايبر كاربون هندسي دقيق وحقيقي بالخلفية */
         body {
-            background-color: var(--carbon-base);
+            background-color: var(--matrix-dark);
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(255, 0, 43, 0.12) 0%, transparent 50%),
-                linear-gradient(45deg, #07080c 25%, transparent 25%), 
-                linear-gradient(-45deg, #07080c 25%, transparent 25%), 
-                linear-gradient(45deg, transparent 75%, #07080c 75%), 
-                linear-gradient(-45deg, transparent 75%, #07080c 75%);
-            background-size: 100% 100%, 16px 16px, 16px 16px, 16px 16px, 16px 16px;
-            background-position: 0 0, 0 0, 0 8px, 8px -8px, -8px 0px;
-            color: var(--silver-light);
+                radial-gradient(circle at 50% 0%, rgba(255, 0, 51, 0.18) 0%, transparent 60%),
+                linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+            background-size: 100% 100%, 30px 30px, 30px 30px;
+            color: var(--silver-text);
             line-height: 1.8;
             overflow-x: hidden;
         }
 
-        /* سكرول بار نيراني مستقبلية */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--carbon-base); }
-        ::-webkit-scrollbar-thumb { background: var(--fire-red); border-radius: 3px; box-shadow: 0 0 10px var(--fire-red); }
+        ::-webkit-scrollbar-track { background: var(--matrix-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--neon-fire); border-radius: 3px; box-shadow: 0 0 12px var(--neon-fire); }
 
-        /* الهيدر المخفي الذكي */
+        /* شريط التنقل العلوي البسيط والشفاف */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
-            background: rgba(3, 3, 5, 0.9);
+            background: rgba(2, 2, 4, 0.85);
             backdrop-filter: blur(20px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 7%;
+            padding: 15px 6%;
             z-index: 1000;
-            border-bottom: 1px solid var(--border-neon);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .header-logo img {
-            height: 45px;
-            border-radius: 8px;
-            border: 1px solid var(--fire-red);
+        .nav-logo-mini img {
+            height: 40px;
+            border-radius: 6px;
+            border: 1px solid var(--neon-fire);
         }
 
-        nav { display: flex; gap: 30px; }
+        nav { display: flex; gap: 25px; }
         nav a {
             color: var(--silver-muted);
             text-decoration: none;
@@ -78,315 +73,307 @@
             font-size: 0.95rem;
             transition: 0.3s;
         }
-        nav a:hover { color: var(--fire-red); text-shadow: 0 0 10px var(--fire-glow); }
+        nav a:hover { color: var(--neon-fire); text-shadow: 0 0 10px var(--neon-glow); }
 
-        /* منطقة الهيرو - اللوغو الضخم المتحرك بمنتصف الصفحة مع إضاءة نارية */
-        .hero-matrix {
+        /* واجهة سينمائية خيالية (Hero Section) تضع الشعار الضخم في قمة التألق */
+        .hero-masterpiece {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 140px 6% 80px;
+            padding: 160px 5% 100px;
             position: relative;
-            background: linear-gradient(180deg, rgba(3,3,5,0.4), rgba(3,3,5,0.95)), url('images/hero.jpg') no-repeat center center/cover;
+            background: linear-gradient(180deg, rgba(2,2,4,0.3), rgba(2,2,4,0.98)), url('images/hero.jpg') no-repeat center center/cover;
         }
 
-        .hero-center-box {
-            background: var(--glass-bg);
-            border: 2px solid var(--border-neon);
-            box-shadow: 0 30px 90px rgba(0,0,0,0.95), 0 0 50px var(--fire-glow);
-            border-radius: 35px;
+        .hero-content-wrapper {
+            background: rgba(10, 11, 16, 0.8);
+            border: 2px solid var(--border-matrix);
+            box-shadow: 0 30px 100px rgba(0,0,0,0.95), 0 0 60px var(--neon-glow);
+            border-radius: 30px;
             padding: 50px 40px;
-            max-width: 850px;
+            max-width: 900px;
             width: 100%;
             backdrop-filter: blur(25px);
             position: relative;
-            animation: floatCard 4s ease-in-out infinite alternate;
+            overflow: hidden;
         }
 
-        @keyframes floatCard {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-8px); }
+        .hero-content-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-fire), transparent);
         }
 
-        .hero-big-logo {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
+        /* الشعار الضخم والواضح الذي يفرض هيبته */
+        .master-logo {
+            width: 160px;
+            height: 160px;
+            border-radius: 20px;
             object-fit: cover;
-            border: 3px solid var(--fire-red);
-            box-shadow: 0 0 40px var(--fire-red), 0 0 80px var(--fire-glow);
+            border: 3px solid var(--neon-fire);
+            box-shadow: 0 0 45px var(--neon-fire), 0 0 90px var(--neon-glow);
             margin-bottom: 25px;
-            animation: pulseLogo 2s infinite alternate;
+            transition: 0.5s;
         }
 
-        @keyframes pulseLogo {
-            0% { transform: scale(1); box-shadow: 0 0 30px var(--fire-red); }
-            100% { transform: scale(1.05); box-shadow: 0 0 60px var(--fire-red); }
+        .master-logo:hover {
+            transform: scale(1.06) rotate(2deg);
         }
 
-        .hero-title-motion {
-            font-size: clamp(2.5rem, 6vw, 4.2rem);
+        .hero-title-fx {
+            font-size: clamp(2.8rem, 7vw, 5rem);
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -1px;
-            margin-bottom: 10px;
-            color: var(--silver-light);
-            text-shadow: 0 5px 20px rgba(0,0,0,0.9);
+            margin-bottom: 15px;
+            color: var(--silver-text);
+            text-shadow: 0 5px 25px rgba(0,0,0,0.9);
         }
 
-        .hero-title-motion span {
-            color: var(--fire-red);
-            text-shadow: 0 0 35px var(--fire-red), 0 0 70px var(--fire-glow);
-            display: inline-block;
-            animation: textFlicker 3s infinite;
+        .hero-title-fx span {
+            color: var(--neon-fire);
+            text-shadow: 0 0 35px var(--neon-fire), 0 0 70px var(--neon-glow);
         }
 
-        @keyframes textFlicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-            20%, 24%, 55% { opacity: 0.8; text-shadow: none; }
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
+        .hero-desc {
+            font-size: 1.3rem;
             color: var(--silver-muted);
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             font-weight: 600;
         }
 
-        /* أزرار التواصل المستقبلية الفورية */
-        .hero-actions-grid {
+        .hero-action-buttons {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .cyber-btn {
-            background: linear-gradient(135deg, var(--fire-red), #b3001f);
+        .btn-core {
+            background: linear-gradient(135deg, var(--neon-fire), #b30024);
             color: white;
-            padding: 15px 32px;
-            border-radius: 16px;
+            padding: 16px 36px;
+            border-radius: 14px;
             text-decoration: none;
             font-weight: 800;
             display: flex;
             flex-direction: column;
             align-items: center;
             transition: 0.3s;
-            box-shadow: 0 10px 30px var(--fire-glow);
+            box-shadow: 0 10px 30px var(--neon-glow);
             border: 1px solid rgba(255,255,255,0.3);
             flex: 1;
-            min-width: 200px;
+            min-width: 220px;
         }
 
-        .cyber-btn:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 15px 45px var(--fire-red);
+        .btn-core:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 45px var(--neon-fire);
         }
 
-        .cyber-btn small { font-size: 0.75rem; font-weight: 400; opacity: 0.85; }
-        .cyber-btn.whatsapp {
+        .btn-core small { font-size: 0.8rem; font-weight: 400; opacity: 0.85; }
+
+        .btn-core.wa-core {
             background: linear-gradient(135deg, #25d366, #128c7e);
             box-shadow: 0 10px 30px rgba(37,211,102,0.4);
         }
-        .cyber-btn.whatsapp:hover { box-shadow: 0 15px 45px rgba(37,211,102,0.8); }
+        .btn-core.wa-core:hover { box-shadow: 0 15px 45px rgba(37,211,102,0.8); }
 
-        /* أقسام الصفحة العامة */
-        section { padding: 110px 7%; position: relative; }
+        /* الأقسام العامة */
+        section { padding: 120px 6%; position: relative; }
 
-        .section-header-cyber {
+        .section-title-core {
             text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header-cyber h2 {
             font-size: 2.8rem;
             font-weight: 900;
-            color: var(--silver-light);
+            color: var(--silver-text);
             text-transform: uppercase;
+            margin-bottom: 60px;
             letter-spacing: -0.5px;
-            display: inline-block;
             position: relative;
         }
 
-        .section-header-cyber h2::after {
+        .section-title-core::after {
             content: '';
             position: absolute;
-            bottom: -12px; left: 50%;
+            bottom: -15px; left: 50%;
             transform: translateX(-50%);
-            width: 80px; height: 4px;
-            background: var(--fire-red);
-            box-shadow: 0 0 15px var(--fire-red);
+            width: 90px; height: 4px;
+            background: var(--neon-fire);
+            box-shadow: 0 0 15px var(--neon-fire);
             border-radius: 2px;
         }
 
-        /* الأقسام الرئيسية الأربعة (بدون أرقام، بتصميم فخامة مطلقة) */
-        .zones-grid-new {
+        /* الأقسام الرئيسية الأربعة بتصميم عصري جريء */
+        .zones-matrix-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 35px;
         }
 
-        .zone-card-new {
-            background: var(--glass-bg);
+        .zone-matrix-card {
+            background: var(--matrix-card);
             border-radius: 24px;
             overflow: hidden;
             border: 1px solid rgba(255,255,255,0.08);
             transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            position: relative;
         }
 
-        .zone-card-new:hover {
+        .zone-matrix-card:hover {
             transform: translateY(-10px);
-            border-color: var(--fire-red);
-            box-shadow: 0 25px 60px var(--fire-glow);
+            border-color: var(--neon-fire);
+            box-shadow: 0 25px 65px var(--neon-glow);
         }
 
-        .zone-card-new img {
+        .zone-matrix-card img {
             width: 100%;
-            height: 240px;
+            height: 250px;
             object-fit: cover;
             transition: 0.5s;
         }
 
-        .zone-card-new:hover img { transform: scale(1.08); }
+        .zone-matrix-card:hover img { transform: scale(1.1); }
 
-        .zone-info { padding: 30px; }
-        .zone-info h3 { font-size: 2rem; font-weight: 900; color: var(--silver-light); margin-bottom: 10px; }
-        .zone-info p { color: var(--silver-muted); font-size: 1rem; margin-bottom: 20px; }
-        .zone-badge {
-            background: rgba(255, 0, 43, 0.15);
-            color: var(--fire-red);
+        .zone-matrix-body { padding: 30px; }
+        .zone-matrix-body h3 { font-size: 2rem; font-weight: 900; color: var(--silver-text); margin-bottom: 10px; }
+        .zone-matrix-body p { color: var(--silver-muted); font-size: 1.05rem; margin-bottom: 20px; }
+        .zone-matrix-tag {
+            background: rgba(255, 0, 51, 0.15);
+            color: var(--neon-fire);
             padding: 8px 18px;
             border-radius: 10px;
             font-size: 0.95rem;
             font-weight: 800;
-            border: 1px solid rgba(255, 0, 43, 0.35);
+            border: 1px solid rgba(255, 0, 51, 0.35);
             display: inline-block;
         }
 
-        /* خدمات متفرعة بأيقونات تعبيرية فريدة (بلا أرقام) */
-        .services-grid-iconic {
+        /* الخدمات التخصصية بأيقونات أنيقة وبلا أرقام */
+        .services-matrix-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
-        .service-icon-card {
-            background: var(--glass-bg);
+        .service-matrix-item {
+            background: var(--matrix-card);
             padding: 30px;
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.08);
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 22px;
             transition: 0.3s;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
-        .service-icon-card:hover {
-            border-color: var(--fire-red);
-            background: #11131c;
+        .service-matrix-item:hover {
+            border-color: var(--neon-fire);
+            background: #171a26;
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px var(--fire-glow);
+            box-shadow: 0 15px 40px var(--neon-glow);
         }
 
-        .service-icon-symbol {
-            width: 55px; height: 55px;
-            background: rgba(255, 0, 43, 0.12);
-            border: 2px solid var(--fire-red);
+        .service-matrix-icon {
+            width: 60px; height: 60px;
+            background: rgba(255, 0, 51, 0.12);
+            border: 2px solid var(--neon-fire);
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem;
-            color: var(--fire-red);
-            box-shadow: 0 0 15px var(--fire-glow);
+            font-size: 1.6rem;
+            color: var(--neon-fire);
+            box-shadow: 0 0 15px var(--neon-glow);
             flex-shrink: 0;
         }
 
-        .service-icon-card span { font-size: 1.15srem; font-weight: 800; color: var(--silver-light); }
+        .service-matrix-item span { font-size: 1.2rem; font-weight: 800; color: var(--silver-text); }
 
-        /* المعرض الفني */
-        .gallery-grid-new {
+        /* المعرض الفني الفاخر */
+        .gallery-matrix-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .gallery-card-new {
+        .gallery-matrix-card {
             position: relative;
             border-radius: 24px;
             overflow: hidden;
-            height: 320px;
+            height: 330px;
             border: 1px solid rgba(255,255,255,0.08);
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
 
-        .gallery-card-new img {
+        .gallery-matrix-card img {
             width: 100%; height: 100%; object-fit: cover; transition: 0.5s;
         }
 
-        .gallery-card-new:hover img { transform: scale(1.1); }
-        .gallery-card-new figcaption {
+        .gallery-matrix-card:hover img { transform: scale(1.1); }
+        .gallery-matrix-card figcaption {
             position: absolute; bottom: 0; left: 0; width: 100%;
-            background: linear-gradient(transparent, rgba(3,3,5,0.95));
+            background: linear-gradient(transparent, rgba(2,2,4,0.95));
             padding: 35px 25px 20px;
-            font-weight: 800; font-size: 1.2rem; color: var(--silver-light);
+            font-weight: 800; font-size: 1.25rem; color: var(--silver-text);
         }
 
-        /* قسم التواصل المستقبلي */
-        .contact-box-cyber {
-            background: linear-gradient(145deg, var(--glass-bg), var(--carbon-base));
+        /* قسم التواصل المستوحى من بطاقة الأعمال المتقدمة */
+        .contact-matrix-box {
+            background: linear-gradient(145deg, var(--matrix-card), var(--matrix-surface));
             border-radius: 35px;
-            padding: 70px 45px;
+            padding: 75px 50px;
             text-align: center;
-            border: 2px solid var(--border-neon);
+            border: 2px solid var(--border-matrix);
             max-width: 950px;
             margin: 0 auto;
-            box-shadow: 0 35px 90px rgba(0,0,0,0.95), 0 0 50px var(--fire-glow);
+            box-shadow: 0 35px 90px rgba(0,0,0,0.95), 0 0 60px var(--neon-glow);
         }
 
-        .contact-grid-new {
+        .contact-matrix-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             margin-top: 45px;
         }
 
-        .contact-card-new {
-            background: var(--carbon-base);
+        .contact-matrix-card {
+            background: var(--matrix-dark);
             padding: 30px;
             border-radius: 18px;
             text-decoration: none;
-            color: var(--silver-light);
+            color: var(--silver-text);
             border: 1px solid rgba(255,255,255,0.1);
             display: flex; flex-direction: column; gap: 8px;
             transition: 0.3s;
         }
 
-        .contact-card-new:hover {
+        .contact-matrix-card:hover {
             transform: translateY(-6px);
-            border-color: var(--fire-red);
-            box-shadow: 0 15px 40px var(--fire-glow);
+            border-color: var(--neon-fire);
+            box-shadow: 0 15px 40px var(--neon-glow);
         }
 
-        .contact-card-new small { color: var(--silver-muted); font-size: 0.9rem; font-weight: 600; }
-        .contact-card-new strong { font-size: 1.3rem; font-weight: 900; color: var(--silver-light); }
-        .contact-card-new span { color: var(--fire-red); font-size: 0.95rem; font-weight: 800; }
+        .contact-matrix-card small { color: var(--silver-muted); font-size: 0.9rem; font-weight: 600; }
+        .contact-matrix-card strong { font-size: 1.3rem; font-weight: 900; color: var(--silver-text); }
+        .contact-matrix-card span { color: var(--neon-fire); font-size: 0.95rem; font-weight: 800; }
 
         /* الفوتر */
         footer {
             text-align: center;
             padding: 60px 7%;
-            background: var(--carbon-base);
-            border-top: 2px solid var(--fire-red);
+            background: var(--matrix-dark);
+            border-top: 2px solid var(--neon-fire);
             color: var(--silver-muted);
             font-size: 1rem;
         }
 
         footer img {
-            height: 50px; border-radius: 10px; margin-bottom: 15px; border: 1px solid var(--fire-red);
+            height: 60px; border-radius: 12px; margin-bottom: 15px; border: 2px solid var(--neon-fire); box-shadow: 0 0 20px var(--neon-glow);
         }
 
         /* زر الواتساب العائم */
@@ -409,8 +396,9 @@
 
         @media (max-width: 768px) {
             nav { display: none; }
-            .hero-matrix { padding-top: 150px; }
-            .hero-center-box { padding: 30px 20px; }
+            .hero-masterpiece { padding-top: 150px; }
+            .hero-content-wrapper { padding: 30px 20px; }
+            .master-logo { width: 120px; height: 120px; }
         }
     </style>
 </head>
@@ -418,7 +406,7 @@
 
     <!-- Header -->
     <header>
-        <div class="header-logo">
+        <div class="nav-logo-mini">
             <img src="images/logo.jpeg" alt="Logo">
         </div>
         <nav>
@@ -431,19 +419,19 @@
     </header>
 
     <main id="home">
-        <!-- Hero Matrix - اللوغو الضخم المتحرك بمنتصف الصفحة -->
-        <section class="hero-matrix">
-            <div class="hero-center-box">
-                <img src="images/logo.jpeg" alt="FALLAHA Logo" class="hero-big-logo">
-                <h1 class="hero-title-motion">مجمع حلب <span>الأول</span></h1>
-                <p class="hero-subtitle">خدمة متطورة في عالم السيارات الحديثة</p>
+        <!-- Hero Masterpiece - اللوغو الضخم بمنتصف الشاشة مع فخامة مطلقة -->
+        <section class="hero-masterpiece">
+            <div class="hero-content-wrapper">
+                <img src="images/logo.jpeg" alt="FALLAHA Logo" class="master-logo">
+                <h1 class="hero-title-fx">مجمع حلب <span>الأول</span></h1>
+                <p class="hero-desc">خدمة متطورة في عالم السيارات الحديثة</p>
 
-                <div class="hero-actions-grid">
-                    <a href="tel:0994643666" class="cyber-btn">
+                <div class="hero-action-buttons">
+                    <a href="tel:0994643666" class="btn-core">
                         <small>اتصال مباشر</small>
                         <strong dir="ltr">0994 643 666</strong>
                     </a>
-                    <a href="https://wa.me/963994643666" class="cyber-btn whatsapp" target="_blank" rel="noopener">
+                    <a href="https://wa.me/963994643666" class="btn-core wa-core" target="_blank" rel="noopener">
                         <small>WhatsApp</small>
                         <strong>تواصل معنا فوراً</strong>
                     </a>
@@ -451,145 +439,136 @@
             </div>
         </section>
 
-        <!-- الأقسام الرئيسية الأربعة (بدون أرقام تقليدية) -->
+        <!-- الأقسام الرئيسية الأربعة -->
         <section id="zones">
-            <div class="section-header-cyber">
-                <h2>أقسام المجمع الرئيسية</h2>
-            </div>
-
-            <div class="zones-grid-new">
-                <article class="zone-card-new">
+            <h2 class="section-title-core">أقسام المجمع الرئيسية</h2>
+            <div class="zones-matrix-grid">
+                <article class="zone-matrix-card">
                     <img src="images/car-wash.jpg" alt="مغسل">
-                    <div class="zone-info">
+                    <div class="zone-matrix-body">
                         <h3>مغسل</h3>
                         <p>غسيل وعناية كاملة بأحدث التقنيات لسيارتك.</p>
-                        <span class="zone-badge">غسيل اكسترا</span>
+                        <span class="zone-matrix-tag">غسيل اكسترا</span>
                     </div>
                 </article>
 
-                <article class="zone-card-new">
+                <article class="zone-matrix-card">
                     <img src="images/cafe.jpg" alt="كافيه">
-                    <div class="zone-info">
+                    <div class="zone-matrix-body">
                         <h3>كافيه</h3>
                         <p>استمتع بفنجان قهوة ولقمة هنية أثناء انتظارك.</p>
-                        <span class="zone-badge">HALAB 1 CAFE</span>
+                        <span class="zone-matrix-tag">HALAB 1 CAFE</span>
                     </div>
                 </article>
 
-                <article class="zone-card-new">
+                <article class="zone-matrix-card">
                     <img src="images/oil.jpg" alt="زيوت وتشحيم">
-                    <div class="zone-info">
+                    <div class="zone-matrix-body">
                         <h3>زيوت وتشحيم</h3>
                         <p>خدمة منظمة وسريعة لأفضل أنواع الزيوت والفلاتر.</p>
-                        <span class="zone-badge">FALLAHA SERVICE</span>
+                        <span class="zone-matrix-tag">FALLAHA SERVICE</span>
                     </div>
                 </article>
 
-                <article class="zone-card-new">
+                <article class="zone-matrix-card">
                     <img src="images/equipment.jpg" alt="بوليش ومعالجة طلاء">
-                    <div class="zone-info">
+                    <div class="zone-matrix-body">
                         <h3>بوليش ومعالجة</h3>
                         <p>استعادة لمعان ونقاء هيكل السيارة بأعلى جودة.</p>
-                        <span class="zone-badge">DETAILING CARE</span>
+                        <span class="zone-matrix-tag">DETAILING CARE</span>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- الخدمات التخصصية بأيقونات مبتكرة (بدون أرقام 01, 02) -->
+        <!-- الخدمات التخصصية بأيقونات مبتكرة (بلا أرقام) -->
         <section id="services">
-            <div class="section-header-cyber">
-                <h2>باقي الخدمات التخصصية</h2>
-            </div>
-
-            <div class="services-grid-iconic">
-                <div class="service-icon-card">
-                    <div class="service-icon-symbol">🔍</div>
+            <h2 class="section-title-core">باقي الخدمات التخصصية</h2>
+            <div class="services-matrix-grid">
+                <div class="service-matrix-item">
+                    <div class="service-matrix-icon">🔍</div>
                     <span>فحص شامل للسيارات</span>
                 </div>
-                <div class="service-icon-card">
-                    <div class="service-icon-symbol">⚙️</div>
+                <div class="service-matrix-item">
+                    <div class="service-matrix-icon">⚙️</div>
                     <span>ميكانيك عام</span>
                 </div>
-                <div class="service-icon-card">
-                    <div class="service-icon-symbol">⚡</div>
+                <div class="service-matrix-item">
+                    <div class="service-matrix-icon">⚡</div>
                     <span>كهرباء وبطاريات</span>
                 </div>
-                <div class="service-icon-card">
-                    <div class="service-icon-symbol">🏎️</div>
+                <div class="service-matrix-item">
+                    <div class="service-matrix-icon">🏎️</div>
                     <span>صيانة علب السرعة</span>
                 </div>
-                <div class="service-icon-card">
-                    <div class="service-icon-symbol">🎵</div>
+                <div class="service-matrix-item">
+                    <div class="service-matrix-icon">🎵</div>
                     <span>صوتيات وأنظمة ترفيه</span>
                 </div>
-                <div class="service-icon-card">
-                    <div class="service-icon-symbol">🛡️</div>
+                <div class="service-matrix-item">
+                    <div class="service-matrix-icon">🛡️</div>
                     <span>مكابح ونظام التعليق</span>
                 </div>
-                <div class="service-icon-card">
-                    <div class="service-icon-symbol">⏱️</div>
+                <div class="service-matrix-item">
+                    <div class="service-matrix-icon">⏱️</div>
                     <span>دعم وطوارئ سريعة</span>
                 </div>
             </div>
         </section>
 
-        <!-- معرض الصور الرياضي -->
+        <!-- معرض الصور -->
         <section id="gallery">
-            <div class="section-header-cyber">
-                <h2>معرض الصور</h2>
-            </div>
-
-            <div class="gallery-grid-new">
-                <figure class="gallery-card-new">
+            <h2 class="section-title-core">معرض الصور</h2>
+            <div class="gallery-matrix-grid">
+                <figure class="gallery-matrix-card">
                     <img src="images/storefront.jpg" alt="واجهة المجمع">
                     <figcaption>واجهة المجمع</figcaption>
                 </figure>
-                <figure class="gallery-card-new">
+                <figure class="gallery-matrix-card">
                     <img src="images/car-wash.jpg" alt="المغسل">
                     <figcaption>المغسل</figcaption>
                 </figure>
-                <figure class="gallery-card-new">
+                <figure class="gallery-matrix-card">
                     <img src="images/cafe.jpg" alt="الكافيه">
                     <figcaption>الكافيه</figcaption>
                 </figure>
-                <figure class="gallery-card-new">
+                <figure class="gallery-matrix-card">
                     <img src="images/oil.jpg" alt="قسم الزيوت">
                     <figcaption>قسم الزيوت</figcaption>
                 </figure>
-                <figure class="gallery-card-new">
+                <figure class="gallery-matrix-card">
                     <img src="images/equipment.jpg" alt="التجهيزات">
                     <figcaption>الخدمات والتجهيزات</figcaption>
                 </figure>
             </div>
         </section>
 
-        <!-- قسم التواصل الفاخر المستقبلي -->
+        <!-- قسم التواصل الفاخر -->
         <section id="contact">
-            <div class="contact-box-cyber">
-                <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--silver-light); margin-bottom: 10px;">جاهزين لخدمتك</h2>
-                <p style="color: var(--silver-muted); font-size: 1.1rem;">اختر طريقة التواصل الأنسب وسنكون بانتظارك فوراً.</p>
+            <div class="contact-matrix-box">
+                <h2 style="font-size: 2.6rem; font-weight: 900; color: var(--silver-text); margin-bottom: 12px;">جاهزين لخدمتك</h2>
+                <p style="color: var(--silver-muted); font-size: 1.15rem;">اختر طريقة التواصل الأنسب وسنكون بانتظارك فوراً.</p>
 
-                <div class="contact-grid-new">
-                    <a href="tel:0994643666" class="contact-card-new">
+                <div class="contact-matrix-grid">
+                    <a href="tel:0994643666" class="contact-matrix-card">
                         <small>اتصال مباشر</small>
                         <strong dir="ltr">0994 643 666</strong>
                         <span>اضغط للاتصال ↗</span>
                     </a>
 
-                    <a href="tel:0995643666" class="contact-card-new">
+                    <a href="tel:0995643666" class="contact-matrix-card">
                         <small>اتصال مباشر</small>
                         <strong dir="ltr">0995 643 666</strong>
                         <span>اضغط للاتصال ↗</span>
                     </a>
 
-                    <a href="https://wa.me/963994643666" class="contact-card-new" target="_blank" rel="noopener">
+                    <a href="https://wa.me/963994643666" class="contact-matrix-card" target="_blank" rel="noopener">
                         <small>WhatsApp</small>
                         <strong>مراسلة فورية</strong>
                         <span>افتح المحادثة ↗</span>
                     </a>
 
-                    <a href="https://maps.google.com/?q=36.2246737,37.1548240" class="contact-card-new" target="_blank" rel="noopener">
+                    <a href="https://maps.google.com/?q=36.2246737,37.1548240" class="contact-matrix-card" target="_blank" rel="noopener">
                         <small>Location</small>
                         <strong>موقع المجمع</strong>
                         <span>افتح الخريطة ↗</span>
