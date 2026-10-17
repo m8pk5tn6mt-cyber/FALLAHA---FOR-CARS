@@ -3,201 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FALLAHA FOR CARS | النبضة المستقبلية 2036</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>مجمع حلب الأول للسيارات - تواصل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-base: #020408;
-            --neon-cyan: #00f3ff;
-            --neon-purple: #b000ff;
-            --text-light: #ffffff;
-            --text-gray: #8a99ad;
-        }
-
-        * {
+        body {
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Cairo', sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
+            text-align: center;
         }
 
-        body {
-            background-color: var(--bg-base);
-            color: var(--text-light);
-            min-height: 100vh;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* خلفية شبكية ديناميكية */
-        .cyber-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -1;
-        }
-
-        /* الهيدر وشعار الموقع */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2.5rem 6%;
+            padding: 20px;
+            border-bottom: 1px solid #333;
         }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-
-        .brand img {
-            width: 65px;
-            height: 65px;
+        .logo-container img {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            border: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 25px rgba(0, 243, 255, 0.4);
-            object-fit: cover;
         }
 
         .brand-title {
-            font-size: 1.4rem;
-            font-weight: 900;
-            letter-spacing: 3px;
-            background: linear-gradient(135deg, var(--text-light), var(--neon-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
 
-        /* المحتوى الرئيسي */
-        main {
-            text-align: center;
-            padding: 2rem 5%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: 0.4rem 1.5rem;
-            background: rgba(176, 0, 255, 0.1);
-            border: 1px solid var(--neon-purple);
-            color: #d175ff;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 15px rgba(176, 0, 255, 0.2);
+        .main-content {
+            padding: 50px 20px;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
 
-        h1 span {
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .subtitle {
+            color: #888;
+            margin-bottom: 30px;
         }
 
-        p.description {
-            color: var(--text-gray);
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin: 0 auto 3.5rem auto;
-            line-height: 1.8;
+        .contact-section {
+            margin-top: 40px;
         }
 
-        /* أزرار التفاعل */
-        .actions {
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .contact-label {
+            color: #00bcd4;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
         }
 
-        .btn {
-            padding: 1rem 2.8rem;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
             text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
         }
 
-        .btn-primary {
-            background: var(--neon-cyan);
-            color: var(--bg-base);
-            border: none;
-            box-shadow: 0 0 25px rgba(0, 243, 255, 0.4);
-        }
-
-        .btn-primary:hover {
-            background: var(--text-light);
-            box-shadow: 0 0 40px var(--neon-cyan);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-light);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--neon-cyan);
-            color: var(--neon-cyan);
-            background: rgba(0, 243, 255, 0.05);
-        }
-
-        /* الفوتر */
-        footer {
-            text-align: center;
-            padding: 2.5rem;
-            color: var(--text-gray);
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
-    <div class="cyber-grid"></div>
-
     <header>
-        <div class="brand">
-            <img src="logo.jpeg" alt="FALLAHA FOR CARS Logo">
-            <div class="brand-title">FALLAHA <span style="color: var(--neon-cyan); font-weight: 300;">2036</span></div>
+        <div class="brand-title">مجمع حلب الأول</div>
+        <div class="logo-container">
+            <img src="logo.jpeg" alt="شعار مجمع حلب الأول">
         </div>
     </header>
 
-    <main>
-        <div class="hero-tag">رؤية الجيل القادم</div>
-        <h1>مستقبل السيارات يبدأ هنا <span>بإبداع بلا حدود</span></h1>
-        <p class="description">انتقال نوعي في تجربة العرض الرقمي، مصمم خصيصاً ليحاكي تطلعات المستقبل بقالب يدمج الفخامة والتقنية الخالصة.</p>
+    <main class="main-content">
+        <h1>مرحباً بكم في مجمع حلب الأول للسيارات</h1>
+        <p class="subtitle">نحن هنا لخدمتكم وتلبية كافة احتياجاتكم في عالم السيارات.</p>
         
-        <div class="actions">
-            <a href="#" class="btn btn-primary" onclick="alert('تم تفعيل الأنظمة الذكية بنجاح!')">استكشاف الأفق</a>
-            <a href="#" class="btn btn-secondary" onclick="alert('جاري مزامنة بيانات العرض...')">أنظمة القيادة</a>
+        <div class="contact-section">
+            <span class="contact-label">للتواصل الفوري والاستفسار:</span>
+            <div class="contact-info">اتصال / واتساب على الرقم:</div>
+            <!-- رابط واتساب مباشر، قم بتغيير الرقم لرقمك الحقيقي -->
+            <a href="tel:+9639xxxxxxxx" class="whatsapp-btn">
+                <svg height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m38.05 9.95a19.78 19.78 0 0 0 -14.05-5.95 20.08 20.08 0 0 0 -17.31 30.15l-1.94 7.1 7.31-1.92a20 20 0 0 0 12.04 4.02h.01a20.08 20.08 0 0 0 14.05-34.22zm-14.05 28.05h-.01a16.44 16.44 0 0 1 -8.4-2.31l-.6-.35-6.2 1.63 1.65-6.05-.39-.62a16.56 16.56 0 0 1 -2.54-8.85a16.68 16.68 0 0 1 16.69-16.68a16.62 16.62 0 0 1 11.44 4.67a16.62 16.62 0 0 1 4.89 11.76a16.68 16.68 0 0 1 -16.7 16.69zm9.11-12.49c-.5-.25-2.94-1.45-3.4-1.61s-.77-.25-1.1.25s-1.28 1.61-1.57 1.94s-.57.28-1.07 0s-2.11-.78-4.02-2.48a14.74 14.74 0 0 1 -2.72-3.44c-.28-.47 0-.73.21-.97a4.65 4.65 0 0 0 .73-1.28a2.19 2.19 0 0 0 .1-1.92c-.1-.25-.94-2.28-1.28-3.18s-.68-.85-.92-.87h-.8a1.51 1.51 0 0 0 -1.09.52a5 5 0 0 0 -1.57 3.72a8.76 8.76 0 0 0 1.83 5.09a19.9 19.9 0 0 0 7.6 7.06c3.63 1.44 5.09 1.69 6.92 1.42a5.71 5.71 0 0 0 3.72-2.66a4.62 4.62 0 0 0 .32-2.66c-.14-.25-.48-.4-.99-.65z" fill="currentColor"/></svg>
+                اتصال / واتساب
+            </a>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2036 FALLAHA FOR CARS. جميع الحقوق محفوظة للرؤية التقنية.</p>
+        <p>&copy; 2024 مجمع حلب الأول للسيارات. جميع الحقوق محفوظة.</p>
     </footer>
+
+    <script>
+        // إضافة كود JavaScript للتتبع أو التحليلات إذا لزم الأمر
+        console.log("تم تحميل صفحة التواصل بنجاح.");
+    </script>
 
 </body>
 </html>
