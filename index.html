@@ -15,7 +15,7 @@
   <style>
     /* ========================= */
     /*      RESET & BASE CSS     */
-    /* =========================  */
+    /* ========================= */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -86,23 +86,6 @@
       color: #dc2626;
     }
 
-    .menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .menu-btn span {
-      display: block;
-      width: 25px;
-      height: 2px;
-      background: #fff;
-      transition: 0.3s;
-    }
-
     /* ========================= */
     /*           HERO            */
     /* ========================= */
@@ -154,15 +137,15 @@
     }
 
     .hero-logo img {
-      width: 70px;
-      height: 70px;
-      border-radius: 14px;
+      width: 90px;
+      height: 90px;
+      border-radius: 18px;
       margin-bottom: 15px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      object-fit: cover;
     }
 
     .main-title {
-      font-size.rem: 3rem;
       font-size: clamp(2.2rem, 5vw, 3.8rem);
       font-weight: 900;
       margin-bottom: 15px;
@@ -420,55 +403,86 @@
     }
 
     /* ========================= */
-    /*         SERVICES          */
+    /*   SERVICES (NEW DESIGN)   */
     /* ========================= */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
     }
 
     .service-card {
-      background: rgba(255, 255, 255, 0.03);
+      background: linear-gradient(145deg, rgba(20, 22, 28, 0.9) 0%, rgba(12, 14, 18, 0.95) 100%);
       border: 1px solid rgba(255, 255, 255, 0.07);
-      padding: 30px 20px;
-      border-radius: 18px;
+      padding: 32px 24px;
+      border-radius: 20px;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      text-align: center;
-      transition: all 0.3s ease;
+      gap: 20px;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: #dc2626;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .service-card:hover {
-      background: rgba(220, 38, 38, 0.05);
-      border-color: rgba(220, 38, 38, 0.3);
-      transform: translateY(-5px);
+      background: linear-gradient(145deg, rgba(30, 33, 42, 0.95) 0%, rgba(16, 18, 24, 0.98) 100%);
+      border-color: rgba(220, 38, 38, 0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
     }
 
     .card-icon {
-      width: 64px;
-      height: 64px;
-      background: rgba(220, 38, 38, 0.12);
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: rgba(220, 38, 38, 0.1);
       border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
       color: #dc2626;
       transition: all 0.3s ease;
+      border: 1px solid rgba(220, 38, 38, 0.2);
     }
 
     .service-card:hover .card-icon {
       background: #dc2626;
       color: #fff;
-      transform: translateY(-4px);
+      transform: scale(1.08) rotate(5deg);
+      box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
     }
 
-    .service-card span {
-      font-size: 1.05rem;
-      font-weight: 700;
+    .service-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-info span:first-child {
+      font-size: 1.15rem;
+      font-weight: 800;
       color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .service-info span.desc {
+      font-size: 0.85rem;
+      color: #9ca3af;
     }
 
     /* ========================= */
@@ -579,6 +593,7 @@
       background: rgba(220, 38, 38, 0.1);
       color: #dc2626;
       margin-bottom: 15px;
+      border: none;
     }
 
     .contact-card.accent .card-icon {
@@ -622,6 +637,7 @@
       height: 45px;
       border-radius: 10px;
       margin-bottom: 15px;
+      object-fit: cover;
     }
 
     footer p {
@@ -678,13 +694,6 @@
     <a href="#home" class="brand" aria-label="FALLAHA">
       <img src="images/logo.jpeg" alt="FALLAHA">
     </a>
-
-    <button class="menu-btn" aria-label="فتح القائمة" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
     <nav class="nav">
       <a href="#home">الرئيسية</a>
       <a href="#zones">الأقسام</a>
@@ -815,6 +824,18 @@
         <i>•</i>
         <span>FALLAHA</span>
         <i>•</i>
+        <span>FALLAHA</span>
+        <i>•</i>
+        <span>مجمع حلب الأول</span>
+        <i>•</i>
+        <span>CAR CARE</span>
+        <i>•</i>
+        <span>CAFE</span>
+        <i>•</i>
+        <span>OIL SERVICE</span>
+        <i>•</i>
+        <span>FALLAHA</span>
+        <i>•</i>
       </div>
     </section>
 
@@ -822,61 +843,96 @@
     <!--         SERVICES          -->
     <!-- ========================= -->
     <section class="section" id="services">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">الخدمات الاحترافية</span>
+          <h2>
+            خدمات متكاملة
+            <br>
+            <em>لعناية فائقة بسيارتك.</em>
+          </h2>
+        </div>
+      </div>
+
       <div class="services-grid">
         <article class="service-card">
           <div class="card-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
           </div>
-          <span>فحص</span>
+          <div class="service-info">
+            <span>فحص شامل</span>
+            <span class="desc">تشخيص دقيق لكافة أنظمة السيارة</span>
+          </div>
         </article>
         
         <article class="service-card">
           <div class="card-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
-          <span>ميكانيك</span>
+          <div class="service-info">
+            <span>ميكانيك عام</span>
+            <span class="desc">إصلاح وصيانة المحرك والأجزاء الحيوية</span>
+          </div>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
-          <span>كهرباء</span>
+          <div class="service-info">
+            <span>كهرباء السيارات</span>
+            <span class="desc">صيانة الحساسات والأنظمة الإلكترونية</span>
+          </div>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </div>
-          <span>علب سرعة</span>
+          <div class="service-info">
+            <span>علب السرعة (الجير)</span>
+            <span class="desc">صيانة وفحص نواقل الحركة الأوتوماتيكية</span>
+          </div>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
           </div>
-          <span>صوتيات</span>
+          <div class="service-info">
+            <span>الصوتيات والملتيميديا</span>
+            <span class="desc">تركيب وترقية الشاشات وأنظمة الصوت</span>
+          </div>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
           </div>
-          <span>بوليش ومعالجة طلاء</span>
+          <div class="service-info">
+            <span>بوليش ومعالجة طلاء</span>
+            <span class="desc">حماية ولمعان فائق لهيكل السيارة</span>
+          </div>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
           </div>
-          <span>مكابح ونظام التعليق</span>
+          <div class="service-info">
+            <span>المكابح ونظام التعليق</span>
+            <span class="desc">أمان تامة وثبات عالي على الطريق</span>
+          </div>
         </article>
 
-        <article class="service-card hot">
+        <article class="service-card">
           <div class="card-icon">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <span>تواصل أسرع</span>
+          <div class="service-info">
+            <span>تواصل أسرع</span>
+            <span class="desc">استجابة فورية لطلبات الاستعلام</span>
+          </div>
         </article>
       </div>
     </section>
@@ -962,7 +1018,7 @@
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <small>Location</small>
-            <strong>موقع المجمع</strong>
+            <strong style="color:#fff;">موقع المجمع</strong>
             <span>افتح الخريطة ↗</span>
           </a>
         </div>
@@ -988,7 +1044,6 @@
   </a>
 
   <script>
-    // تحديث سنة التذييل تلقائياً
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
