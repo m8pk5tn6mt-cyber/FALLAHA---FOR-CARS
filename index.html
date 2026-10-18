@@ -11,10 +11,346 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   
   <style>
-    /* تنسيق خاص ومرتب لأيقونات الأقسام */
+    /* ========================= */
+    /*      RESET & BASE CSS     */
+    /* =========================  */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #090a0c;
+      color: #f3f4f6;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ========================= */
+    /*          HEADER           */
+    /* ========================= */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 75px;
+      background: rgba(9, 10, 12, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .brand img {
+      height: 42px;
+      width: auto;
+      border-radius: 8px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav a {
+      color: #9ca3af;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #dc2626;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-btn span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    /* ========================= */
+    /*           HERO            */
+    /* ========================= */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(9,10,12,0.6) 0%, rgba(9,10,12,0.85) 80%, #090a0c 100%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin-top: 40px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(220, 38, 38, 0.15);
+      color: #ef4444;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border: 1px solid rgba(220, 38, 38, 0.3);
+    }
+
+    .hero-logo img {
+      width: 70px;
+      height: 70px;
+      border-radius: 14px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .main-title {
+      font-size.rem: 3rem;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .red-word {
+      color: #dc2626;
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: #d1d5db;
+      margin-bottom: 25px;
+    }
+
+    .hero-pills {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 35px;
+      flex-wrap: wrap;
+    }
+
+    .hero-pills span {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .btn-red {
+      background: #dc2626;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+    }
+    .btn-red:hover {
+      background: #b91c1c;
+      transform: translateY(-2px);
+    }
+
+    .btn-dark {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .btn-dark:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .btn small {
+      font-size: 0.75rem;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+
+    .btn strong {
+      font-size: 1rem;
+    }
+
+    .scroll {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #9ca3af;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .scroll b {
+      width: 6px;
+      height: 6px;
+      border-right: 2px solid #9ca3af;
+      border-bottom: 2px solid #9ca3af;
+      transform: rotate(45deg);
+      animation: bounce 1.5s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(45deg); }
+      50% { transform: translateY(6px) rotate(45deg); }
+    }
+
+    /* ========================= */
+    /*        COMMON SECTIONS    */
+    /* ========================= */
+    .section {
+      padding: 90px 7%;
+    }
+
+    .section-head {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      color: #dc2626;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .section-head h2 em {
+      color: #dc2626;
+      font-style: normal;
+    }
+
+    /* ========================= */
+    /*        MAIN ZONES         */
+    /* ========================= */
+    .zones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .zone-card {
+      position: relative;
+      height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.4s ease;
+    }
+
+    .zone-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .zone-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .zone-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 20%, rgba(9,10,12,0.95) 90%);
+    }
+
+    .zone-copy {
+      position: relative;
+      z-index: 2;
+    }
+
     .zone-icon {
       width: 52px;
       height: 52px;
@@ -29,23 +365,279 @@
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.3);
     }
+
+    .zone-copy h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .zone-copy p {
+      font-size: 0.95rem;
+      color: #d1d5db;
+      margin-bottom: 12px;
+    }
+
+    .zone-copy b {
+      display: inline-block;
+      background: #dc2626;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    /* ========================= */
+    /*        SPEED STRIP        */
+    /* ========================= */
+    .ticker {
+      background: #dc2626;
+      padding: 15px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      gap: 30px;
+      align-items: center;
+      animation: ticker 20s linear infinite;
+    }
+
+    .ticker-track span, .ticker-track i {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========================= */
+    /*         SERVICES          */
+    /* ========================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 30px 20px;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: rgba(220, 38, 38, 0.05);
+      border-color: rgba(220, 38, 38, 0.3);
+      transform: translateY(-5px);
+    }
+
     .card-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(220, 38, 38, 0.1);
-      border-radius: 10px;
+      width: 64px;
+      height: 64px;
+      background: rgba(220, 38, 38, 0.12);
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
       color: #dc2626;
+      transition: all 0.3s ease;
     }
+
+    .service-card:hover .card-icon {
+      background: #dc2626;
+      color: #fff;
+      transform: translateY(-4px);
+    }
+
+    .service-card span {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* ========================= */
+    /*          GALLERY          */
+    /* ========================= */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-grid figure {
+      position: relative;
+      height: 260px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .gallery-grid figure.big {
+      grid-column: span 2;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-grid figure:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-grid figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(9,10,12,0.9) 0%, transparent 100%);
+      padding: 20px 15px 15px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid figure.big {
+        grid-column: span 1;
+      }
+    }
+
+    /* ========================= */
+    /*          CONTACT          */
+    /* ========================= */
+    .contact-section {
+      padding: 80px 7%;
+      background: rgba(255, 255, 255, 0.01);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .contact-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-wrap h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .contact-wrap > p {
+      color: #9ca3af;
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 25px 20px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateY(-5px);
+    }
+
+    .contact-card .card-icon {
+      background: rgba(220, 38, 38, 0.1);
+      color: #dc2626;
+      margin-bottom: 15px;
+    }
+
     .contact-card.accent .card-icon {
       background: rgba(37, 211, 102, 0.1);
       color: #25d366;
     }
 
-    /* زر الواتساب العائم العصري والنابض */
+    .contact-card small {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 5px;
+    }
+
+    .contact-card strong {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .contact-card span {
+      font-size: 0.85rem;
+      color: #dc2626;
+      font-weight: 600;
+    }
+    .contact-card.accent span {
+      color: #25d366;
+    }
+
+    /* ========================= */
+    /*          FOOTER           */
+    /* ========================= */
+    footer {
+      background: #050607;
+      padding: 40px 7%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer img {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    footer small {
+      color: #6b7280;
+      font-size: 0.85rem;
+    }
+
+    /* ========================= */
+    /*      FLOATING WHATSAPP    */
+    /* ========================= */
     .floating-wa {
       position: fixed;
       bottom: 30px;
@@ -63,20 +655,16 @@
       transition: all 0.3s ease;
       animation: pulse-wa 2s infinite;
     }
+
     .floating-wa:hover {
       transform: scale(1.12);
       box-shadow: 0 8px 30px rgba(37, 211, 102, 0.8);
     }
+
     @keyframes pulse-wa {
-      0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
   </style>
 </head>
@@ -165,18 +753,6 @@
     <!--        MAIN ZONES         -->
     <!-- ========================= -->
     <section class="section" id="zones">
-      <div class="section-head">
-        <div>
-          <span class="section-kicker">أقسام المجمع</span>
-          <h2>
-            ثلاثة أقسام.
-            <br>
-            <em>هوية واحدة.</em>
-          </h2>
-        </div>
-        <p>مرافق متكاملة ومجهزة بأحدث التقنيات لخدمتك وراحة سيارتك تحت سقف واحد.</p>
-      </div>
-
       <div class="zones-grid">
         <!-- CAR WASH -->
         <article class="zone-card">
@@ -246,92 +822,62 @@
     <!--         SERVICES          -->
     <!-- ========================= -->
     <section class="section" id="services">
-      <div class="section-head">
-        <div>
-          <span class="section-kicker">خدمات السيارات</span>
-          <h2>
-            خدمات السيارة
-            <br>
-            <em>من الألف للياء.</em>
-          </h2>
-        </div>
-      </div>
-
       <div class="services-grid">
         <article class="service-card">
           <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
           </div>
           <span>فحص</span>
         </article>
         
         <article class="service-card">
           <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <span>ميكانيك</span>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
           <span>كهرباء</span>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </div>
           <span>علب سرعة</span>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
           </div>
           <span>صوتيات</span>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
           </div>
           <span>بوليش ومعالجة طلاء</span>
         </article>
 
         <article class="service-card">
           <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
           </div>
           <span>مكابح ونظام التعليق</span>
         </article>
 
         <article class="service-card hot">
           <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
           <span>تواصل أسرع</span>
         </article>
-      </div>
-    </section>
-
-    <!-- ========================= -->
-    <!--       BRAND BANNER        -->
-    <!-- ========================= -->
-    <section class="section">
-      <div class="feature-banner">
-        <img src="images/storefront.jpg" alt="واجهة مجمع حلب الأول">
-        <div class="feature-overlay"></div>
-        <div class="feature-copy">
-          <span class="section-kicker">تجربة رقمية ذكية عبر QR</span>
-          <h2>
-            من الكرت...
-            <br>
-            <em>إلى كل خدمات المجمع.</em>
-          </h2>
-          <p>الشعار، الأقسام، الخدمات، الصور، التواصل والموقع ضمن صفحة واحدة بتصميم سريع وسلس.</p>
-        </div>
       </div>
     </section>
 
@@ -343,9 +889,9 @@
         <div>
           <span class="section-kicker">معرض الصور</span>
           <h2>
-            المعرض
+            لسنا مجرد شركة،
             <br>
-            <em>بصوركم الحقيقية.</em>
+            <em>نحن شركاء تألق سيارتك.</em>
           </h2>
         </div>
       </div>
@@ -380,8 +926,8 @@
     <section class="contact-section" id="contact">
       <div class="contact-wrap">
         <span class="section-kicker">تواصل معنا</span>
-        <h2>جاهزين نخدمك.</h2>
-        <p>اختر طريقة التواصل الأنسب إلك.</p>
+        <h2>نستمع إليك بدقة، لنلبيك بامتياز</h2>
+        <p>خدمة على مدار الأسبوع</p>
 
         <div class="contact-grid">
           <a class="contact-card" href="tel:+963994643666">
@@ -441,7 +987,10 @@
     <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
   </a>
 
-  <script src="script.js"></script>
+  <script>
+    // تحديث سنة التذييل تلقائياً
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
