@@ -1,712 +1,279 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#090a0c">
+  <meta name="theme-color" content="#08090b">
   <meta name="description" content="مجمع حلب الأول - FALLAHA | خدمة متطورة في عالم السيارات الحديثة">
   <title>FALLAHA | مجمع حلب الأول</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+
   <style>
-    /* ========================= */
-    /*      RESET & BASE CSS     */
-    /* ========================= */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg:#08090b; --panel:#111318; --panel2:#15171d;
+      --red:#e11d2e; --red2:#ff4052; --white:#f8f9fb;
+      --muted:#a6abb5; --line:rgba(255,255,255,.09);
+      --glow:0 0 45px rgba(225,29,46,.18);
     }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; scroll-padding-top:90px; font-size:16px; scrollbar-color:#b91c2c #08090b; }
     body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #090a0c;
-      color: #f3f4f6;
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family:'Cairo',sans-serif; color:var(--white); background:
+      radial-gradient(ellipse at 50% 0%,rgba(145,18,31,.09),transparent 42%),var(--bg);
+      line-height:1.7; overflow-x:hidden; -webkit-font-smoothing:antialiased;
     }
+    a { color:inherit; text-decoration:none; -webkit-tap-highlight-color:transparent; }
+    img { display:block; max-width:100%; }
+    a:focus-visible { outline:2px solid var(--red2); outline-offset:5px; }
+    ::selection { background:var(--red); color:#fff; }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    /* ========================= */
-    /*          HEADER           */
-    /* ========================= */
+    /* HEADER */
     .topbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 75px;
-      background: rgba(9, 10, 12, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position:fixed; inset:0 0 auto; height:80px; z-index:1000;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:24px; padding:0 clamp(18px,5vw,76px);
+      background:rgba(5,6,8,.88); border-bottom:1px solid var(--line);
+      box-shadow:0 8px 35px rgba(0,0,0,.2);
+      backdrop-filter:blur(22px) saturate(140%); -webkit-backdrop-filter:blur(22px) saturate(140%);
     }
+    .brand { display:inline-flex; align-items:center; flex-shrink:0; }
+    .brand img { width:auto; height:48px; max-width:150px; object-fit:contain; filter:drop-shadow(0 0 12px rgba(255,255,255,.12)); }
+    .nav { display:flex; align-items:center; gap:clamp(14px,2.2vw,32px); }
+    .nav a { position:relative; color:#b0b4bd; font-size:.9rem; font-weight:700; white-space:nowrap; padding:9px 0; transition:color .25s; }
+    .nav a::after { content:""; position:absolute; right:0; bottom:2px; width:0; height:2px; border-radius:3px; background:linear-gradient(90deg,var(--red),#ff6571); box-shadow:0 0 12px rgba(225,29,46,.55); transition:width .3s; }
+    .nav a:hover { color:#fff; }
+    .nav a:hover::after { width:100%; }
 
-    .brand img {
-      height: 42px;
-      width: auto;
-      border-radius: 8px;
-    }
-
-    .nav {
-      display: flex;
-      gap: 30px;
-    }
-
-    .nav a {
-      color: #9ca3af;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-    }
-
-    .nav a:hover {
-      color: #dc2626;
-    }
-
-    /* ========================= */
-    /*           HERO            */
-    /* ========================= */
+    /* HERO */
     .hero {
-      position: relative;
-      height: 100vh;
-      min-height: 700px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
+      position:relative; isolation:isolate; min-height:100vh; min-height:100svh;
+      display:flex; align-items:center; justify-content:center; text-align:center;
+      padding:125px 22px 100px; overflow:hidden; background:#08090b;
     }
-
-    .hero-image {
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+    .hero-image { position:absolute; inset:0; z-index:-3; }
+    .hero-image img { width:100%; height:100%; object-fit:cover; object-position:center 52%; filter:brightness(.65) saturate(.78) contrast(1.08); }
     .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(9,10,12,0.5) 0%, rgba(9,10,12,0.85) 80%, #090a0c 100%);
-      z-index: -1;
+      position:absolute; inset:0; z-index:-2;
+      background:linear-gradient(180deg,rgba(5,6,8,.38),rgba(5,6,8,.62) 38%,rgba(5,6,8,.91) 78%,#08090b 100%),
+                 linear-gradient(90deg,rgba(8,9,11,.3),transparent 50%,rgba(8,9,11,.3));
     }
-
-    .hero-content {
-      max-width: 850px;
-      margin-top: 50px;
+    .hero::before {
+      content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.24;
+      background:repeating-linear-gradient(125deg,transparent 0,transparent 90px,rgba(255,255,255,.025) 91px,transparent 93px),
+                 radial-gradient(ellipse at 50% 38%,rgba(155,18,32,.18),transparent 48%);
     }
-
+    .hero-content { position:relative; z-index:2; width:min(100%,1000px); margin:auto; animation:rise-in .9s .08s both; }
     .eyebrow {
-      display: inline-block;
-      background: rgba(220, 38, 38, 0.15);
-      color: #ef4444;
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 25px;
-      border: 1px solid rgba(220, 38, 38, 0.3);
+      display:inline-block; padding:8px 19px; margin-bottom:20px; color:#ff737e;
+      background:rgba(140,15,29,.18); border:1px solid rgba(255,70,88,.32);
+      border-radius:100px; font-size:.85rem; font-weight:800; box-shadow:0 0 30px rgba(225,29,46,.08);
+      backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
     }
-
-    /* اللوغو الرئيسي بحجم كبير وبارز ومريح للعين */
-    .hero-logo-wrapper {
-      margin-bottom: 25px;
-      display: flex;
-      justify-content: center;
+    .hero-logo-wrapper { position:relative; isolation:isolate; display:flex; align-items:center; justify-content:center; width:100%; margin:4px auto 25px; }
+    .hero-logo-wrapper::before {
+      content:""; position:absolute; z-index:-1; width:clamp(230px,39vw,410px); aspect-ratio:1;
+      border-radius:50%; background:rgba(255,255,255,.12); filter:blur(48px); pointer-events:none;
     }
-
+    .hero-logo-wrapper::after {
+      content:""; position:absolute; z-index:-1; width:clamp(190px,32vw,330px); aspect-ratio:1;
+      border-radius:50%; background:rgba(225,29,46,.15); filter:blur(56px); transform:translateY(20px); pointer-events:none;
+    }
     .hero-logo-wrapper img {
-      width: 130px;
-      height: 130px;
-      border-radius: 26px;
-      object-fit: cover;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(220, 38, 38, 0.3);
-      border: 3px solid rgba(255, 255, 255, 0.15);
-      transition: transform 0.4s ease;
-    }
-
-    .hero-logo-wrapper img:hover {
-      transform: scale(1.05);
-    }
-
-    .main-title {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900;
-      margin-bottom: 15px;
-      color: #fff;
-    }
-
-    .red-word {
-      color: #dc2626;
-    }
-
-    .tagline {
-      font-size: 1.2rem;
-      color: #d1d5db;
-      margin-bottom: 25px;
-    }
-
-    .hero-pills {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 35px;
-      flex-wrap: wrap;
-    }
-
-    .hero-pills span {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 8px 20px;
-      border-radius: 30px;
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 12px 28px;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-
-    .btn-red {
-      background: #dc2626;
-      color: #fff;
-      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
-    }
-    .btn-red:hover {
-      background: #b91c1c;
-      transform: translateY(-2px);
-    }
-
-    .btn-dark {
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    .btn-dark:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-2px);
-    }
-
-    .btn small {
-      font-size: 0.75rem;
-      opacity: 0.85;
-      font-weight: 500;
-    }
-
-    .btn strong {
-      font-size: 1rem;
-    }
-
-    .scroll {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #9ca3af;
-      font-size: 0.85rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-    .scroll b {
-      width: 6px;
-      height: 6px;
-      border-right: 2px solid #9ca3af;
-      border-bottom: 2px solid #9ca3af;
-      transform: rotate(45deg);
-      animation: bounce 1.5s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0) rotate(45deg); }
-      50% { transform: translateY(6px) rotate(45deg); }
-    }
-
-    /* ========================= */
-    /*        COMMON SECTIONS    */
-    /* ========================= */
-    .section {
-      padding: 90px 7%;
-    }
-
-    .section-head {
-      margin-bottom: 50px;
-      text-align: center;
-    }
-
-    .section-kicker {
-      display: inline-block;
-      color: #dc2626;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .section-head h2 {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.3;
-    }
-
-    .section-head h2 em {
-      color: #dc2626;
-      font-style: normal;
-    }
-
-    /* ========================= */
-    /*        MAIN ZONES         */
-    /* ========================= */
-    .zones-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .zone-card {
-      position: relative;
-      height: 380px;
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-      padding: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: transform 0.4s ease;
-    }
-
-    .zone-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .zone-card img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .zone-card:hover img {
-      transform: scale(1.06);
-    }
-
-    .shade {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 20%, rgba(9,10,12,0.95) 90%);
-    }
-
-    .zone-copy {
-      position: relative;
-      z-index: 2;
-    }
-
-    .zone-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .zone-copy h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-
-    .zone-copy p {
-      font-size: 0.95rem;
-      color: #d1d5db;
-      margin-bottom: 12px;
-    }
-
-    .zone-copy b {
-      display: inline-block;
-      background: #dc2626;
-      color: #fff;
-      padding: 4px 12px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-    }
-
-    /* ========================= */
-    /*        SPEED STRIP        */
-    /* ========================= */
-    .ticker {
-      background: #dc2626;
-      padding: 15px 0;
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-    }
-
-    .ticker-track {
-      display: inline-flex;
-      gap: 30px;
-      align-items: center;
-      animation: ticker 20s linear infinite;
-    }
-
-    .ticker-track span, .ticker-track i {
-      color: #fff;
-      font-weight: 800;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* ========================= */
-    /*   SERVICES (PROFESSIONAL) */
-    /* ========================= */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .service-card {
-      background: linear-gradient(145deg, rgba(18, 20, 26, 0.95) 0%, rgba(10, 12, 16, 0.98) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 35px 25px;
-      border-radius: 22px;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, #dc2626, transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .service-card:hover {
-      background: linear-gradient(145deg, rgba(28, 31, 40, 0.98) 0%, rgba(14, 16, 22, 100));
-      border-color: rgba(220, 38, 38, 0.5);
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    }
-
-    .service-card:hover::after {
-      opacity: 1;
-    }
-
-    .service-card .card-icon {
-      flex-shrink: 0;
-      width: 65px;
-      height: 65px;
-      background: rgba(220, 38, 38, 0.12);
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #dc2626;
-      transition: all 0.35s ease;
-      border: 1px solid rgba(220, 38, 38, 0.25);
-    }
-
-    .service-card:hover .card-icon {
-      background: #dc2626;
-      color: #fff;
-      transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
-    }
-
-    .service-info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .service-info h3 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-
-    .service-info p {
-      font-size: 0.9rem;
-      color: #9ca3af;
-      line-height: 1.5;
-    }
-
-    /* ========================= */
-    /*          GALLERY          */
-    /* ========================= */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .gallery-grid figure {
-      position: relative;
-      height: 260px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .gallery-grid figure.big {
-      grid-column: span 2;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-grid figure:hover img {
-      transform: scale(1.05);
-    }
-
-    .gallery-grid figcaption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(0deg, rgba(9,10,12,0.9) 0%, transparent 100%);
-      padding: 20px 15px 15px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #fff;
-    }
-
-    @media (max-width: 768px) {
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-      .gallery-grid figure.big {
-        grid-column: span 1;
-      }
-    }
-
-    /* ========================= */
-    /*          CONTACT          */
-    /* ========================= */
-    .contact-section {
-      padding: 80px 7%;
-      background: rgba(255, 255, 255, 0.01);
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .contact-wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .contact-wrap h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .contact-wrap > p {
-      color: #9ca3af;
-      margin-bottom: 40px;
-      font-size: 1.05rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .contact-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 25px 20px;
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .contact-card:hover {
-      background: rgba(255, 255, 255, 0.06);
-      transform: translateY(-5px);
-    }
-
-    .contact-card .card-icon {
-      background: rgba(220, 38, 38, 0.1);
-      color: #dc2626;
-      margin-bottom: 15px;
-      border: none;
-    }
-
-    .contact-card.accent .card-icon {
-      background: rgba(37, 211, 102, 0.1);
-      color: #25d366;
-    }
-
-    .contact-card small {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-bottom: 5px;
-    }
-
-    .contact-card strong {
-      font-size: 1.1rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .contact-card span {
-      font-size: 0.85rem;
-      color: #dc2626;
-      font-weight: 600;
-    }
-    .contact-card.accent span {
-      color: #25d366;
-    }
-
-    /* ========================= */
-    /*          FOOTER           */
-    /* ========================= */
-    footer {
-      background: #050607;
-      padding: 40px 7%;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    footer img {
-      width: 45px;
-      height: 45px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      object-fit: cover;
-    }
-
-    footer p {
-      color: #9ca3af;
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-    }
-
-    footer small {
-      color: #6b7280;
-      font-size: 0.85rem;
-    }
-
-    /* ========================= */
-    /*      FLOATING WHATSAPP    */
-    /* ========================= */
-    .floating-wa {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-      color: #fff;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-      z-index: 9999;
-      transition: all 0.3s ease;
-      animation: pulse-wa 2s infinite;
-    }
-
-    .floating-wa:hover {
-      transform: scale(1.12);
-      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.8);
-    }
-
-    @keyframes pulse-wa {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      width:clamp(220px,32vw,320px); height:clamp(220px,32vw,320px);
+      max-width:82vw; max-height:82vw; object-fit:contain; border:0; border-radius:0;
+      background:transparent; filter:drop-shadow(0 0 14px rgba(255,255,255,.17)) drop-shadow(0 18px 35px rgba(0,0,0,.45));
+      transition:transform .45s ease,filter .45s ease;
+    }
+    .hero-logo-wrapper img:hover { transform:scale(1.035); filter:drop-shadow(0 0 23px rgba(255,255,255,.25)) drop-shadow(0 18px 35px rgba(0,0,0,.45)); }
+    .complex-title { margin-bottom:8px; }
+    .main-title { position:relative; display:inline-block; margin-bottom:15px; color:#fff; font-size:clamp(2.5rem,6vw,4.8rem); font-weight:900; line-height:1.35; letter-spacing:-1.2px; text-shadow:0 5px 28px rgba(0,0,0,.5); }
+    .red-word { color:var(--red2); text-shadow:0 0 28px rgba(225,29,46,.22); }
+    .complex-title .main-title::after {
+      content:""; position:absolute; right:18%; bottom:-5px; width:52%; height:3px; border-radius:100%;
+      background:linear-gradient(90deg,transparent,#b91c2c 15%,#ff3c50 55%,#b91c2c 85%,transparent);
+      box-shadow:0 0 17px rgba(225,29,46,.45);
+    }
+    .tagline { max-width:720px; margin:18px auto 26px; color:#e0e2e7; font-size:clamp(1rem,2vw,1.25rem); line-height:1.9; }
+    .hero-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:30px; }
+    .hero-pills span { padding:8px 20px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.13); border-radius:100px; font-size:.92rem; font-weight:700; backdrop-filter:blur(10px); transition:all .3s; }
+    .hero-pills span:hover { background:rgba(225,29,46,.14); border-color:rgba(225,29,46,.45); transform:translateY(-3px); }
+    .hero-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:13px; }
+    .btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; min-width:205px; padding:14px 26px; border-radius:13px; font-weight:800; transition:all .3s; }
+    .btn-red { background:linear-gradient(135deg,#f02b3f,#b81024); color:#fff; box-shadow:0 8px 25px rgba(190,16,36,.25),inset 0 1px 0 rgba(255,255,255,.16); }
+    .btn-red:hover { background:linear-gradient(135deg,#ff3c50,#c31329); transform:translateY(-4px); box-shadow:0 14px 32px rgba(225,29,46,.32); }
+    .btn-dark { background:rgba(255,255,255,.055); border:1px solid rgba(255,255,255,.17); backdrop-filter:blur(12px); }
+    .btn-dark:hover { background:rgba(255,255,255,.11); border-color:rgba(255,255,255,.3); transform:translateY(-4px); }
+    .btn small { font-size:.75rem; opacity:.85; font-weight:600; }
+    .btn strong { font-size:1rem; }
+    .scroll { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; color:#b5b9c2; font-size:.82rem; opacity:.8; }
+    .scroll b { width:7px; height:7px; border-right:2px solid var(--red2); border-bottom:2px solid var(--red2); transform:rotate(45deg); animation:bounce 1.5s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0) rotate(45deg)} 50%{transform:translateY(6px) rotate(45deg)} }
+
+    /* SECTIONS */
+    .section { position:relative; padding:clamp(65px,8vw,110px) clamp(20px,7%,100px); }
+    .section-head { margin-bottom:45px; text-align:center; }
+    .section-kicker { display:inline-block; margin-bottom:15px; padding:5px 14px; color:#ff5969; background:rgba(225,29,46,.09); border:1px solid rgba(225,29,46,.19); border-radius:100px; font-size:.85rem; font-weight:800; letter-spacing:.2px; }
+    .section-head h2 { color:#fff; font-size:clamp(2rem,3.5vw,2.8rem); font-weight:900; line-height:1.5; letter-spacing:-.4px; }
+    .section-head h2 em { color:var(--red2); font-style:normal; }
+
+    /* MAIN ZONES */
+    .zones-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(14px,2.2vw,27px); }
+    .zone-card { position:relative; isolation:isolate; min-width:0; height:clamp(330px,34vw,430px); display:flex; align-items:flex-end; padding:clamp(20px,2.4vw,32px); border:1px solid rgba(255,255,255,.1); border-radius:20px; overflow:hidden; background:#111216; box-shadow:0 12px 32px rgba(0,0,0,.17); transition:transform .4s,box-shadow .4s; }
+    .zone-card::after { content:""; position:absolute; inset:0; z-index:1; border-radius:inherit; border:1px solid rgba(255,255,255,.08); pointer-events:none; }
+    .zone-card:hover { transform:translateY(-7px); box-shadow:0 24px 48px rgba(0,0,0,.35); }
+    .zone-card img { position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; filter:brightness(.84) saturate(.91); transition:transform .6s,filter .4s; }
+    .zone-card:hover img { transform:scale(1.06); filter:brightness(.97) saturate(1.04); }
+    .shade { position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(0,0,0,.02) 5%,rgba(5,6,8,.17) 38%,rgba(5,6,8,.94) 100%); }
+    .zone-copy { position:relative; z-index:2; }
+    .zone-icon { width:55px; height:55px; display:flex; align-items:center; justify-content:center; margin-bottom:15px; color:#fff; background:rgba(225,29,46,.18); border:1px solid rgba(255,255,255,.22); border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,.2); backdrop-filter:blur(10px); }
+    .zone-copy h3 { margin-bottom:7px; color:#fff; font-size:clamp(1.3rem,2vw,1.7rem); font-weight:900; }
+    .zone-copy p { margin-bottom:12px; color:#d1d5db; font-size:.95rem; line-height:1.8; }
+    .zone-copy b { display:inline-block; padding:5px 13px; color:#fff; background:linear-gradient(135deg,#f02b3f,#b81024); border-radius:7px; font-size:.8rem; box-shadow:0 4px 15px rgba(225,29,46,.17); }
+
+    /* MOVING BRAND STRIP */
+    .ticker { position:relative; overflow:hidden; padding:16px 0; background:linear-gradient(100deg,#a90f21,#e11d2e 50%,#a90f21); border-block:1px solid rgba(255,255,255,.12); white-space:nowrap; box-shadow:0 8px 32px rgba(225,29,46,.1); }
+    .ticker-track { display:inline-flex; align-items:center; gap:30px; animation:ticker 25s linear infinite; will-change:transform; }
+    .ticker-track span,.ticker-track i { color:#fff; font-size:1rem; font-weight:900; letter-spacing:.7px; }
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* SERVICES */
+    .services-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:19px; }
+    .service-card { position:relative; display:flex; align-items:flex-start; gap:17px; min-width:0; padding:28px 23px; overflow:hidden; background:linear-gradient(145deg,rgba(255,255,255,.035),transparent 58%),linear-gradient(145deg,#13151a,#0b0c0f); border:1px solid rgba(255,255,255,.075); border-radius:18px; box-shadow:0 10px 28px rgba(0,0,0,.12); transition:all .35s; }
+    .service-card::before { content:""; position:absolute; top:0; right:0; width:3px; height:0; background:linear-gradient(180deg,#ff5263,#b81024); transition:height .35s; }
+    .service-card::after { content:""; position:absolute; right:0; bottom:0; left:0; height:3px; background:linear-gradient(90deg,transparent,var(--red),transparent); opacity:0; transition:opacity .3s; }
+    .service-card:hover { background:linear-gradient(145deg,rgba(225,29,46,.055),transparent 65%),linear-gradient(145deg,#17191f,#0d0e12); border-color:rgba(225,29,46,.35); transform:translateY(-5px); box-shadow:0 18px 38px rgba(0,0,0,.27); }
+    .service-card:hover::before { height:65%; }
+    .service-card:hover::after { opacity:1; }
+    .card-icon { flex-shrink:0; width:58px; height:58px; display:flex; align-items:center; justify-content:center; color:var(--red2); background:rgba(225,29,46,.09); border:1px solid rgba(225,29,46,.2); border-radius:15px; transition:all .35s; }
+    .service-card:hover .card-icon { color:#fff; background:linear-gradient(135deg,#f02b3f,#b81024); transform:translateY(-2px); box-shadow:0 8px 25px rgba(225,29,46,.25); }
+    .service-info { display:flex; flex-direction:column; min-width:0; }
+    .service-info h3 { margin-bottom:6px; color:#fff; font-size:1.13rem; font-weight:900; line-height:1.7; }
+    .service-info p { color:#a7abb5; font-size:.9rem; line-height:1.9; }
+
+    /* GALLERY */
+    .gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .gallery-grid figure { position:relative; height:clamp(210px,23vw,300px); overflow:hidden; background:#101216; border:1px solid rgba(255,255,255,.09); border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.15); }
+    .gallery-grid figure.big { grid-column:span 2; }
+    .gallery-grid img { width:100%; height:100%; object-fit:cover; filter:brightness(.88) saturate(.91); transition:transform .5s,filter .4s; }
+    .gallery-grid figure:hover img { transform:scale(1.05); filter:brightness(1) saturate(1.04); }
+    .gallery-grid figcaption { position:absolute; right:0; bottom:0; left:0; padding:34px 18px 17px; background:linear-gradient(0deg,rgba(4,5,7,.94),transparent); color:#fff; font-size:.95rem; font-weight:800; }
+
+    /* CONTACT */
+    .contact-section { position:relative; padding:clamp(65px,8vw,100px) clamp(20px,7%,100px); background:radial-gradient(ellipse at 50% 100%,rgba(225,29,46,.065),transparent 65%),rgba(255,255,255,.012); border-top:1px solid var(--line); }
+    .contact-wrap { max-width:1080px; margin:auto; text-align:center; }
+    .contact-wrap h2 { margin-bottom:10px; color:#fff; font-size:clamp(1.8rem,3vw,2.5rem); font-weight:900; line-height:1.55; }
+    .contact-wrap>p { margin-bottom:38px; color:#a6abb5; font-size:1.05rem; line-height:1.9; }
+    .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:17px; }
+    .contact-card { display:flex; flex-direction:column; align-items:center; min-width:0; padding:28px 17px; text-align:center; background:linear-gradient(145deg,#14161b,#0b0c0f); border:1px solid rgba(255,255,255,.08); border-radius:18px; box-shadow:0 12px 28px rgba(0,0,0,.12); transition:all .3s; }
+    .contact-card:hover { background:linear-gradient(145deg,#1a1c22,#101115); border-color:rgba(225,29,46,.32); transform:translateY(-5px); box-shadow:0 18px 35px rgba(0,0,0,.22); }
+    .contact-card .card-icon { margin-bottom:14px; border-color:rgba(225,29,46,.18); }
+    .contact-card.accent .card-icon { color:#25d366; background:rgba(37,211,102,.1); border-color:rgba(37,211,102,.2); }
+    .contact-card small { margin-bottom:5px; color:#a6abb5; font-size:.8rem; }
+    .contact-card strong { margin-bottom:10px; color:#fff; font-size:clamp(.95rem,1.4vw,1.1rem); overflow-wrap:anywhere; }
+    .contact-card span { color:var(--red2); font-size:.85rem; font-weight:800; line-height:1.7; }
+    .contact-card.accent span { color:#25d366; }
+
+    /* FOOTER */
+    footer { position:relative; padding:45px 20px 30px; text-align:center; background:radial-gradient(ellipse at 50% 0%,rgba(225,29,46,.055),transparent 60%),#050607; border-top:1px solid rgba(255,255,255,.05); }
+    footer::before { content:""; display:block; width:min(180px,35%); height:2px; margin:-45px auto 35px; background:linear-gradient(90deg,transparent,#d51d30,transparent); }
+    footer img { width:64px; height:64px; margin:0 auto 15px; object-fit:contain; filter:drop-shadow(0 0 12px rgba(255,255,255,.12)); }
+    footer p { margin-bottom:10px; color:#a6abb5; font-size:.95rem; line-height:1.9; }
+    footer small { color:#737985; font-size:.85rem; letter-spacing:.4px; }
+
+    /* FLOATING WHATSAPP */
+    .floating-wa { position:fixed; z-index:9999; bottom:max(23px,env(safe-area-inset-bottom)); left:max(20px,env(safe-area-inset-left)); width:59px; height:59px; display:flex; align-items:center; justify-content:center; color:#fff; background:linear-gradient(135deg,#2be477,#0c9b68); border:1px solid rgba(255,255,255,.2); border-radius:50%; box-shadow:0 8px 28px rgba(37,211,102,.25); transition:transform .3s,box-shadow .3s; }
+    .floating-wa:hover { transform:scale(1.07) translateY(-2px); box-shadow:0 12px 32px rgba(37,211,102,.35); }
+
+    @keyframes rise-in { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+
+    /* TABLET */
+    @media (max-width:1024px) {
+      .topbar { padding-inline:24px; }
+      .nav { gap:16px; }
+      .nav a { font-size:.82rem; }
+      .zones-grid,.services-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .zone-card { height:360px; }
+      .gallery-grid figure { height:240px; }
+    }
+
+    /* MOBILE */
+    @media (max-width:640px) {
+      html { font-size:15px; scroll-padding-top:75px; }
+      .topbar { height:68px; padding-inline:15px; gap:14px; }
+      .brand img { height:39px; max-width:100px; }
+      .nav { flex:1; min-width:0; gap:19px; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+      .nav::-webkit-scrollbar { display:none; }
+      .nav a { flex:0 0 auto; font-size:.79rem; padding:8px 0; }
+      .hero { padding:105px 19px 94px; }
+      .hero-image img { object-position:center center; }
+      .eyebrow { max-width:100%; padding:7px 13px; margin-bottom:21px; font-size:.78rem; }
+      .hero-logo-wrapper { margin:3px auto 23px; }
+      .hero-logo-wrapper::before { width:76vw; filter:blur(35px); }
+      .hero-logo-wrapper::after { width:65vw; filter:blur(40px); }
+      .hero-logo-wrapper img { width:clamp(205px,61vw,270px); height:clamp(205px,61vw,270px); max-width:78vw; max-height:78vw; }
+      .main-title { font-size:clamp(2.25rem,10vw,3.25rem); letter-spacing:-.8px; margin-bottom:13px; }
+      .tagline { font-size:.98rem; line-height:1.9; margin:17px auto 23px; }
+      .hero-pills { gap:8px; margin-bottom:26px; }
+      .hero-pills span { padding:7px 15px; font-size:.82rem; }
+      .hero-actions { gap:10px; }
+      .btn { flex:1 1 145px; min-width:0; padding:13px 10px; border-radius:12px; }
+      .btn strong { font-size:.94rem; }
+      .scroll { bottom:17px; font-size:.78rem; }
+      .section { padding:65px 18px; }
+      .section-head { margin-bottom:30px; }
+      .section-head h2 { font-size:clamp(1.75rem,7.4vw,2.3rem); }
+      .zones-grid,.services-grid { grid-template-columns:1fr; gap:16px; }
+      .zone-card { height:350px; padding:24px; border-radius:17px; }
+      .zone-copy h3 { font-size:1.5rem; }
+      .service-card { padding:23px 19px; gap:15px; border-radius:16px; }
+      .service-card .card-icon { width:53px; height:53px; border-radius:14px; }
+      .service-info h3 { font-size:1.08rem; }
+      .service-info p { font-size:.88rem; }
+      .ticker { padding:14px 0; }
+      .ticker-track { gap:23px; animation-duration:27s; }
+      .ticker-track span,.ticker-track i { font-size:.9rem; }
+      .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+      .gallery-grid figure,.gallery-grid figure.big { grid-column:auto; height:205px; border-radius:13px; }
+      .gallery-grid figure.big { grid-column:1/-1; height:235px; }
+      .gallery-grid figcaption { font-size:.82rem; padding:27px 11px 12px; }
+      .contact-section { padding:65px 18px; }
+      .contact-wrap h2 { font-size:1.65rem; }
+      .contact-wrap>p { font-size:.95rem; margin-bottom:28px; }
+      .contact-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:11px; }
+      .contact-card { padding:21px 9px; border-radius:14px; }
+      .contact-card .card-icon { width:47px; height:47px; margin-bottom:12px; }
+      .contact-card small { font-size:.73rem; }
+      .contact-card strong { font-size:.88rem; }
+      .contact-card span { font-size:.75rem; }
+      footer { padding:35px 18px 25px; }
+      footer p { font-size:.85rem; }
+      .floating-wa { width:53px; height:53px; bottom:max(17px,env(safe-area-inset-bottom)); left:max(15px,env(safe-area-inset-left)); }
+      .floating-wa svg { width:30px; height:30px; }
+    }
+    @media (max-width:380px) {
+      .topbar { padding-inline:11px; gap:10px; }
+      .brand img { max-width:82px; height:35px; }
+      .nav { gap:15px; }
+      .nav a { font-size:.75rem; }
+      .hero { padding-inline:15px; }
+      .hero-logo-wrapper img { width:205px; height:205px; }
+      .hero-actions { flex-direction:column; align-items:stretch; }
+      .btn { width:100%; }
+      .contact-card strong { font-size:.81rem; }
+      .gallery-grid figure { height:175px; }
+      .gallery-grid figure.big { height:210px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- ========================= -->
-  <!--          HEADER           -->
-  <!-- ========================= -->
   <header class="topbar">
-    <a href="#home" class="brand" aria-label="FALLAHA">
-      <img src="images/logo.jpeg" alt="FALLAHA">
-    </a>
+    <a href="#home" class="brand" aria-label="FALLAHA"><img src="images/logo.jpeg" alt="FALLAHA"></a>
     <nav class="nav">
       <a href="#home">الرئيسية</a>
       <a href="#zones">الأقسام</a>
@@ -717,349 +284,117 @@
   </header>
 
   <main>
-
-    <!-- ========================= -->
-    <!--           HERO            -->
-    <!-- ========================= -->
     <section class="hero" id="home">
-      <div class="hero-image">
-        <img src="images/hero.jpg" alt="مجمع حلب الأول">
-      </div>
+      <div class="hero-image"><img src="images/hero.jpg" alt="مجمع حلب الأول"></div>
       <div class="hero-overlay"></div>
-
       <div class="hero-content">
-        <span class="eyebrow">
-          مجمع حلب الأول • عالم السيارات الحديثة
-        </span>
-
-        <!-- اللوغو البارز والكبير في رأس الصفحة -->
-        <div class="hero-logo-wrapper">
-          <img src="images/logo.jpeg" alt="FALLAHA Car's Trading and Service">
-        </div>
-
-        <div class="complex-title">
-          <h1 class="main-title">
-            مجمع حلب <span class="red-word">الأول</span>
-          </h1>
-        </div>
-
-        <p class="tagline">
-          الوجهة الاحترافية الأولى لعناية وخدمة السيارات المتكاملة
-        </p>
-
-        <div class="hero-pills">
-          <span>مغسل</span>
-          <span>كافيه</span>
-          <span>زيوت وتشحيم</span>
-        </div>
-
+        <span class="eyebrow">مجمع حلب الأول • عالم السيارات الحديثة</span>
+        <div class="hero-logo-wrapper"><img src="images/logo.jpeg" alt="FALLAHA Car's Trading and Service"></div>
+        <div class="complex-title"><h1 class="main-title">مجمع حلب <span class="red-word">الأول</span></h1></div>
+        <p class="tagline">الوجهة الاحترافية الأولى لعناية وخدمة السيارات المتكاملة</p>
+        <div class="hero-pills"><span>مغسل</span><span>كافيه</span><span>زيوت وتشحيم</span></div>
         <div class="hero-actions">
-          <a class="btn btn-red" href="tel:+963994643666">
-            <small>اتصال مباشر</small>
-            <strong dir="ltr">0994 643 666</strong>
-          </a>
-
-          <a class="btn btn-dark" href="https://wa.me/963994643666" target="_blank" rel="noopener">
-            <small>WhatsApp</small>
-            <strong>تواصل معنا</strong>
-          </a>
+          <a class="btn btn-red" href="tel:+963994643666"><small>اتصال مباشر</small><strong dir="ltr">0994 643 666</strong></a>
+          <a class="btn btn-dark" href="https://wa.me/963994643666" target="_blank" rel="noopener"><small>WhatsApp</small><strong>تواصل معنا</strong></a>
         </div>
       </div>
-
-      <a class="scroll" href="#zones">
-        اكتشف المجمع
-        <b></b>
-      </a>
+      <a class="scroll" href="#zones">اكتشف المجمع<b></b></a>
     </section>
 
-    <!-- ========================= -->
-    <!--        MAIN ZONES         -->
-    <!-- ========================= -->
     <section class="section" id="zones">
       <div class="zones-grid">
-        <!-- CAR WASH -->
         <article class="zone-card">
-          <img src="images/car-wash.jpg" alt="مغسل السيارات">
-          <div class="shade"></div>
+          <img src="images/car-wash.jpg" alt="مغسل السيارات"><div class="shade"></div>
           <div class="zone-copy">
-            <div class="zone-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-            </div>
-            <h3>مغسل</h3>
-            <p>غسيل وعناية كاملة</p>
-            <b>غسيل اكسترا</b>
+            <div class="zone-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+            <h3>مغسل</h3><p>غسيل وعناية كاملة</p><b>غسيل اكسترا</b>
           </div>
         </article>
-
-        <!-- CAFE -->
         <article class="zone-card featured">
-          <img src="images/cafe.jpg" alt="كافيه مجمع حلب الأول">
-          <div class="shade"></div>
+          <img src="images/cafe.jpg" alt="كافيه مجمع حلب الأول"><div class="shade"></div>
           <div class="zone-copy">
-            <div class="zone-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-            </div>
-            <h3>كافيه</h3>
-            <p>فنجان قهوة ولقمة هنية</p>
-            <b>HALAB 1 CAFE</b>
+            <div class="zone-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+            <h3>كافيه</h3><p>فنجان قهوة ولقمة هنية</p><b>HALAB 1 CAFE</b>
           </div>
         </article>
-
-        <!-- OIL -->
         <article class="zone-card">
-          <img src="images/oil.jpg" alt="زيوت وتشحيم">
-          <div class="shade"></div>
+          <img src="images/oil.jpg" alt="زيوت وتشحيم"><div class="shade"></div>
           <div class="zone-copy">
-            <div class="zone-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
-            </div>
-            <h3>زيوت وتشحيم</h3>
-            <p>خدمة منظمة وسريعة</p>
-            <b>FALLAHA SERVICE</b>
+            <div class="zone-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg></div>
+            <h3>زيوت وتشحيم</h3><p>خدمة منظمة وسريعة</p><b>FALLAHA SERVICE</b>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- ========================= -->
-    <!--        SPEED STRIP        -->
-    <!-- ========================= -->
     <section class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        <span>FALLAHA</span>
-        <i>•</i>
-        <span>مجمع حلب الأول</span>
-        <i>•</i>
-        <span>CAR CARE</span>
-        <i>•</i>
-        <span>CAFE</span>
-        <i>•</i>
-        <span>OIL SERVICE</span>
-        <i>•</i>
-        <span>FALLAHA</span>
-        <i>•</i>
-        <span>FALLAHA</span>
-        <i>•</i>
-        <span>مجمع حلب الأول</span>
-        <i>•</i>
-        <span>CAR CARE</span>
-        <i>•</i>
-        <span>CAFE</span>
-        <i>•</i>
-        <span>OIL SERVICE</span>
-        <i>•</i>
-        <span>FALLAHA</span>
-        <i>•</i>
+        <span>FALLAHA</span><i>•</i><span>مجمع حلب الأول</span><i>•</i><span>CAR CARE</span><i>•</i><span>CAFE</span><i>•</i><span>OIL SERVICE</span><i>•</i><span>FALLAHA</span><i>•</i>
+        <span>FALLAHA</span><i>•</i><span>مجمع حلب الأول</span><i>•</i><span>CAR CARE</span><i>•</i><span>CAFE</span><i>•</i><span>OIL SERVICE</span><i>•</i><span>FALLAHA</span><i>•</i>
       </div>
     </section>
 
-    <!-- ========================= -->
-    <!--         SERVICES          -->
-    <!-- ========================= -->
     <section class="section" id="services">
-      <div class="section-head">
-        <div>
-          <span class="section-kicker">الخدمات الاحترافية</span>
-          <h2>
-            خدمات متكاملة
-            <br>
-            <em>لعناية فائقة بسيارتك.</em>
-          </h2>
-        </div>
-      </div>
-
+      <div class="section-head"><div><span class="section-kicker">الخدمات الاحترافية</span><h2>خدمات متكاملة<br><em>لعناية فائقة بسيارتك.</em></h2></div></div>
       <div class="services-grid">
-        <article class="service-card">
-          <div class="card-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-          </div>
-          <div class="service-info">
-            <h3>فحص شامل</h3>
-            <p>تشخيص دقيق لكافة أنظمة السيارة بأحدث المعدات.</p>
-          </div>
-        </article>
-        
-        <article class="service-card">
-          <div class="card-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <div class="service-info">
-            <h3>ميكانيك عام</h3>
-            <p>إصلاح وصيانة المحرك والأجزاء الحيوية بخبرة عالية.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="card-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <div class="service-info">
-            <h3>كهرباء السيارات</h3>
-            <p>صيانة الحساسات والأنظمة الإلكترونية المعقدة.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="card-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-          </div>
-          <div class="service-info">
-            <h3>علب السرعة (الجير)</h3>
-            <p>صيانة وفحص نواقل الحركة الأوتوماتيكية بدقة.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="card-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          </div>
-          <div class="service-info">
-            <h3>الصوتيات والملتيميديا</h3>
-            <p>تركيب وترقية الشاشات وأنظمة الصوت الاحترافية.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="card-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-          </div>
-          <div class="service-info">
-            <h3>بوليش ومعالجة طلاء</h3>
-            <p>حماية ولمعان فائق لهيكل السيارة ضد العوامل الجوية.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="card-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
-          </div>
-          <div class="service-info">
-            <h3>المكابح ونظام التعليق</h3>
-            <p>لضمان أعلى معايير الأمان والثبات على الطرقات.</p>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="card-icon">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </div>
-          <div class="service-info">
-            <h3>تواصل أسرع</h3>
-            <p>استجابة فورية لطلبات الاستعلام والخدمة السريعة.</p>
-          </div>
-        </article>
+        <article class="service-card"><div class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg></div><div class="service-info"><h3>فحص شامل</h3><p>تشخيص دقيق لكافة أنظمة السيارة بأحدث المعدات.</p></div></article>
+        <article class="service-card"><div class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div><div class="service-info"><h3>ميكانيك عام</h3><p>إصلاح وصيانة المحرك والأجزاء الحيوية بخبرة عالية.</p></div></article>
+        <article class="service-card"><div class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="service-info"><h3>كهرباء السيارات</h3><p>صيانة الحساسات والأنظمة الإلكترونية المعقدة.</p></div></article>
+        <article class="service-card"><div class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0l.06.06a2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><div class="service-info"><h3>علب السرعة (الجير)</h3><p>صيانة وفحص نواقل الحركة الأوتوماتيكية بدقة.</p></div></article>
+        <article class="service-card"><div class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div><div class="service-info"><h3>الصوتيات والملتيميديا</h3><p>تركيب وترقية الشاشات وأنظمة الصوت الاحترافية.</p></div></article>
+        <article class="service-card"><div class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div><div class="service-info"><h3>بوليش ومعالجة طلاء</h3><p>حماية ولمعان فائق لهيكل السيارة ضد العوامل الجوية.</p></div></article>
+        <article class="service-card"><div class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><div class="service-info"><h3>المكابح ونظام التعليق</h3><p>لضمان أعلى معايير الأمان والثبات على الطرقات.</p></div></article>
+        <article class="service-card"><div class="card-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div class="service-info"><h3>تواصل أسرع</h3><p>استجابة فورية لطلبات الاستعلام والخدمة السريعة.</p></div></article>
       </div>
     </section>
 
-    <!-- ========================= -->
-    <!--          GALLERY          -->
-    <!-- ========================= -->
     <section class="section" id="gallery">
-      <div class="section-head">
-        <div>
-          <span class="section-kicker">معرض الصور</span>
-          <h2>
-            لسنا مجرد شركة،
-            <br>
-            <em>نحن شركاء تألق سيارتك.</em>
-          </h2>
-        </div>
-      </div>
-
+      <div class="section-head"><div><span class="section-kicker">معرض الصور</span><h2>لسنا مجرد شركة،<br><em>نحن شركاء تألق سيارتك.</em></h2></div></div>
       <div class="gallery-grid">
-        <figure class="big">
-          <img src="images/storefront.jpg" alt="واجهة المجمع">
-          <figcaption>واجهة المجمع</figcaption>
-        </figure>
-        <figure>
-          <img src="images/car-wash.jpg" alt="المغسل">
-          <figcaption>المغسل</figcaption>
-        </figure>
-        <figure>
-          <img src="images/cafe.jpg" alt="الكافيه">
-          <figcaption>الكافيه</figcaption>
-        </figure>
-        <figure>
-          <img src="images/oil.jpg" alt="قسم الزيوت">
-          <figcaption>قسم الزيوت</figcaption>
-        </figure>
-        <figure>
-          <img src="images/equipment.jpg" alt="الخدمات والتجهيزات">
-          <figcaption>الخدمات والتجهيزات</figcaption>
-        </figure>
+        <figure class="big"><img src="images/storefront.jpg" alt="واجهة المجمع"><figcaption>واجهة المجمع</figcaption></figure>
+        <figure><img src="images/car-wash.jpg" alt="المغسل"><figcaption>المغسل</figcaption></figure>
+        <figure><img src="images/cafe.jpg" alt="الكافيه"><figcaption>الكافيه</figcaption></figure>
+        <figure><img src="images/oil.jpg" alt="قسم الزيوت"><figcaption>قسم الزيوت</figcaption></figure>
+        <figure><img src="images/equipment.jpg" alt="الخدمات والتجهيزات"><figcaption>الخدمات والتجهيزات</figcaption></figure>
       </div>
     </section>
 
-    <!-- ========================= -->
-    <!--          CONTACT          -->
-    <!-- ========================= -->
     <section class="contact-section" id="contact">
       <div class="contact-wrap">
         <span class="section-kicker">تواصل معنا</span>
         <h2>نستمع إليك بدقة، لنلبيك بامتياز</h2>
         <p>خدمة على مدار الأسبوع</p>
-
         <div class="contact-grid">
           <a class="contact-card" href="tel:+963994643666">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <small>اتصال مباشر</small>
-            <strong dir="ltr">0994 643 666</strong>
-            <span>اضغط للاتصال ↗</span>
+            <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <small>اتصال مباشر</small><strong dir="ltr">0994 643 666</strong><span>اضغط للاتصال ↗</span>
           </a>
-
           <a class="contact-card" href="tel:+963995643666">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <small>اتصال مباشر</small>
-            <strong dir="ltr">0995 643 666</strong>
-            <span>اضغط للاتصال ↗</span>
+            <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <small>اتصال مباشر</small><strong dir="ltr">0995 643 666</strong><span>اضغط للاتصال ↗</span>
           </a>
-
           <a class="contact-card accent" href="https://wa.me/963994643666" target="_blank" rel="noopener">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-            </div>
-            <small>WhatsApp</small>
-            <strong>مراسلة فورية</strong>
-            <span>افتح المحادثة ↗</span>
+            <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+            <small>WhatsApp</small><strong>مراسلة فورية</strong><span>افتح المحادثة ↗</span>
           </a>
-
           <a class="contact-card" href="https://maps.google.com/?q=36.2246737,37.1548240" target="_blank" rel="noopener">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <small>Location</small>
-            <strong>موقع المجمع</strong>
-            <span>افتح الخريطة ↗</span>
+            <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <small>Location</small><strong>موقع المجمع</strong><span>افتح الخريطة ↗</span>
           </a>
         </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ========================= -->
-  <!--          FOOTER           -->
-  <!-- ========================= -->
   <footer>
     <img src="images/logo.jpeg" alt="FALLAHA">
     <p>مجمع حلب الأول — خدمة متطورة في عالم السيارات الحديثة</p>
-    <small>
-      © <span id="year"></span> FALLAHA
-    </small>
+    <small>© <span id="year"></span> FALLAHA</small>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
   <a class="floating-wa" href="https://wa.me/963994643666" target="_blank" rel="noopener" aria-label="واتساب">
     <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
   </a>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
-
 </html>
